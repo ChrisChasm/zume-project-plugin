@@ -6,9 +6,10 @@ Description: Private Plugin for the Zume Project
 Version: 1.0
 Requires at least: WordPress 2.9.1 / BuddyPress 1.2
 Tested up to: WordPress 2.9.1 / BuddyPress 1.2
-License: GNU/GPL 2
+License: GNU/GPL 3
 Author: Chris Chasm
-Author URI: http://example.org/me/
+Author URI: http://chasm.solutions
+GitHub Plugin URI: https://github.com/ChasmSolutions/zume-project-plugin
 */
 
 define('ZUME_DOMAIN', 'zume_project');
