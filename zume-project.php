@@ -10,6 +10,7 @@ License: GNU/GPL 3
 Author: Chris Chasm
 Author URI: http://chasm.solutions
 GitHub Plugin URI: https://github.com/ChasmSolutions/zume-project-plugin
+GitHub Branch:    master
 */
 
 define('ZUME_DOMAIN', 'zume_project');
