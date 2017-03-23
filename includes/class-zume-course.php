@@ -377,7 +377,7 @@ class Zume_Course {
         </div>
 
         <div class="callout">
-            <p class="center padding-bottom">Your next session is <strong>Session <?php echo $next_session; ?></strong> for your <strong><?php echo $this->zume_get_group_name($group_id); ?></strong> </p>
+            <p class="center padding-bottom"><strong>Session <?php echo $next_session; ?></strong> is the next session for <strong><?php echo $this->zume_get_group_name($group_id); ?></strong> </p>
             <p class="center"><a href="<?php echo home_url("/zume-training/") . "?id=" . $next_session ?>" class="button large">Start Your Next Session</a></p>
         </div>
 
