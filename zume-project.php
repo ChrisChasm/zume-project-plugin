@@ -5,7 +5,7 @@ Plugin URI: http://example.org/my-plugin/
 Description: Private Plugin for the Zume Project
 Version: 1.0
 Requires at least: WordPress 2.9.1 / BuddyPress 1.2
-Tested up to: WordPress 2.9.1 / BuddyPress 1.2
+Tested up to: WordPress 7.4 / BuddyPress 1.2
 License: GNU/GPL 3
 Author: Chris Chasm
 Author URI: http://chasm.solutions
@@ -17,7 +17,7 @@ define('ZUME_DOMAIN', 'zume_project');
 define('ZUME_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 /* Only load code that needs BuddyPress to run once BP is loaded and initialized. */
-function my_plugin_init() {
+function zume_init() {
 
     require_once ('includes/class-zume-course.php');
     $zume_course = Zume_Course::instance();
@@ -29,8 +29,10 @@ function my_plugin_init() {
 
     require_once ('includes/class-zume-dashboard.php');
 
+    require_once ('includes/class-zume-extend-group.php');
+
 }
-add_action( 'bp_include', 'my_plugin_init' );
+add_action( 'bp_include', 'zume_init' );
 
 /* If you have code that does not need BuddyPress to run, then add it here. */
 

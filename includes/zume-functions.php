@@ -63,6 +63,14 @@ function zume_after_invitation_explaination () {
     print 'This is a Zume explaination after the invitation process.';
 }
 
+function zume_after_group_description () {
+    print '<label>Address</label><input type="text" />';
+    print '<label>City</label><input type="text" />';
+    print '<label>State</label><input type="text" />';
+    print '<label>Zip</label><input type="text" />';
+}
+add_action('bp_after_group_details_creation_step', 'zume_after_group_description');
+
 /*
  * Redirects logged on users from home page requests to dashboard.
  *
