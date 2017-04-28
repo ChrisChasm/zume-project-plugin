@@ -8,13 +8,26 @@
 
 /* Require Authentication for Zume */
 function zume_force_login() {
-    global $post;
 
+    // Pages that should not be redirected. Add to array exception pages.
+    $exception_pages = array(
+        'Home',
+        'Register',
+        'Activate',
+        'Complete'
+    );
+    foreach($exception_pages as $page) {
+        if(is_page($page)) {
+            return;
+        }
+    }
+
+    // Otherwise, if user is not logged in redirect to login
     if (!is_user_logged_in()) {
         auth_redirect();
     }
 
-    // Check if Zume plugin is active
+    // If user is logged in, check that key plugins exist for the course.
     if (! class_exists('Zume_Course') ) {
         echo 'Zume Course plugin is disabled or otherwise unreachable. Please, check with administrator to verify course availability.';
         return;
@@ -48,28 +61,6 @@ function zume_remove_coach_menu_pages() {
 }
 
 
-// Using wp-content/plugins/buddypress/bp-templates/bp-legacy/buddypress/groups/create.php
-// And using wp-content/plugins/buddypress/bp-themes/bp-default/groups/create.php
-
-
-add_action('bp_after_group_invites_creation_step', 'zume_after_invitation_explaination');
-add_action('bp_before_group_invites_creation_step', 'zume_before_invitation_explaination');
-
-function zume_before_invitation_explaination () {
-    print '<p>This is a Zume explaination before the invitation process.</p>';
-}
-
-function zume_after_invitation_explaination () {
-    print 'This is a Zume explaination after the invitation process.';
-}
-
-function zume_after_group_description () {
-    print '<label>Address</label><input type="text" />';
-    print '<label>City</label><input type="text" />';
-    print '<label>State</label><input type="text" />';
-    print '<label>Zip</label><input type="text" />';
-}
-add_action('bp_after_group_details_creation_step', 'zume_after_group_description');
 
 /*
  * Redirects logged on users from home page requests to dashboard.
@@ -142,3 +133,5 @@ function zume_invite_page_content ( $content ) {
     return $content;
 }
 add_filter( 'the_content', 'zume_invite_page_content');
+
+

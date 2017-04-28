@@ -347,13 +347,13 @@ class Zume_Course {
             <h3></h3>
             <section>
                 <h3>Session 6 Overview</h3>
-                <?php print $this->zume_session_overview_content (5) ?>
+                <?php print $this->zume_session_overview_content (6) ?>
             </section>
 
             <h3></h3>
             <section>
                 <h3>Session 7 Overview</h3>
-                <?php print $this->zume_session_overview_content (6) ?>
+                <?php print $this->zume_session_overview_content (7) ?>
             </section>
 
             <h3></h3>
