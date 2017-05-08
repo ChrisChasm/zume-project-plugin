@@ -558,10 +558,12 @@ class Zume_Course {
 
                 <!-- Video block -->
                 <div class="row block">
-                    <!--<script src="//fast.wistia.com/embed/medias/fe3w7ebpl4.jsonp" async></script>
+                    <div class="small-4 small-centered columns">
+                    <script src="//fast.wistia.com/embed/medias/fe3w7ebpl4.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-                    <div class="wistia_embed wistia_async_fe3w7ebpl4" >&nbsp;</div>-->
-                    <img src="<?php echo plugin_dir_url(__FILE__); ?>img/video-placeholder.png" />
+                    <div class="wistia_embed wistia_async_fe3w7ebpl4" >&nbsp;</div>
+<!--                    <img src="--><?php //echo plugin_dir_url(__FILE__); ?><!--img/video-placeholder.png" />-->
+                    </div>
                 </div> <!-- row -->
 
                 <!-- Activity Block  -->
@@ -590,11 +592,14 @@ class Zume_Course {
 
                 <!-- Video block -->
                 <div class="row block">
-                    <!--<script src="//fast.wistia.com/embed/medias/pzq41gvam6.jsonp" async></script>
+                    <div class="small-4 small-centered columns">
+                    <script src="//fast.wistia.com/embed/medias/pzq41gvam6.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-                    <div class="wistia_embed wistia_async_pzq41gvam6" >&nbsp;</div>-->
-                    <img src="<?php echo plugin_dir_url(__FILE__); ?>img/video-placeholder.png" />
+                    <div class="wistia_embed wistia_async_pzq41gvam6" >&nbsp;</div>
+<!--                    <img src="--><?php //echo plugin_dir_url(__FILE__); ?><!--img/video-placeholder.png" />-->
+                    </div>
                 </div> <!-- row -->
+
 
                 <!-- Activity Block  -->
                 <div class="row block">
@@ -628,10 +633,10 @@ class Zume_Course {
 
                 <!-- Video block -->
                 <div class="row block">
-                    <!--<script src="//fast.wistia.com/embed/medias/67sh299w6m.jsonp" async></script>
+                    <script src="//fast.wistia.com/embed/medias/67sh299w6m.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-                    <div class="wistia_embed wistia_async_67sh299w6m" >&nbsp;</div>-->
-                    <img src="<?php echo plugin_dir_url(__FILE__); ?>img/video-placeholder.png" />
+                    <div class="wistia_embed wistia_async_67sh299w6m" >&nbsp;</div>
+<!--                    <img src="--><?php //echo plugin_dir_url(__FILE__); ?><!--img/video-placeholder.png" />-->
                 </div> <!-- row -->
 
                 <!-- Activity Block  -->
@@ -662,10 +667,10 @@ class Zume_Course {
 
                 <!-- Video block -->
                 <div class="row block">
-                    <!--<script src="//fast.wistia.com/embed/medias/i5fwo662go.jsonp" async></script>
+                    <script src="//fast.wistia.com/embed/medias/i5fwo662go.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-                    <div class="wistia_embed wistia_async_i5fwo662go" >&nbsp;</div>-->
-                    <img src="<?php echo plugin_dir_url(__FILE__); ?>img/video-placeholder.png" />
+                    <div class="wistia_embed wistia_async_i5fwo662go" >&nbsp;</div>
+<!--                    <img src="--><?php //echo plugin_dir_url(__FILE__); ?><!--img/video-placeholder.png" />-->
                 </div> <!-- row -->
 
 
@@ -686,10 +691,10 @@ class Zume_Course {
                 </div> <!-- row -->
                 <!-- Video block -->
                 <div class="row block">
-                    <!--<script src="//fast.wistia.com/embed/medias/1zl3h2clam.jsonp" async></script>
+                    <script src="//fast.wistia.com/embed/medias/1zl3h2clam.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-                    <div class="wistia_embed wistia_async_1zl3h2clam" >&nbsp;</div>-->
-                    <img src="<?php echo plugin_dir_url(__FILE__); ?>img/video-placeholder.png" />
+                    <div class="wistia_embed wistia_async_1zl3h2clam" >&nbsp;</div>
+<!--                    <img src="--><?php //echo plugin_dir_url(__FILE__); ?><!--img/video-placeholder.png" />-->
                 </div> <!-- row -->
             </section>
 
