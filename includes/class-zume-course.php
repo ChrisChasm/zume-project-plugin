@@ -558,7 +558,7 @@ class Zume_Course {
 
                 <!-- Video block -->
                 <div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
                         <script src="//fast.wistia.com/embed/medias/fe3w7ebpl4.jsonp" async></script>
                         <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                         <div class="wistia_embed wistia_async_fe3w7ebpl4" >&nbsp;</div>
@@ -591,7 +591,7 @@ class Zume_Course {
 
                 <!-- Video block -->
                 <div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
                     <script src="//fast.wistia.com/embed/medias/pzq41gvam6.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                     <div class="wistia_embed wistia_async_pzq41gvam6" >&nbsp;</div>
@@ -631,7 +631,7 @@ class Zume_Course {
 
                 <!-- Video block -->
                 <div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
                     <script src="//fast.wistia.com/embed/medias/67sh299w6m.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                     <div class="wistia_embed wistia_async_67sh299w6m" >&nbsp;</div>
@@ -666,7 +666,7 @@ class Zume_Course {
 
                 <!-- Video block -->
                 <div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
                     <script src="//fast.wistia.com/embed/medias/i5fwo662go.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                     <div class="wistia_embed wistia_async_i5fwo662go" >&nbsp;</div>
@@ -691,7 +691,7 @@ class Zume_Course {
                 </div> <!-- row -->
                 <!-- Video block -->
                 <div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
                     <script src="//fast.wistia.com/embed/medias/1zl3h2clam.jsonp" async></script>
                     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                     <div class="wistia_embed wistia_async_1zl3h2clam" >&nbsp;</div>
@@ -817,7 +817,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/degdhfsycm.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_degdhfsycm" >&nbsp;</div>
@@ -847,7 +847,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/1995yry849.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_1995yry849" >&nbsp;</div>
@@ -907,7 +907,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/pzcavp72zy.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_pzcavp72zy" >&nbsp;</div>
@@ -1018,7 +1018,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/63g4lcmbjf.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_63g4lcmbjf" >&nbsp;</div>
@@ -1072,7 +1072,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/0qq5iq8b2i.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_0qq5iq8b2i" >&nbsp;</div>
@@ -1119,7 +1119,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/v8p5mbpdp5.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_v8p5mbpdp5" >&nbsp;</div>
@@ -1221,7 +1221,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/kwhpgugafp.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_kwhpgugafp" >&nbsp;</div>
@@ -1261,7 +1261,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/qbfpcb1ta8.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_qbfpcb1ta8" >&nbsp;</div>
@@ -1292,7 +1292,7 @@ class Zume_Course {
 
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/aii2k283nk.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_aii2k283nk" >&nbsp;</div>
@@ -1326,7 +1326,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/t3xr5w43av.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_t3xr5w43av" >&nbsp;</div>
@@ -1435,7 +1435,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/ltxoicq440.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_ltxoicq440" >&nbsp;</div>
@@ -1556,7 +1556,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/yk0i0eserm.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_yk0i0eserm" >&nbsp;</div>
@@ -1584,7 +1584,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/xnhyl1o17z.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_xnhyl1o17z" >&nbsp;</div>
@@ -1619,7 +1619,7 @@ class Zume_Course {
 
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/s4shprhr4l.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_s4shprhr4l" >&nbsp;</div>
@@ -1712,7 +1712,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/ziw8qxj7zj.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_ziw8qxj7zj" >&nbsp;</div>
@@ -1841,7 +1841,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/lnr64mh2bg.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_lnr64mh2bg" >&nbsp;</div>
@@ -1963,7 +1963,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/1rydt7j3ds.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_1rydt7j3ds" >&nbsp;</div>
@@ -1992,7 +1992,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/42tm77n9aq.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_42tm77n9aq" >&nbsp;</div>
@@ -2021,7 +2021,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/nna7r761vo.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_nna7r761vo" >&nbsp;</div>
@@ -2113,7 +2113,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
 					<script src="//fast.wistia.com/embed/medias/h3znainxm9.jsonp" async></script>
 					<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 					<div class="wistia_embed wistia_async_h3znainxm9" >&nbsp;</div>
@@ -2232,7 +2232,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
                         <script src="//fast.wistia.com/embed/medias/h9bg4ij6hs.jsonp" async></script>
                         <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                         <div class="wistia_embed wistia_async_h9bg4ij6hs" >&nbsp;</div>
@@ -2260,7 +2260,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
                         <script src="//fast.wistia.com/embed/medias/82s2l4gpq8.jsonp" async></script>
                         <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                         <div class="wistia_embed wistia_async_82s2l4gpq8" >&nbsp;</div>
@@ -2313,7 +2313,7 @@ class Zume_Course {
 				</div> <!-- row -->
 				<!-- Video block -->
 				<div class="row block">
-                    <div class="small-4 small-centered columns">
+                    <div class="small-12 small-centered medium-9 columns">
                         <script src="//fast.wistia.com/embed/medias/h3znainxm9.jsonp" async></script>
                         <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
                         <div class="wistia_embed wistia_async_h3znainxm9" >&nbsp;</div>
