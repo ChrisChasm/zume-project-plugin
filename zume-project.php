@@ -20,8 +20,6 @@ function zume_init() {
     require_once ('includes/class-zume-course.php');
     $zume_course = Zume_Course::instance();
 
-    require_once ('api/record-steps.php');
-
     // Loads configuration functions for the zume site.
     require_once ('includes/zume-functions.php');
 
@@ -53,11 +51,6 @@ add_action( 'rest_api_init', 'prefix_register_zume_rest_routes' );
 
 require_once ('includes/steplog-post-type.php');
 $steplog = Zume_Steplog::instance();
-
-
-require_once ('includes/class-zume-helper.php');
-$helper = Zume_Helper::instance();
-
 
 
 /**
