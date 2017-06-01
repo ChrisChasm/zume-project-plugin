@@ -1170,7 +1170,7 @@ class Zume_Course {
 	 * @return mixed
 	 */
 	public function zume_session_4_content ($group_id) {
-        $session_number = 1;
+        $session_number = 4;
         ?>
 
         <?php echo $this->jquery_steps($group_id, $session_number); ?>
@@ -1386,7 +1386,7 @@ class Zume_Course {
 	 * @return mixed
 	 */
 	public function zume_session_5_content ($group_id) {
-        $session_number = 1;
+        $session_number = 5;
         ?>
 
         <?php echo $this->jquery_steps($group_id, $session_number); ?>
@@ -1506,7 +1506,7 @@ class Zume_Course {
 	 * @return mixed
 	 */
 	public function zume_session_6_content ($group_id) {
-        $session_number = 1;
+        $session_number = 6;
         ?>
 
         <?php echo $this->jquery_steps($group_id, $session_number); ?>
@@ -1663,7 +1663,7 @@ class Zume_Course {
 	 * @return mixed
 	 */
 	public function zume_session_7_content ($group_id) {
-        $session_number = 1;
+        $session_number = 7;
         ?>
 
         <?php echo $this->jquery_steps($group_id, $session_number); ?>
@@ -1786,7 +1786,7 @@ class Zume_Course {
 	 * @return mixed
 	 */
 	public function zume_session_8_content ($group_id) {
-        $session_number = 1;
+        $session_number = 8;
         ?>
 
         <?php echo $this->jquery_steps($group_id, $session_number); ?>
@@ -1912,7 +1912,7 @@ class Zume_Course {
 	 * @return mixed
 	 */
 	public function zume_session_9_content ($group_id) {
-        $session_number = 1;
+        $session_number = 9;
         ?>
 
         <?php echo $this->jquery_steps($group_id, $session_number); ?>

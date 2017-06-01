@@ -27,8 +27,6 @@ function zume_init() {
 
     require_once ('includes/functions-group-address.php'); // loads the group address meta fields
 
-    require_once ('includes/class-zume-extend-group.php');
-
 }
 add_action( 'bp_include', 'zume_init' );
 

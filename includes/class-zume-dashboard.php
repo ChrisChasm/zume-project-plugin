@@ -48,11 +48,6 @@ class Zume_Dashboard {
 
 
     public function enqueue_buddypress_styles_to_zume () {
-//        wp_register_style( 'zume_buddypress_style', plugins_url() . '/buddypress/bp-themes/bp-default/_inc/css/default.css' );
-//        wp_enqueue_style( 'zume_buddypress_stylesheet', plugins_url() . '/buddypress/bp-themes/bp-default/_inc/css/default.css');
-
-//        wp_register_style( 'zume_buddypress_responsive_style', plugins_url() . '/buddypress/bp-themes/bp-default/_inc/css/responsive.css' );
-//        wp_enqueue_style( 'zume_buddypress_responsive_stylesheet', plugins_url() . '/buddypress/bp-themes/bp-default/_inc/css/responsive.css');
 
         wp_register_style( 'zume_dashboard_style', ZUME_PLUGIN_URL . '/includes/css/zume-dashboard.css' );
         wp_enqueue_style( 'zume_dashboard_stylesheet', ZUME_PLUGIN_URL . '/includes/css/zume-dashboard.css');
@@ -73,23 +68,18 @@ class Zume_Dashboard {
      */
     protected function load_your_groups () {
 
-//        /*** VARIABLES ***/
-//        $user_id = get_current_user_id();
-//        $meta_key = 'zume_active_group';
-
         // Check for number of groups
         $user_groups = $this->zume_get_groups_of_user();
 
         // if user has no groups, then invite them to find a group or start a group
         if (empty($user_groups)) {
             echo '<p>Welcome! It looks like you have no group(s). </p>
-                                            <ul><li>If you are the first of your friends, try starting a group and then inviting friends. </li>
-                                            <li>If you were invited to Zume, look to find your friend in our directory and connect with them. Then they can invite you to a group.</li>
-                                            </ul>
-                                            ';
+                    <ul><li>If you are the first of your friends, try starting a group and then inviting friends. </li>
+                    <li>If you were invited to Zume, look to find your friend in our directory and connect with them. Then they can invite you to a group.</li>
+                    </ul>
+                    ';
             return;
         }
-
 
         foreach($user_groups as $one_group) {
 
@@ -98,12 +88,6 @@ class Zume_Dashboard {
 
             echo $group_name . '<br>';
         }
-
-
-
-//        print '<pre>'; print_r($user_groups); print '</pre>';
-
-
     }
 
     /**
