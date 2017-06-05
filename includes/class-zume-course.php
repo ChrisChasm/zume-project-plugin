@@ -244,7 +244,7 @@ class Zume_Course {
 	 */
 	public function zume_scripts_enqueue () {
 		wp_register_script( 'jquery-steps', plugin_dir_url(__FILE__) . 'js/jquery.steps.js', array('jquery'), NULL, true );
-		wp_register_style( 'zume-course', plugin_dir_url(__FILE__) . 'css/zume-course.css', false, NULL, 'all' );
+		wp_register_style( 'zume-course', plugin_dir_url(__FILE__) . 'css/zume-course.css', false, NULL, 'all' ); // Relocated into the _main.scss theme file
 
 		wp_enqueue_script( 'jquery-steps' );
 		wp_enqueue_style( 'zume-course' );

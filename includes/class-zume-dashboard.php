@@ -49,7 +49,7 @@ class Zume_Dashboard {
 
     public function enqueue_buddypress_styles_to_zume () {
 
-        wp_register_style( 'zume_dashboard_style', ZUME_PLUGIN_URL . '/includes/css/zume-dashboard.css' );
+        wp_register_style( 'zume_dashboard_style', ZUME_PLUGIN_URL . '/includes/css/zume-dashboard.css' ); // Relocated to the _main.scss in the theme
         wp_enqueue_style( 'zume_dashboard_stylesheet', ZUME_PLUGIN_URL . '/includes/css/zume-dashboard.css');
     }
 
