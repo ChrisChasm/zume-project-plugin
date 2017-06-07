@@ -190,47 +190,44 @@ class Zume_Course {
 
 	    // Check for highest session completed and redirect
         $next_session = zume_group_next_session($group_id);
-        if ($session > $next_session || $session == 'overview') {
-
-            if($session == 'overview') { $session = 1;}
-
-            echo $this->zume_sessions_overview($group_id, $next_session, $session);
-
-        } else {
-            // Select content
-            switch ($session) {
-                case '1':
-                    echo $this->zume_session_1_content($group_id);
-                    break;
-                case '2':
-                    echo $this->zume_session_2_content($group_id);
-                    break;
-                case '3':
-                    echo $this->zume_session_3_content($group_id);
-                    break;
-                case '4':
-                    echo $this->zume_session_4_content($group_id);
-                    break;
-                case '5':
-                    echo $this->zume_session_5_content($group_id);
-                    break;
-                case '6':
-                    echo $this->zume_session_6_content($group_id);
-                    break;
-                case '7':
-                    echo $this->zume_session_7_content($group_id);
-                    break;
-                case '8':
-                    echo $this->zume_session_8_content($group_id);
-                    break;
-                case '9':
-                    echo $this->zume_session_9_content($group_id);
-                    break;
-                case '10':
-                    echo $this->zume_session_10_content($group_id);
-                    break;
-            }
+        if ($session > $next_session ) {
+            $session = $next_session;
         }
+
+        // Select content
+        switch ($session) {
+            case '1':
+                echo $this->zume_session_1_content($group_id);
+                break;
+            case '2':
+                echo $this->zume_session_2_content($group_id);
+                break;
+            case '3':
+                echo $this->zume_session_3_content($group_id);
+                break;
+            case '4':
+                echo $this->zume_session_4_content($group_id);
+                break;
+            case '5':
+                echo $this->zume_session_5_content($group_id);
+                break;
+            case '6':
+                echo $this->zume_session_6_content($group_id);
+                break;
+            case '7':
+                echo $this->zume_session_7_content($group_id);
+                break;
+            case '8':
+                echo $this->zume_session_8_content($group_id);
+                break;
+            case '9':
+                echo $this->zume_session_9_content($group_id);
+                break;
+            case '10':
+                echo $this->zume_session_10_content($group_id);
+                break;
+        }
+
 	}
 
 	/**
@@ -243,11 +240,6 @@ class Zume_Course {
 
 		wp_enqueue_script( 'jquery-steps' );
 		wp_enqueue_style( 'zume-course' );
-
-//		wp_enqueue_script( 'bootstrap-js' );
-//		wp_enqueue_style( 'bootstrap-css' );
-//		wp_register_script( 'bootstrap-js', '://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), NULL, true );
-//		wp_register_style( 'bootstrap-css', '://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', false, NULL, 'all' );
 	}
 
     /**
@@ -259,126 +251,6 @@ class Zume_Course {
         return $group->name;
     }
 
-    /**
-     * Pulls the content from the pages database
-     * @return string
-     */
-    public function zume_session_overview_content ($session) {
-
-	    $session_title = 'Session ' . $session . ' Overview';
-        $page_object = get_page_by_title( $session_title, OBJECT, 'page' );
-
-
-        if (! empty($page_object) || ! empty($page_object->post_content)) {
-            $page_content = (string) $page_object->post_content;
-            echo $page_content;
-        }
-        else {
-            print 'Please republish "'.$session_title.'" with content for this section in the pages administration area.';
-        }
-    }
-
-    /**
-     * Zume Overview
-     * @return mixed
-     */
-    public function zume_sessions_overview ($group_id, $next_session, $session) {
-        ?>
-        <h2 class="center padding-bottom">Sessions Overview</h2>
-
-        <script>
-            jQuery(document).ready(function () {
-
-                jQuery("#overview").steps({
-                    // Disables the finish button (required if pagination is enabled)
-                    enableFinishButton: false,
-                    // Disables the next and previous buttons (optional)
-                    enablePagination: false,
-                    // Enables all steps from the begining
-                    enableAllSteps: true,
-                    // Removes the number from the title
-//                    titleTemplate: "#title#",
-                    startIndex: <?php echo $session - 1;?>,
-                    headerTag: "h3",
-                    bodyTag: "section",
-                    transitionEffect: "fade",
-                    autoFocus: true
-                });
-            });
-
-        </script>
-
-        <div id="overview">
-            <h3></h3>
-            <section>
-                <h3>Session 1 Overview</h3>
-                <?php print $this->zume_session_overview_content (1) ?>
-            </section>
-
-            <h3></h3>
-            <section>
-                <h3>Session 2 Overview</h3>
-                <?php print $this->zume_session_overview_content (2) ?>
-            </section>
-
-            <h3></h3>
-            <section>
-                <h3>Session 3 Overview</h3>
-                <?php print $this->zume_session_overview_content (3) ?>
-            </section>
-
-            <h3></h3>
-            <section>
-                <h3>Session 4 Overview</h3>
-                <?php print $this->zume_session_overview_content (4) ?>
-            </section>
-
-            <h3></h3>
-            <section>
-                <h3>Session 5 Overview</h3>
-                <?php print $this->zume_session_overview_content (5) ?>
-            </section>
-
-            <h3></h3>
-            <section>
-                <h3>Session 6 Overview</h3>
-                <?php print $this->zume_session_overview_content (6) ?>
-            </section>
-
-            <h3></h3>
-            <section>
-                <h3>Session 7 Overview</h3>
-                <?php print $this->zume_session_overview_content (7) ?>
-            </section>
-
-            <h3></h3>
-            <section>
-                <h3>Session 8 Overview</h3>
-                <?php print $this->zume_session_overview_content (8) ?>
-            </section>
-
-            <h3></h3>
-            <section>
-                <h3>Session 9 Overview</h3>
-                <?php print $this->zume_session_overview_content (9) ?>
-            </section>
-
-            <h3></h3>
-            <section>
-                <h3>Session 10 Overview</h3>
-                <?php print $this->zume_session_overview_content (10) ?>
-            </section>
-
-        </div>
-
-        <div class="callout">
-            <p class="center padding-bottom"><strong>Session <?php echo $next_session; ?></strong> is the next session for <strong><?php echo $this->zume_get_group_name($group_id); ?></strong> </p>
-            <p class="center"><a href="<?php echo home_url("/zume-training/") . "?id=" . $next_session ?>" class="button large">Start Your Next Session</a></p>
-        </div>
-
-
-        <?php
-    }
 
     /**
      * Jquery Steps with configuration
