@@ -20,6 +20,9 @@ function zume_init() {
     require_once ('includes/class-zume-course.php');
     $zume_course = Zume_Course::instance();
 
+    require_once ('includes/class-zume-overview.php');
+    $zume_overview = Zume_Overview::instance();
+
     // Loads configuration functions for the zume site.
     require_once ('includes/zume-functions.php');
 

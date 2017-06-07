@@ -149,13 +149,8 @@ class Zume_Course {
                 $this->content_loader($zume_session, $new_group_id );
             }
 
-
-
             /**
-             *
              * Last, pull current active group from user meta and load content according to active group.
-             *
-             *
              */
         } else {
 
