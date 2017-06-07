@@ -170,7 +170,7 @@ class Zume_Overview {
 
         </div>
 
-        <?php $this->next_session_block(); ?>
+        <?php if(is_user_logged_in()) {$this->next_session_block(); } ?>
 
 
         <?php
