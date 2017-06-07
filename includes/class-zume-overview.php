@@ -97,7 +97,7 @@ class Zume_Overview {
                     enableAllSteps: true,
                     // Removes the number from the title
 //                    titleTemplate: "#title#",
-                    startIndex: <?php echo $session - 1;?>,
+                    startIndex: 0,
                     headerTag: "h3",
                     bodyTag: "section",
                     transitionEffect: "fade",
