@@ -109,16 +109,22 @@ class Zume_Overview {
                     autoFocus: true,
                     onStepChanged: function(event, currentIndex, priorIndex) {
                         var newHash = "#s" + (currentIndex + 1);
-                        if (history.replaceState) {
-                            <?php /* Replaces window.location.hash without
-                            creating a history entry, and without scrolling or
-                            jumping */ ?>
-                            history.replaceState(null, null, newHash);
-                        } else {
-                            window.location.hash = newHash;
-                        }
+                        <?php /* Replaces window.location.hash without creating
+                        a history entry, and without scrolling or jumping, and
+                        without triggering hashchange */ ?>
+                        history.replaceState(null, null, newHash);
                     }
                 });
+                window.addEventListener("hashchange", function(event) {
+                    <?php /* This can get triggered when Overview menu items
+                    get clicked */ ?>
+                    var hash = event.newURL.substr(event.newURL.indexOf("#"));
+                    if (! isNaN(parseInt(hash.substr(2)))) {
+                        var stepIndex = parseInt(hash.substr(2)) - 1;
+                        $("#overview .steps a#overview-t-" + stepIndex).click();
+                    }
+                });
+
             });
 
         </script>
@@ -126,61 +132,61 @@ class Zume_Overview {
         <div id="overview">
             <h3></h3>
             <section>
-                <h3 id="s1">Session 1 Overview</h3>
+                <h3>Session 1 Overview</h3>
                 <?php print $this->zume_session_overview_content (1) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3 id="s2">Session 2 Overview</h3>
+                <h3>Session 2 Overview</h3>
                 <?php print $this->zume_session_overview_content (2) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3 id="s3">Session 3 Overview</h3>
+                <h3>Session 3 Overview</h3>
                 <?php print $this->zume_session_overview_content (3) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3 id="s4">Session 4 Overview</h3>
+                <h3>Session 4 Overview</h3>
                 <?php print $this->zume_session_overview_content (4) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3 id="s5">Session 5 Overview</h3>
+                <h3>Session 5 Overview</h3>
                 <?php print $this->zume_session_overview_content (5) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3 id="s6">Session 6 Overview</h3>
+                <h3>Session 6 Overview</h3>
                 <?php print $this->zume_session_overview_content (6) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3 id="s7">Session 7 Overview</h3>
+                <h3>Session 7 Overview</h3>
                 <?php print $this->zume_session_overview_content (7) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3 id="s8">Session 8 Overview</h3>
+                <h3>Session 8 Overview</h3>
                 <?php print $this->zume_session_overview_content (8) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3 id="s9">Session 9 Overview</h3>
+                <h3>Session 9 Overview</h3>
                 <?php print $this->zume_session_overview_content (9) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3 id="s10">Session 10 Overview</h3>
+                <h3>Session 10 Overview</h3>
                 <?php print $this->zume_session_overview_content (10) ?>
             </section>
 
