@@ -14,7 +14,9 @@ function zume_force_login() {
         'Home',
         'Register',
         'Activate',
-        'Complete'
+        'Complete',
+        'Overview',
+        'About',
     );
     foreach($exception_pages as $page) {
         if(is_page($page)) {
