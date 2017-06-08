@@ -30,10 +30,19 @@ function zume_init() {
 
     require_once ('includes/functions-group-address.php'); // loads the group address meta fields
 
+
 }
 add_action( 'bp_include', 'zume_init' );
 
+function bp_loaded_function(){
+
+	require_once ('includes/group_creation.php');
+}
+
+add_action('bp_init', 'bp_loaded_function');
+
 /* If you have code that does not need BuddyPress to run, then add it here. */
+
 
 
 
