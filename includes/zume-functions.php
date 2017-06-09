@@ -17,6 +17,7 @@ function zume_force_login() {
         'Complete',
         'Overview',
         'About',
+        'Resources',
     );
     foreach($exception_pages as $page) {
         if(is_page($page)) {
