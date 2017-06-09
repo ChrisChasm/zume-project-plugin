@@ -291,17 +291,6 @@ button.btn.btn-large.next-step.zume-purple.uppercase.bg-white.font-zume-purple.b
     margin: 0 auto;
 }
 
-#overview .steps ul li a {
-     background: #323A68;
-     color: #fff;
- }
-
-#overview .steps ul li a:active, #overview .steps ul li a:hover, #overview .steps .current a {
-    background: #00aeff;
-    color: #fff;
-}
-
-
 /* Buddy press modifications */
 body.single-item.groups #buddypress div#item-header #item-header-cover-image #item-actions {
     margin-top: 10px;

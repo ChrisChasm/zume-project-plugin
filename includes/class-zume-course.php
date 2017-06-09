@@ -330,9 +330,11 @@ class Zume_Course {
                             }
                 
                         });
-                    }
+                    },
                     
                     '; // end html block
+
+        $html .= "  titleTemplate: '<span class=\"number\">#index#</span> #title#'";
 
 
 
