@@ -133,61 +133,61 @@ class Zume_Overview {
         <div id="overview">
             <h3></h3>
             <section>
-                <h3>Session 1 Overview</h3>
+                <h3 style="text-align: center">Session 1</h3>
                 <?php print $this->zume_session_overview_content (1) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3>Session 2 Overview</h3>
+                <h3 style="text-align: center">Session 2</h3>
                 <?php print $this->zume_session_overview_content (2) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3>Session 3 Overview</h3>
+                <h3 style="text-align: center">Session 3</h3>
                 <?php print $this->zume_session_overview_content (3) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3>Session 4 Overview</h3>
+                <h3 style="text-align: center">Session 4</h3>
                 <?php print $this->zume_session_overview_content (4) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3>Session 5 Overview</h3>
+                <h3 style="text-align: center">Session 5</h3>
                 <?php print $this->zume_session_overview_content (5) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3>Session 6 Overview</h3>
+                <h3 style="text-align: center">Session 6</h3>
                 <?php print $this->zume_session_overview_content (6) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3>Session 7 Overview</h3>
+                <h3 style="text-align: center">Session 7</h3>
                 <?php print $this->zume_session_overview_content (7) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3>Session 8 Overview</h3>
+                <h3 style="text-align: center">Session 8</h3>
                 <?php print $this->zume_session_overview_content (8) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3>Session 9 Overview</h3>
+                <h3 style="text-align: center">Session 9</h3>
                 <?php print $this->zume_session_overview_content (9) ?>
             </section>
 
             <h3></h3>
             <section>
-                <h3>Session 10 Overview</h3>
+                <h3 style="text-align: center">Session 10</h3>
                 <?php print $this->zume_session_overview_content (10) ?>
             </section>
 
