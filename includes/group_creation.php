@@ -46,6 +46,14 @@ if (isset($_SESSION["zume_group_id"]) && isset($_SESSION["zume_group_token"])){
 			if (groups_accept_invite(get_current_user_id(), $_SESSION["zume_group_id"])){
 				$_SESSION["zume_group_id"] = "";
 				$_SESSION["zume_group_token"] = "";
+				//send welcome to group email
+				$args = array(
+					'tokens' => array (
+						'group.name'    => $group->name,
+						'group.url'     => esc_url(bp_get_group_permalink($group))
+					)
+				);
+				bp_send_email('member_automatically_added_to_group', get_current_user_id(), $args);
 			};
 		}
 	}
@@ -99,7 +107,7 @@ function automatically_added_to_group() {
 		// add our email to the taxonomy term 'post_received_comment'
 		// Email is a custom post type, therefore use wp_set_object_terms
 
-		$tt_ids = wp_set_object_terms( $post_id, 'post_received_comment', bp_get_email_tax_type() );
+		$tt_ids = wp_set_object_terms( $post_id, 'member_automatically_added_to_group', bp_get_email_tax_type() );
 		foreach ( $tt_ids as $tt_id ) {
 			$term = get_term_by( 'term_taxonomy_id', (int) $tt_id, bp_get_email_tax_type() );
 			wp_update_term( (int) $term->term_id, bp_get_email_tax_type(), array(
