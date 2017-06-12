@@ -116,3 +116,7 @@ add_action( 'groups_created_group',  'group_header_fields_save' );
 //    print '<label>Zip (required)</label><input type="text" name="group_zip" required/>';
 //}
 //add_action('bp_after_group_details_creation_step', 'zume_after_group_description');
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
