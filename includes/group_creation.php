@@ -72,3 +72,41 @@ function set_group_defaults($group_id){
 }
 
 add_action( 'groups_created_group',  'set_group_defaults' );
+
+
+
+function automatically_added_to_group() {
+
+	// Do not create if it already exists and is not in the trash
+	$post_exists = post_exists( '[{{{site.name}}}] Added to Group.' );
+
+	if ( $post_exists != 0 && get_post_status( $post_exists ) == 'publish' )
+		return;
+
+	// Create post object
+	$my_post = array(
+		'post_title'    => __( '[{{{site.name}}}] Added to Group.', 'zume_project' ),
+		'post_content'  => __( "Congratulations! You are now part of the Zume group &quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot;", 'zume_project' ),  // HTML email content.
+		'post_excerpt'  => __( "Congratulations! You are now part of the Zume group \"{{group.name}}\" \n\nTo view the group, visit: {{{group.url}}}", 'zume_project' ),  // Plain text email content.
+		'post_status'   => 'publish',
+		'post_type' => bp_get_email_post_type() // this is the post type for emails
+	);
+
+	// Insert the email post into the database
+	$post_id = wp_insert_post( $my_post );
+
+	if ( $post_id ) {
+		// add our email to the taxonomy term 'post_received_comment'
+		// Email is a custom post type, therefore use wp_set_object_terms
+
+		$tt_ids = wp_set_object_terms( $post_id, 'post_received_comment', bp_get_email_tax_type() );
+		foreach ( $tt_ids as $tt_id ) {
+			$term = get_term_by( 'term_taxonomy_id', (int) $tt_id, bp_get_email_tax_type() );
+			wp_update_term( (int) $term->term_id, bp_get_email_tax_type(), array(
+				'description' => 'A member is automatically added to a group',
+			) );
+		}
+	}
+
+}
+add_action( 'bp_core_install_emails', 'automatically_added_to_group' );
