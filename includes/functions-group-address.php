@@ -23,31 +23,12 @@ function group_edit_fields_markup() {
     global $bp, $wpdb;
     ?>
 
-    <label for="address">Address (required)</label>
-    <input id="address" type="text" name="address" value="<?php echo custom_field('address'); ?>" required/>
+    <label for="tract">Tract</label>
+    <input id="tract" type="text" name="address" value="<?php echo custom_field('tract'); ?>" required/>
 
-    <label for="city">City (required)</label>
-    <input id="city" type="text" name="city" value="<?php echo custom_field('city'); ?>" required/>
 
-    <label for="state">State (required)</label>
-    <input id="state" type="text" name="state" value="<?php echo custom_field('state'); ?>" required/>
-
-    <label for="zip">Zip (required)</label>
-    <input id="zip" type="text" name="zip" value="<?php echo custom_field('zip'); ?>" required/>
-
-    <?php
-}
-
-/**
- * Markup for the create step of the group details
- */
-function group_create_fields_markup() {
-    global $bp, $wpdb;
-    ?>
-
-    <label for="address">Search with your address for your tract in the map below.</label>
+    <label for="address">Search for a new tract to connect with your group.</label>
     <input id="address" type="text" name="address" value="" placeholder="1501 W. Mineral Ave, Littleton, CO 80120" style="width: 50%; display:inline;" required/> <button style="font-size:1.25em;" type="button">Search</button> <span id="spinner"></span>
-
 
 
     <div id="search-response"></div>
@@ -67,7 +48,93 @@ function group_create_fields_markup() {
         }
     </style>
     <div id="map" style="height:200px;"></div>
-    <input type="text" id="tract" name="tract" value=""  disabled/>
+
+    <script type="text/javascript">
+
+        jQuery(document).ready(function() {
+            var map;
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 38.7767479, lng: -104.0954098},
+                zoom: 3
+            });
+
+            jQuery('button').click( function () {
+                jQuery('#spinner').prepend('<img src="<?php echo plugin_dir_url(__FILE__); ?>/img/spinner.svg" style="height:30px;" />');
+
+                var address = jQuery('#address').val();
+                var restURL = '<?php echo get_rest_url(null, '/lookup/v1/tract/gettractmap'); ?>';
+                jQuery.post( restURL, { address: address })
+                    .done(function( data ) {
+                        jQuery('#spinner').html('');
+                        jQuery('#search-response').html('Looks like you searched for ' + data.formatted_address + '? Therefore, ' + data.geoid + ' is most likely your tract. If not, search again.' );
+
+                        jQuery('#map').css('height', '600px');
+
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: data.zoom,
+                            center: {lng: data.lng, lat: data.lat},
+                            mapTypeId: 'terrain'
+                        });
+
+                        // Define the LatLng coordinates for the polygon's path.
+                        var coords = [ data.coordinates ];
+
+                        var tracts = [];
+
+                        for (i = 0; i < coords.length; i++) {
+                            tracts.push(new google.maps.Polygon({
+                                paths: coords[i],
+                                strokeColor: '#FF0000',
+                                strokeOpacity: 0.5,
+                                strokeWeight: 2,
+                                fillColor: '',
+                                fillOpacity: 0.2
+                            }));
+
+                            tracts[i].setMap(map);
+                        }
+
+                        jQuery('#tract').val(data.geoid);
+                    });
+            });
+        });
+    </script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcddCscCo-Uyfa3HJQVe0JdBaMCORA9eY">
+    </script>
+
+
+    <?php
+}
+
+/**
+ * Markup for the create step of the group details
+ */
+function group_create_fields_markup() {
+    ?>
+
+    <label for="address">Search for your census tract using your group meeting address. (U.S. physical addresses only)</label>
+    <input id="address" type="text" name="address" value="" placeholder="1501 W. Mineral Ave, Littleton, CO 80120" style="width: 50%; display:inline;" required/> <button style="font-size:1.25em;" type="button" id="search-button">Search</button> <span id="spinner"></span>
+
+
+    <div id="search-response"></div>
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+        #map {
+            height: 600px;
+            width: 75%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <div id="map" style="height:200px;"></div>
+    <input type="text" id="tract" name="tract" value=""  required/>
 
 
     <script type="text/javascript">
@@ -87,7 +154,8 @@ function group_create_fields_markup() {
                 jQuery.post( restURL, { address: address })
                     .done(function( data ) {
                         jQuery('#spinner').html('');
-                        jQuery('#search-response').html('We found that your tract is ' + data.geoid );
+                        jQuery('#search-button').html('Search Again?');
+                        jQuery('#search-response').html('<p>Looks like you searched for <strong>' + data.formatted_address + '</strong>? <br>Therefore, <strong>' + data.geoid + '</strong> is most likely your census tract represented in the map below. </p>' );
 
                         jQuery('#map').css('height', '600px');
 
