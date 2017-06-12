@@ -46,9 +46,11 @@ function group_create_fields_markup() {
     ?>
 
     <label for="address">Search with your address for your tract in the map below.</label>
-    <input id="address" type="text" name="address" value="" required/> <button class="button" type="button" value="submit">Search</button>
+    <input id="address" type="text" name="address" value="" placeholder="1501 W. Mineral Ave, Littleton, CO 80120" style="width: 50%; display:inline;" required/> <button style="font-size:1.25em;" type="button">Search</button> <span id="spinner"></span>
 
-    <input type="hidden" name="tract" />
+
+
+    <div id="search-response"></div>
 
     <style>
         /* Always set the map height explicitly to define the size of the div
@@ -65,6 +67,8 @@ function group_create_fields_markup() {
         }
     </style>
     <div id="map" style="height:200px;"></div>
+    <input type="text" id="tract" name="tract" value=""  disabled/>
+
 
     <script type="text/javascript">
 
@@ -76,12 +80,13 @@ function group_create_fields_markup() {
             });
 
             jQuery('button').click( function () {
-                jQuery
+                jQuery('#spinner').prepend('<img src="<?php echo plugin_dir_url(__FILE__); ?>/img/spinner.svg" style="height:30px;" />');
 
                 var address = jQuery('#address').val();
                 var restURL = '<?php echo get_rest_url(null, '/lookup/v1/tract/gettractmap'); ?>';
                 jQuery.post( restURL, { address: address })
                     .done(function( data ) {
+                        jQuery('#spinner').html('');
                         jQuery('#search-response').html('We found that your tract is ' + data.geoid );
 
                         jQuery('#map').css('height', '600px');
@@ -110,6 +115,7 @@ function group_create_fields_markup() {
                             tracts[i].setMap(map);
                         }
 
+                        jQuery('#tract').val(data.geoid);
                     });
             });
         });
