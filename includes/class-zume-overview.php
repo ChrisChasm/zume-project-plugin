@@ -70,7 +70,7 @@ class Zume_Overview {
 
         if (! empty($page_object) || ! empty($page_object->post_content)) {
             $page_content = (string) $page_object->post_content;
-            echo $page_content;
+            echo "<div class=\"overview\">$page_content</div>";
         }
         else {
             print 'Please republish "'.$session_title.'" with content for this section in the pages administration area.';
