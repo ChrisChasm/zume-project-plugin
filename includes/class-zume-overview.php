@@ -201,13 +201,10 @@ class Zume_Overview {
     }
 
     public function next_session_block () {
-        $next_session = '';
-        $group_id = '';
-        $group_name = Zume_Course::instance()->zume_get_group_name($group_id);
         ?>
         <div class="callout">
-            <p class="center padding-bottom"><strong>Session <?php echo $next_session; ?></strong> is the next session for <strong><?php echo $group_name;  ?></strong> </p>
-            <p class="center"><a href="<?php echo home_url("/zume-training/") . "?id=" . $next_session ?>" class="button large">Start Your Next Session</a></p>
+            <p class="center padding-bottom">Go to the Dashboard to select your Group and start the next session</p>
+            <p class="center"><a href="/dashboard/" class="button large">Dashboard</a></p>
         </div>
         <?php
     }
