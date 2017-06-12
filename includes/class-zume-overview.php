@@ -113,7 +113,8 @@ class Zume_Overview {
                         a history entry, and without scrolling or jumping, and
                         without triggering hashchange */ ?>
                         history.replaceState(null, null, newHash);
-                    }
+                    },
+                    titleTemplate: '<span class="number">#index#</span> #title#'
                 });
                 window.addEventListener("hashchange", function(event) {
                     <?php /* This can get triggered when Overview menu items
