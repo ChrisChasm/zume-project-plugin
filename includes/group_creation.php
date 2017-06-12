@@ -94,8 +94,8 @@ function automatically_added_to_group() {
 	// Create post object
 	$my_post = array(
 		'post_title'    => __( '[{{{site.name}}}] Added to Group.', 'zume_project' ),
-		'post_content'  => __( "Congratulations! You are now part of the Zume group &quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot;", 'zume_project' ),  // HTML email content.
-		'post_excerpt'  => __( "Congratulations! You are now part of the Zume group \"{{group.name}}\" \n\nTo view the group, visit: {{{group.url}}}", 'zume_project' ),  // Plain text email content.
+		'post_content'  => __( "Congratulations! You are now part of the Zúme group &quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot;", 'zume_project' ),  // HTML email content.
+		'post_excerpt'  => __( "Congratulations! You are now part of the Zúme group \"{{group.name}}\" \n\nTo view the group, visit: {{{group.url}}}", 'zume_project' ),  // Plain text email content.
 		'post_status'   => 'publish',
 		'post_type' => bp_get_email_post_type() // this is the post type for emails
 	);

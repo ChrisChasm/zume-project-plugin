@@ -75,7 +75,7 @@ class Zume_Dashboard {
         if (empty($user_groups)) {
             echo '<p>Welcome! It looks like you have no group(s). </p>
                     <ul><li>If you are the first of your friends, try starting a group and then inviting friends. </li>
-                    <li>If you were invited to Zume, look to find your friend in our directory and connect with them. Then they can invite you to a group.</li>
+                    <li>If you were invited to Zúme, look to find your friend in our directory and connect with them. Then they can invite you to a group.</li>
                     </ul>
                     ';
             return;

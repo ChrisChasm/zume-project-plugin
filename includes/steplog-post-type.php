@@ -94,7 +94,7 @@ class Zume_Steplog {
         );
         $args = array(
             'label'                 => __( 'StepLog', 'zume' ),
-            'description'           => __( 'Zume Step Log for Groups', 'zume' ),
+            'description'           => __( 'Zúme Step Log for Groups', 'zume' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'excerpt' ),
             'hierarchical'          => false,

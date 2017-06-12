@@ -1,12 +1,12 @@
 <?php
 /**
- * Functions used in the Zume implementation
+ * Functions used in the Zúme implementation
  *
  * @since 0.1
  * @author  Chasm Solutions
  */
 
-/* Require Authentication for Zume */
+/* Require Authentication for Zúme */
 function zume_force_login() {
 
     // Pages that should not be redirected. Add to array exception pages.
@@ -32,7 +32,7 @@ function zume_force_login() {
 
     // If user is logged in, check that key plugins exist for the course.
     if (! class_exists('Zume_Course') ) {
-        echo 'Zume Course plugin is disabled or otherwise unreachable. Please, check with administrator to verify course availability.';
+        echo 'Zúme Course plugin is disabled or otherwise unreachable. Please, check with administrator to verify course availability.';
         return;
     }
 
@@ -123,7 +123,7 @@ add_filter('show_admin_bar', '__return_false');
 
 
 /*
- * Zume Invite Page Content
+ * Zúme Invite Page Content
  * contains tailored content for the user to select the kind of invitation they want to make.
  */
 function zume_invite_page_content ( $content ) {

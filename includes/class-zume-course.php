@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Zume Course Core
+ * Zúme Course Core
  *
  * @class Disciple_Tools_Admin_Menus
  * @version	0.1
@@ -47,7 +47,7 @@ class Zume_Course {
 	} // End __construct()
 
     /**
-     * Zume Pre Content Load
+     * Zúme Pre Content Load
      * @access  public
      * @since   0.1
      */
@@ -86,7 +86,7 @@ class Zume_Course {
                 add_user_meta( $user_id, $meta_key, $new_group_id, true );
             }
 
-            // Load Zume content with variables
+            // Load Zúme content with variables
             $this->content_loader($zume_session, $new_group_id );
         }
         /**
@@ -137,7 +137,7 @@ class Zume_Course {
                     add_user_meta( $user_id, $meta_key, $new_group_id, true );
                 }
 
-                // Load Zume content with variables
+                // Load Zúme content with variables
                 $this->content_loader($zume_session, $new_group_id );
             }
 
@@ -148,7 +148,7 @@ class Zume_Course {
 
             $new_group_id = get_user_meta($user_id, $meta_key, true);
 
-            // Load Zume content with variables
+            // Load Zúme content with variables
             $this->content_loader($zume_session, $new_group_id );
         }
 
@@ -171,7 +171,7 @@ class Zume_Course {
     }
 
 	/**
-	 * Zume Content Loader
+	 * Zúme Content Loader
 	 * @return mixed
 	 */
 	public function content_loader ( $session = '1', $group_id ) {

@@ -12,7 +12,7 @@ function zume_page_content_zume_invites () {
     <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
         <div class="medium-4 columns">
             <div class="callout" data-equalizer-watch>
-                <h2 class="center">Connect with a Friends who is already on Zume</h2>
+                <h2 class="center">Connect with a Friends who is already on Zúme</h2>
             </div>
         </div>
         <div class="medium-4 columns">
@@ -22,7 +22,7 @@ function zume_page_content_zume_invites () {
         </div>
         <div class="medium-4 columns">
             <div class="callout" data-equalizer-watch>
-                <h2 class="center">Invite Someone To Join Zume and Your Group</h2>
+                <h2 class="center">Invite Someone To Join Zúme and Your Group</h2>
             </div>
         </div>
 

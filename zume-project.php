@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Zume Project
+Plugin Name: Zúme Project
 Plugin URI: http://example.org/my-plugin/
-Description: Private Plugin for the Zume Project
+Description: Private Plugin for the Zúme Project
 Version: 1.1.1
 Requires at least: WordPress 2.9.1 / BuddyPress 1.2
 Tested up to: WordPress 7.4 / BuddyPress 1.2

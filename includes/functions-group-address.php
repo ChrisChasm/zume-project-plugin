@@ -102,11 +102,11 @@ add_action( 'groups_created_group',  'group_header_fields_save' );
 //add_action('bp_before_group_invites_creation_step', 'zume_before_invitation_explaination');
 //
 //function zume_before_invitation_explaination () {
-//    print '<p>This is a Zume explaination before the invitation process.</p>';
+//    print '<p>This is a Zúme explaination before the invitation process.</p>';
 //}
 //
 //function zume_after_invitation_explaination () {
-//    print 'This is a Zume explaination after the invitation process.';
+//    print 'This is a Zúme explaination after the invitation process.';
 //}
 
 //function zume_after_group_description () {
