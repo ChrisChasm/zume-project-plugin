@@ -220,13 +220,12 @@ function invite_by_email_parse_addresses( $address_string ) {
 }
 
 function group_invite_by_email() {
-//	@todo verify nonce
-	update_option( "save_group_email", $_POST );
+	if (!wp_verify_nonce( $_POST["_wpnonce"],"invite_by_email")){
+		return false;
+	}
 	$group = groups_get_group($_POST["group_id"]);
 	if ( isset( $_POST["invite_by_email_addresses"] ) ) {
 		$addresses = invite_by_email_parse_addresses($_POST["invite_by_email_addresses"]);
-		update_option("group_invite_addresses", $addresses);
-
 		foreach ($addresses as $address){
 			$args = array(
 				'tokens' => array (
@@ -235,7 +234,7 @@ function group_invite_by_email() {
 					'group.sign_up'   => $_POST["sing_up_url"]
 				)
 			);
-			bp_send_email('member_automatically_added_to_group', get_current_user_id(), $args);
+			bp_send_email('member_automatically_added_to_group', $addresses, $args);
 		}
 	}
 	return wp_redirect($_POST["_wp_http_referer"]);
