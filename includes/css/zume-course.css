@@ -3,8 +3,11 @@ body {
     padding-top:12px;
     /*background-image: url(/images/artboard.jpg);*/
     background-position: center top;
-    font-family: "europa", sans-serif !important;
+    font-family: Helvetica, Roboto, Arial, sans-serif !important;
     padding-bottom:25px;
+}
+.course-steps {
+    font-size: 1.5rem;
 }
 .gray-bar {
     min-height:1px;
@@ -142,7 +145,7 @@ div.step-title {
 div.activity-title {
     color: #062d6d;
     font-size: 50px;
-    font-weight: 300;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -151,9 +154,9 @@ div.activity-title span {
 }
 
 div.activity-description {
-    font-weight: 900;
     padding-top: 12px;
     text-align: center;
+    font-size: 1.5rem;
 }
 
 div.activity-description ol, div.activity-description ul {
@@ -162,7 +165,6 @@ div.activity-description ol, div.activity-description ul {
 
 div.activity-description ol li, div.activity-description ul li {
     padding:5px 0 20px;
-    font-size: 14px;
 }
 
 .wistia_embed {
@@ -237,12 +239,11 @@ button.btn.btn-large.next-step.zume-purple.uppercase.bg-white.font-zume-purple.b
         font-size: 50px;
         float: left;
         width: 25%;
-        font-weight: 300;
+        font-weight: bold;
         text-align:left;
     }
 
     div.activity-description {
-        font-weight: 900;
         padding: 12px 0 12px 6%;
         text-align: left;
         float: right;
@@ -297,4 +298,38 @@ body.single-item.groups #buddypress div#item-header #item-header-cover-image #it
 
 body.single-item.groups #buddypress div#item-header #item-header-cover-image #item-actions h2 {
     color: #ffffff;
+}
+
+.chevron:before {
+    font-size: 2.5rem;
+    border-style: solid;
+    border-width: 0.15em 0.15em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.45em;
+    left: 0.15em;
+    position: relative;
+    top: 0.45em;
+    transform: rotate(-45deg);
+    vertical-align: top;
+    width: 0.45em;
+}
+
+.chevron > span {
+    display: none;
+}
+
+.chevron--right:before {
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.chevron--bottom:before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.chevron--left:before {
+    left: 0;
+    transform: rotate(-135deg);
 }
