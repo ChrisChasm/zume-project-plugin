@@ -212,13 +212,18 @@ class Zume_Course {
 
         if (! empty($page_object) || ! empty($page_object->post_content)) {
 
+            $session_title = "Session $session";
+            if ($session == 10) {
+                $session_title = "Session 10 — Advanced Training";
+            }
+
             $html = '';
             $html .= $this->jquery_steps($group_id, $session);
             $html .= '<div class="row columns center">';
             if (! is_null($prev_link)) {
                 $html .= '<a href="' . esc_attr($prev_link) . '" title="Previous session"><span class="chevron chevron--left"><span>Previous session</span></span></a> ';
             }
-            $html .= '<h2 style="color: #21336A; display: inline">Session '.$session.'</h2>';
+            $html .= '<h2 style="color: #21336A; display: inline">' . $session_title . '</h2>';
             if (! is_null($next_link)) {
                 $html .= ' <a href="' . esc_attr($next_link) . '" title="Next session"><span class="chevron chevron--right"><span>Next session</span></span></a>';
             }
