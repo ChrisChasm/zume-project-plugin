@@ -3,7 +3,7 @@ body {
     padding-top:12px;
     /*background-image: url(/images/artboard.jpg);*/
     background-position: center top;
-    font-family: "europa", sans-serif !important;
+    font-family: Helvetica, Roboto, Arial, sans-serif !important;
     padding-bottom:25px;
 }
 .gray-bar {
@@ -153,6 +153,7 @@ div.activity-title span {
 div.activity-description {
     padding-top: 12px;
     text-align: center;
+    font-size: 1.5rem;
 }
 
 div.activity-description ol, div.activity-description ul {
@@ -161,7 +162,6 @@ div.activity-description ol, div.activity-description ul {
 
 div.activity-description ol li, div.activity-description ul li {
     padding:5px 0 20px;
-    font-size: 14px;
 }
 
 .wistia_embed {
