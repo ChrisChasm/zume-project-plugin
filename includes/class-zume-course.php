@@ -209,69 +209,34 @@ class Zume_Course {
         }
 
         if (! empty($page_object) || ! empty($page_object->post_content)) {
-            ?>
 
-            <?php $session_title = "Session $session"; ?>
+            $session_title = "Session $session";
+            if ($session == 10) {
+                $session_title = "Session 10 — Advanced Training";
+            }
 
-            <?php if ($session == 10) : ?>
-                Session 10 — Advanced Training
-            <?php endif; ?>
+            $html = '';
+            $html .= $this->jquery_steps($group_id, $session);
+            $html .= '<div class="row columns center">';
+            if (! is_null($prev_link)) {
+                $html .= '<a href="' . esc_attr($prev_link) . '" title="Previous session"><span class="chevron chevron--left"><span>Previous session</span></span></a> ';
+            }
+            $html .= '<h2 style="color: #21336A; display: inline">' . $session_title . '</h2>';
+            if (! is_null($next_link)) {
+                $html .= ' <a href="' . esc_attr($next_link) . '" title="Next session"><span class="chevron chevron--right"><span>Next session</span></span></a>';
+            }
+            $html .= '</div>';
+            $html .= '<br><div id="session'.$session.'-'.$group_id .'" class="course-steps">';
 
-            <?php echo $this->jquery_steps($group_id, $session); ?>
+            $html .= $this->attendance_step($group_id, $session); // add attendance as the first step
 
-            <div class="row columns center">
+            $html .= $page_object->post_content.'';
+            $html .= '</div>';
 
-            <?php if (! is_null($prev_link)) : ?>
-                <a href="<?php echo esc_attr($prev_link); ?>" title="Previous session"><span class="chevron chevron--left"><span>Previous session</span></span></a>
-            <?php endif; ?>
-
-            <h2 style="color: #21336A; display: inline"><?php echo $session_title ?></h2>
-
-            <?php if (! is_null($next_link)) : ?>
-                <a href="<?php echo  esc_attr($next_link) ; ?>" title="Next session"><span class="chevron chevron--right"><span>Next session</span></span></a>';
-            <?php endif; ?>
-
-            </div>
-                <br>
-            <div id="session<?php echo $session .'-'.$group_id; ?>" class="course-steps">
-
-            <?php echo $this->attendance_step($group_id, $session);  // add attendance as the first step ?>
-
-            <?php echo $page_object->post_content; ?>
-            </div>
-
-            <?php
-//            $session_title = "Session $session";
-//            if ($session == 10) {
-//                $session_title = "Session 10 — Advanced Training";
-//            }
-//
-//            $html = '';
-//            $html .= $this->jquery_steps($group_id, $session);
-//            $html .= '<div class="row columns center">';
-//            if (! is_null($prev_link)) {
-//                $html .= '<a href="' . esc_attr($prev_link) . '" title="Previous session"><span class="chevron chevron--left"><span>Previous session</span></span></a> ';
-//            }
-//            $html .= '<h2 style="color: #21336A; display: inline">' . $session_title . '</h2>';
-//            if (! is_null($next_link)) {
-//                $html .= ' <a href="' . esc_attr($next_link) . '" title="Next session"><span class="chevron chevron--right"><span>Next session</span></span></a>';
-//            }
-//            $html .= '</div>';
-//            $html .= '<br><div id="session'.$session.'-'.$group_id .'" class="course-steps">';
-//
-//            $html .= $this->attendance_step($group_id, $session); // add attendance as the first step
-//
-//            $html .= $page_object->post_content.'';
-//            $html .= '</div>';
-//
-//            return $html;
+            return $html;
         }
         else {
-            ?>
-
-            <p>Please republish "'.$session_title.'" with content for this section in the pages administration area.</p>
-
-            <?php
+            return 'Please republish "'.$session_title.'" with content for this section in the pages administration area.';
         }
     }
 
@@ -337,27 +302,7 @@ class Zume_Course {
         // Fire record creation on step change
         $html .=    'onStepChanging: function (event, currentIndex, newIndex) {
                        
-                       var title = "Group-" + "'. $group_id. '" + " Step-" + currentIndex + " Session-" + "'. $session_number . '" ;
-                       var status = \'publish\';
-                       
-                       var data = {
-                            title: title,
-                            status: status
-                        }; 
-                       
-                       jQuery.ajax({
-                            method: "POST",
-                            url: \''. $root .'\' + \'wp/v2/steplog\',
-                            data: data,
-                            beforeSend: function ( xhr ) {
-                                xhr.setRequestHeader( \'X-WP-Nonce\', \''.$nonce.'\' );
-                            },
-                            fail : function( response ) {
-                                console.log( response );
-                                alert( \''.$failure.'\' );
-                            }
-                
-                        });
+                       return true;
                     },
                     
                     '; // end html block
@@ -440,7 +385,6 @@ class Zume_Course {
     public function attendance_step ($group_id, $session) {
 
 	    $html = '';
-
         $html .= '<h3></h3>
                     <section>
 
@@ -459,12 +403,8 @@ class Zume_Course {
     }
 
     public function get_attendance_list($group_id, $session) {
-//        if ( bp_group_has_members( array('group_id' => $group_id, 'group_role' => array('admin', 'mod', 'member') )) ) :
-//            while ( bp_group_members() ) : bp_group_the_member();
-//            endwhile;
-//        endif;
 
-        return true;
+	    return 'members';
 
     }
 
