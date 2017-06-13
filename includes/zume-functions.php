@@ -17,13 +17,16 @@ function zume_force_login() {
         'Complete',
         'Overview',
         'About',
-        'Resources',
+        'Resources'
     );
-    foreach($exception_pages as $page) {
-        if(is_page($page)) {
-            return;
-        }
+
+    if (is_page($exception_pages) || $GLOBALS['pagenow'] === 'wp-login.php' || (isset($_REQUEST['reauth']) && $_REQUEST['reauth'] == '1')) {
+        return;
     }
+
+    // If using BuddyPress and on the register/activate page, don't do anything.
+    if ( function_exists( 'bp_is_current_component' ) && ( bp_is_current_component( 'register' ) || bp_is_current_component( 'activate' ) ) )
+        return;
 
     // Otherwise, if user is not logged in redirect to login
     if (!is_user_logged_in()) {
@@ -86,7 +89,7 @@ function zume_group_highest_session_completed ($group_id) {
     global $wpdb;
 
     $where_query = 'group-'.$group_id.'-step-complete%';
-    $querystr =  "SELECT MAX(post_excerpt) as completed FROM $wpdb->posts WHERE post_type = 'steplog' AND post_name LIKE '$where_query'";
+    $querystr =  $wpdb->prepare("SELECT MAX(post_excerpt) as completed FROM $wpdb->posts WHERE post_type = 'steplog' AND post_name LIKE %s", $where_query);
 
     $result = $wpdb->get_results($querystr, ARRAY_A);
 
@@ -94,13 +97,18 @@ function zume_group_highest_session_completed ($group_id) {
 }
 
 /**
- * Gets the session number for the next session of the group.
+ * Gets the session number for the next session of the group, null if there is
+ * no next session for the group.
  * @since 0.1
- * @return integer
+ * @return integer or null
  */
 function zume_group_next_session ($group_id) {
-    $highest_session = zume_group_highest_session_completed($group_id);
-    return (int) $highest_session + 1;
+    $highest_session = (int) zume_group_highest_session_completed($group_id);
+    if ($highest_session >= 10) {
+        return null;
+    } else {
+        return $highest_session + 1;
+    }
 }
 
 

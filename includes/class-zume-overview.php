@@ -187,7 +187,7 @@ class Zume_Overview {
 
             <h3></h3>
             <section>
-                <h3 style="text-align: center; font-weight: bold">Session 10</h3>
+                <h3 style="text-align: center; font-weight: bold">Session 10 - Advanced Training</h3>
                 <?php print $this->zume_session_overview_content (10) ?>
             </section>
 

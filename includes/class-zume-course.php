@@ -178,9 +178,11 @@ class Zume_Course {
 
 	    // Check for highest session completed and redirect
         $next_session = zume_group_next_session($group_id);
-        if ($session > $next_session ) {
+        if (! is_null($next_session) && $session > $next_session ) {
             $session = $next_session;
         }
+
+
 
         echo $this->zume_course_loader($session, $group_id);
 
@@ -195,12 +197,38 @@ class Zume_Course {
         $session_title = 'Session ' . $session . ' Course';
         $page_object = get_page_by_title( $session_title, OBJECT, 'page' );
 
+        $session = (int) $session;
+        $group_id = (int) $group_id;
+
+        $prev_link = null;
+        $next_link = null;
+        if ($session > 1) {
+            $prev_link = '?id=' . ($session - 1) . '&group_id=' . $group_id;
+        }
+        $group_next_session = zume_group_next_session($group_id);
+        if (! is_null($group_next_session) && ($session + 1) <= $group_next_session) {
+            $next_link = '?id=' . ($session + 1) . '&group_id=' . $group_id;
+        }
 
         if (! empty($page_object) || ! empty($page_object->post_content)) {
 
+            $session_title = "Session $session";
+            if ($session == 10) {
+                $session_title = "Session 10 — Advanced Training";
+            }
+
             $html = '';
             $html .= $this->jquery_steps($group_id, $session);
-            $html .= '<div class="row"><h2 class="small-centered columns center" style="color: #21336A">Session '.$session.'</h2></div>
+            $html .= '<div class="row columns center">';
+            if (! is_null($prev_link)) {
+                $html .= '<a href="' . esc_attr($prev_link) . '" title="Previous session"><span class="chevron chevron--left"><span>Previous session</span></span></a> ';
+            }
+            $html .= '<h2 style="color: #21336A; display: inline">' . $session_title . '</h2>';
+            if (! is_null($next_link)) {
+                $html .= ' <a href="' . esc_attr($next_link) . '" title="Next session"><span class="chevron chevron--right"><span>Next session</span></span></a>';
+            }
+            $html .= '</div>';
+            $html .= '
                             <br>
                             <div id="session'.$session.'-'.$group_id .'" class="course-steps">';
             $html .= $page_object->post_content.'';
@@ -346,6 +374,34 @@ class Zume_Course {
                 '; // end html block
 
         return $html;
+    }
+
+    public function attendance_step () {
+	    $html = '';
+	    $html .= '<h3></h3>
+            <section>
+                <!-- Step Title -->
+                <div class="row block">
+                    <div class="step-title">
+                        WHO\'S WITH YOU?
+                    </div> <!-- step-title -->
+                </div> <!-- row -->
+                <!-- Activity Block  -->
+                <div class="row block single">
+                    <div class="activity-description well">DOWNLOAD<br><br>You will be able to follow along on a digital PDF for this session, but please make sure that each member of your group has a printed copy of the materials for future sessions.
+                    </div>
+                    <div class="activity-description">
+                        <ul>
+                            <li>Member 1</li>
+                            <li>Member 2</li>
+                            <li>Member 3</li>
+                            <li>Member 4</li>
+                        </ul>
+                    </div>
+                </div> <!-- row -->
+
+            </section>';
+	    return $html;
     }
 
 }
