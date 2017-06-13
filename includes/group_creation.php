@@ -134,7 +134,7 @@ One of your friends just invited you to start an exciting journey -- a journey i
 
 Your friend, {{inviter.name}}, would like you to join their Zúme training group, &quot;{{group.name}}&quot;.
 
-Go <a href="{{group.sign_up}}">here</a> to accept your invitation. After you click on this link, it will ask you to create an account. Then you will be joined to your group.
+Go <a href="{{{group.sign_up}}}">here</a> to accept your invitation. After you click on this link, it will ask you to create an account. Then you will be joined to your group.
 
 When you, your friend who invited you and at least two other people are gathered together, you can begin going through the Zúme training.
 
@@ -147,7 +147,7 @@ One of your friends just invited you to start an exciting journey -- a journey i
 
 Your friend, {{inviter.name}}, would like you to join their Zúme training group, "{{group.name}}".
 
-Go {{group.sign_up}} to accept your invitation. After you click on this link, it will ask you to create an account. Then you will be joined to your group.
+Go to {{group.sign_up}} to accept your invitation. After you click on this link, it will ask you to create an account. Then you will be joined to your group.
 
 When you, your friend who invited you and at least two other people are gathered together, you can begin going through the Zúme training.
 
@@ -157,7 +157,7 @@ Join the movement of ordinary people who God could use to change the world.
 
 	// Create post object
 	$my_post = array(
-		'post_title'    => __( '[{{{site.name}}}] Zume Invitation.', 'zume_project' ),
+		'post_title'    => __( '[{{{site.name}}}] Join my training group.', 'zume_project' ),
 		'post_content'  => $post_content,  // HTML email content.
 		'post_excerpt'  => $post_exerpt,
 		'post_status'   => 'publish',
@@ -231,10 +231,10 @@ function group_invite_by_email() {
 				'tokens' => array (
 					'group.name'    => $group->name,
 					'inviter.name'  => $_POST["inviter_name"],
-					'group.sign_up'   => $_POST["sign_up_url"]
+					'group.sign_up' => $_POST["sign_up_url"]
 				)
 			);
-			bp_send_email('invite_to_group_email', $addresses, $args);
+			bp_send_email('invite_to_group_email', $address, $args);
 		}
 	}
 	return wp_redirect($_POST["_wp_http_referer"]);
