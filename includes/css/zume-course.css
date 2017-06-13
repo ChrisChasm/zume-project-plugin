@@ -298,3 +298,37 @@ body.single-item.groups #buddypress div#item-header #item-header-cover-image #it
 body.single-item.groups #buddypress div#item-header #item-header-cover-image #item-actions h2 {
     color: #ffffff;
 }
+
+.chevron:before {
+    font-size: 2.5rem;
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.45em;
+    left: 0.15em;
+    position: relative;
+    top: 0.45em;
+    transform: rotate(-45deg);
+    vertical-align: top;
+    width: 0.45em;
+}
+
+.chevron > span {
+    display: none;
+}
+
+.chevron--right:before {
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.chevron--bottom:before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.chevron--left:before {
+    left: 0;
+    transform: rotate(-135deg);
+}
