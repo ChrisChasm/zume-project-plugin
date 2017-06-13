@@ -231,7 +231,7 @@ function group_invite_by_email() {
 				'tokens' => array (
 					'group.name'    => $group->name,
 					'inviter.name'  => $_POST["inviter_name"],
-					'group.sign_up'   => $_POST["sing_up_url"]
+					'group.sign_up'   => $_POST["sign_up_url"]
 				)
 			);
 			bp_send_email('invite_to_group_email', $addresses, $args);
