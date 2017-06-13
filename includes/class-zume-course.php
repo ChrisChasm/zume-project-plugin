@@ -200,8 +200,9 @@ class Zume_Course {
 
             $html = '';
             $html .= $this->jquery_steps($group_id, $session);
-            $html .= '<div class="row"><div class="small-centered columns center" style="color: #ccc;">Session '.$session.'</div></div>
-                            <div id="session'.$session.'-'.$group_id .'">';
+            $html .= '<div class="row"><h2 class="small-centered columns center" style="color: #21336A">Session '.$session.'</h2></div>
+                            <br>
+                            <div id="session'.$session.'-'.$group_id .'" class="course-steps">';
             $html .= $page_object->post_content.'';
             $html .= '</div>';
 
