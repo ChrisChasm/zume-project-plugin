@@ -18,6 +18,7 @@ function zume_force_login() {
         'Overview',
         'About',
         'Resources',
+        'wp-login.php'
     );
     foreach($exception_pages as $page) {
         if(is_page($page)) {

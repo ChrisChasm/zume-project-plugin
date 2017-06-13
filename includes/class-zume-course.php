@@ -182,6 +182,8 @@ class Zume_Course {
             $session = $next_session;
         }
 
+
+
         echo $this->zume_course_loader($session, $group_id);
 
 	}
@@ -346,6 +348,34 @@ class Zume_Course {
                 '; // end html block
 
         return $html;
+    }
+
+    public function attendance_step () {
+	    $html = '';
+	    $html .= '<h3></h3>
+            <section>
+                <!-- Step Title -->
+                <div class="row block">
+                    <div class="step-title">
+                        WHO\'S WITH YOU?
+                    </div> <!-- step-title -->
+                </div> <!-- row -->
+                <!-- Activity Block  -->
+                <div class="row block single">
+                    <div class="activity-description well">DOWNLOAD<br><br>You will be able to follow along on a digital PDF for this session, but please make sure that each member of your group has a printed copy of the materials for future sessions.
+                    </div>
+                    <div class="activity-description">
+                        <ul>
+                            <li>Member 1</li>
+                            <li>Member 2</li>
+                            <li>Member 3</li>
+                            <li>Member 4</li>
+                        </ul>
+                    </div>
+                </div> <!-- row -->
+
+            </section>';
+	    return $html;
     }
 
 }
