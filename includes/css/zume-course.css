@@ -161,7 +161,6 @@ div.activity-description ol, div.activity-description ul {
 }
 
 div.activity-description ol li, div.activity-description ul li {
-    margin-left: -10px;
     padding:5px 0 20px;
     font-size: 14px;
 }
