@@ -234,7 +234,7 @@ function group_invite_by_email() {
 					'group.sign_up'   => $_POST["sing_up_url"]
 				)
 			);
-			bp_send_email('member_automatically_added_to_group', $addresses, $args);
+			bp_send_email('invite_to_group_email', $addresses, $args);
 		}
 	}
 	return wp_redirect($_POST["_wp_http_referer"]);
