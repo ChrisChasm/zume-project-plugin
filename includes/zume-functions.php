@@ -17,14 +17,14 @@ function zume_force_login() {
         'Complete',
         'Overview',
         'About',
-        'Resources',
-        'wp-login.php'
+        'Resources'
+
     );
-    foreach($exception_pages as $page) {
-        if(is_page($page)) {
+//    foreach($exception_pages as $page) {
+        if(is_page($exception_pages) || $GLOBALS['pagenow'] === 'wp-login.php' || $_REQUEST['reauth'] == '1' ) {
             return;
         }
-    }
+//    }
 
     // Otherwise, if user is not logged in redirect to login
     if (!is_user_logged_in()) {
