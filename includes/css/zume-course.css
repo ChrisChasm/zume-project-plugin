@@ -6,6 +6,9 @@ body {
     font-family: Helvetica, Roboto, Arial, sans-serif !important;
     padding-bottom:25px;
 }
+.course-steps {
+    font-size: 1.5rem;
+}
 .gray-bar {
     min-height:1px;
     width:100%;
