@@ -18,13 +18,15 @@ function zume_force_login() {
         'Overview',
         'About',
         'Resources'
-
     );
-//    foreach($exception_pages as $page) {
-        if(is_page($exception_pages) || $GLOBALS['pagenow'] === 'wp-login.php' || $_REQUEST['reauth'] == '1' ) {
-            return;
-        }
-//    }
+
+    if(is_page($exception_pages) || $GLOBALS['pagenow'] === 'wp-login.php' || $_REQUEST['reauth'] == '1' ) {
+        return;
+    }
+
+    // If using BuddyPress and on the register/activate page, don't do anything.
+    if ( function_exists( 'bp_is_current_component' ) && ( bp_is_current_component( 'register' ) || bp_is_current_component( 'activate' ) ) )
+        return;
 
     // Otherwise, if user is not logged in redirect to login
     if (!is_user_logged_in()) {
