@@ -20,7 +20,7 @@ function zume_force_login() {
         'Resources'
     );
 
-    if (is_page($exception_pages) || $GLOBALS['pagenow'] === 'wp-login.php' || (isset($_REQUEST['reauth']) && $_REQUEST['reauth'] == '1')) {
+    if(is_page($exception_pages) || $GLOBALS['pagenow'] === 'wp-login.php'  ) {
         return;
     }
 
