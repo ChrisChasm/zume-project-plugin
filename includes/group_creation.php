@@ -91,11 +91,29 @@ function automatically_added_to_group() {
 	if ( $post_exists != 0 && get_post_status( $post_exists ) == 'publish' )
 		return;
 
+	$post_content = 'Congratulations! You are now part of the Zúme group &quot;<a href="{{{group.url}}}">{{group.name}}</a>&quot;
+	
+Return to <a href="{{{site.url}}}">ZumeProject.com</a> to:
+<ul>
+	<li>Communicate with your group and begin planning your first session together.</li>
+	<li>Invite others to the group. You will need at least 4 people present to start Session 1.</li>
+	<li>Check out the "About" page to download the Guidebook and view other resources.</li>
+</ul>
+	';
+	$post_excerpt = 'Congratulations! You are now part of the Zúme group "{{group.name}}" 
+
+To view the group, visit: {{{group.url}}}
+
+Return to {{{site.url}}} to:
+- Communicate with your group and begin planning your first session together.
+- Invite others to the group. You will need at least 4 people present to start Session 1.
+- Check out the "About" page to download the Guidebook and view other resources.';
+
 	// Create post object
 	$my_post = array(
 		'post_title'    => __( '[{{{site.name}}}] Added to Group.', 'zume_project' ),
-		'post_content'  => __( "Congratulations! You are now part of the Zúme group &quot;<a href=\"{{{group.url}}}\">{{group.name}}</a>&quot;", 'zume_project' ),  // HTML email content.
-		'post_excerpt'  => __( "Congratulations! You are now part of the Zúme group \"{{group.name}}\" \n\nTo view the group, visit: {{{group.url}}}", 'zume_project' ),  // Plain text email content.
+		'post_content'  => $post_content,
+		'post_excerpt'  => $post_excerpt,
 		'post_status'   => 'publish',
 		'post_type' => bp_get_email_post_type() // this is the post type for emails
 	);
