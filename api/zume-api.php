@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * TODO: I don't think this is being used anywhere. Consider removing. @chris 6-13-2017
+ *
+ */
+
 class Zume_Custom_Route extends WP_REST_Controller {
 
     /**

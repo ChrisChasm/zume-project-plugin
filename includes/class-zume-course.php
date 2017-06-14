@@ -261,12 +261,13 @@ class Zume_Course {
         return $group->name;
     }
 
-
     /**
      * Jquery Steps with configuration
      * @return mixed
      */
 	public function jquery_steps ($group_id, $session_number) {
+
+
 
 	    // Create variables
 	    $visited = true;
@@ -280,6 +281,15 @@ class Zume_Course {
         $dashboard_complete_next = home_url("/zume-training/") . '?group_id=' . $group_id . '&id=' . $session_number . '&wp_nonce=' . $nonce;
         $success =  __( 'Session Complete! Congratulations!', 'zume' );
 		$failure =  __( 'Could not track your progress. Yikes. Tell us and we will tell our geeks to get on it!', 'zume' );
+
+        // Get list of members attending the group
+        $group_members_result = groups_get_group_members( $args = array('group_id' => $group_id, 'exclude_admins_mods' => false) );
+        $group_members = array();
+        foreach(  $group_members_result['members'] as $member ) {
+            $group_members[] = $member->ID;
+        }
+//        $group_members_ids = implode(", ", $group_members);
+        // end Get list of members
 
 		// Create Javascript HTML
         $html = '';
@@ -302,13 +312,47 @@ class Zume_Course {
         // Fire record creation on step change
         $html .=    'onStepChanging: function (event, currentIndex, newIndex) {
                        
+                       if (currentIndex === 0) { /* check attendance requirement */
+                            var n = jQuery( "input:checked" ).length;
+                            if ( n < 4 ) {
+                            return false;
+                            }
+                       }
                        return true;
+                       
                     },
                     
                     '; // end html block
 
         // Fire record creation on step change
-        $html .=    'onStepChanged: function (event, currentIndex) {
+        $html .=    'onStepChanged: function (event, currentIndex, priorIndex) {
+        
+                        if (currentIndex === 1 && priorIndex === 0) { /* record attendance */
+                            
+                            var members = '.json_encode($group_members).';
+                            var session = \''.$session_number.'\';
+                            var group_id = \''. $group_id . '\';
+                        
+                            var data = {
+                                members: members,
+                                session: session,
+                                group_id: group_id
+                            };
+                        
+                            jQuery.ajax({
+                            method: "POST",
+                            url: \''. $root .'\' + \'zume/v1/attendance/log\',
+                            data: data,
+                            beforeSend: function ( xhr ) {
+                                xhr.setRequestHeader( \'X-WP-Nonce\', \''.$nonce.'\' );
+                            },
+                            fail : function( response ) {
+                                console.log( response );
+                                alert( \''.$failure.'\' );
+                            }
+                
+                        });
+                        }
                        
                        var title = "Group-" + "'. $group_id. '" + " Step-" + currentIndex + " Session-" + "'. $session_number . '" ;
                        var status = \'publish\';
@@ -391,9 +435,9 @@ class Zume_Course {
                     <div class="row block">
                         <div class="step-title">WHO\'S WITH YOU?</div> <!-- step-title -->
                     </div> <!-- row -->
-                    
                     <!-- Activity Block  -->
-                    <div class="row block single"><div class="activity-description">';
+                    <div class="row "><div class="small-12 medium-6 small-centered columns">
+                        ';
 
         $html .= $this->get_attendance_list($group_id, $session);
 
@@ -403,9 +447,65 @@ class Zume_Course {
     }
 
     public function get_attendance_list($group_id, $session) {
+        $html = '';
+        $html = '<style>
+                    li.attendance-list {padding:10px;}
+                    li#count {text-align:center;}
+</style>';
 
-	    return 'members';
+        if ( bp_group_has_members( array('group_id' => $group_id, 'group_role' => array('admin', 'mod', 'member')) ) ) :
+            $html .= '<ul id="attendance-list" style="list-style-type: none;">';
 
+
+        while ( bp_group_members() ) : bp_group_the_member();
+
+                $html .= '<li class="attendance-list"><div class="switch" style="width:100px; float:right;">
+                          <input class="switch-input" id="member-'.bp_get_group_member_id().'" type="checkbox" name="'. bp_get_group_member_id() .'">
+                          <label class="switch-paddle" for="member-'.bp_get_group_member_id().'">
+                            <span class="show-for-sr">' . bp_get_group_member_name() . '</span>
+                          </label>
+                          </div>' . bp_get_group_member_name() . '</li>';
+
+
+                endwhile;
+            $html .= '<li id="count"></li>';
+            $html .= '</ul>';
+        endif;
+
+        $html .= "  <script>
+  
+                        jQuery(document).ready(function () {
+                            
+                            var countChecked = function() {
+                                var n = jQuery( \"input:checked\" ).length;
+                                
+                                if( n < 4 ) { 
+                                    var missing = 4 - n;  
+                                    jQuery( '#count' ).text( missing + (missing === 1 ? \" is\" : \" are\") + \" needed!\"  );
+                                    } else {
+                                    jQuery( '#count' ).text( '' );
+                                    }
+                            };
+                            countChecked();
+ 
+                            jQuery( \"input[type=checkbox]\" ).on( \"click\", countChecked );
+                            
+                        });
+    
+                    </script>
+        ";
+
+	    return $html;
+
+    }
+
+    public function get_members_in_group ($group_id) {
+//	    $member_array = array();
+//        if ( bp_group_has_members( array('group_id' => $group_id, 'group_role' => array('admin', 'mod', 'member')) ) ) :
+//            while ( bp_group_members() ) : bp_group_the_member();
+//                $member_array[] = '';
+//            endwhile;
+//        endif;
     }
 
 }
