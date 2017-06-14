@@ -23,15 +23,9 @@ function group_edit_fields_markup() {
     global $bp, $wpdb;
     ?>
 
-    <label for="tract">Tract</label>
-    <input id="tract" type="text" name="address" value="<?php echo custom_field('tract'); ?>" required/>
-
-
-    <label for="address">Search for a new tract to connect with your group.</label>
-    <input id="address" type="text" name="address" value="" placeholder="1501 W. Mineral Ave, Littleton, CO 80120" style="width: 50%; display:inline;" required/> <button style="font-size:1.25em;" type="button">Search</button> <span id="spinner"></span>
-
-
-    <div id="search-response"></div>
+    <input id="tract" type="hidden" name="tract" value="<?php echo custom_field('tract'); ?>" required/>
+    <input type="hidden" id="lng" name="lng" value="<?php echo custom_field('lng'); ?>"  required/>
+    <input type="hidden" id="lat" name="lat" value="<?php echo custom_field('lat'); ?>"  required/>
 
     <style>
         /* Always set the map height explicitly to define the size of the div
@@ -47,26 +41,31 @@ function group_edit_fields_markup() {
             padding: 0;
         }
     </style>
-    <div id="map" style="height:200px;"></div>
+
+    <div id="search-response"></div>
+
+    <div id="map"></div>
+
+    <label for="address">Search for a new tract to connect with your group.</label>
+    <input id="address" type="text" name="address" value="" placeholder="1501 W. Mineral Ave, Littleton, CO 80120" style="width: 50%; display:inline;" required/> <button style="font-size:1.25em;" type="button">Search</button> <span id="spinner"></span>
+
+
+
 
     <script type="text/javascript">
 
         jQuery(document).ready(function() {
-            var map;
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 38.7767479, lng: -104.0954098},
-                zoom: 3
-            });
 
-            jQuery('button').click( function () {
-                jQuery('#spinner').prepend('<img src="<?php echo plugin_dir_url(__FILE__); ?>/img/spinner.svg" style="height:30px;" />');
+            jQuery(window).load(function () {
+                var geoid = '<?php echo custom_field('tract'); ?>';
+                var lng = '<?php echo custom_field('lng'); ?>';
+                var lat = '<?php echo custom_field('lat'); ?>';
 
-                var address = jQuery('#address').val();
-                var restURL = '<?php echo get_rest_url(null, '/lookup/v1/tract/gettractmap'); ?>';
-                jQuery.post( restURL, { address: address })
+
+                var restURL = '<?php echo get_rest_url(null, '/lookup/v1/tract/getmapbygeoid'); ?>';
+
+                jQuery.post( restURL, { geoid: geoid, lng: lng, lat: lat })
                     .done(function( data ) {
-                        jQuery('#spinner').html('');
-                        jQuery('#search-response').html('Looks like you searched for ' + data.formatted_address + '? Therefore, ' + data.geoid + ' is most likely your tract. If not, search again.' );
 
                         jQuery('#map').css('height', '600px');
 
@@ -94,7 +93,49 @@ function group_edit_fields_markup() {
                             tracts[i].setMap(map);
                         }
 
+                    });
+            });
+
+
+            jQuery('button').click( function () {
+                jQuery('#spinner').prepend('<img src="<?php echo plugin_dir_url(__FILE__); ?>/img/spinner.svg" style="height:30px;" />');
+
+                var address = jQuery('#address').val();
+                var restURL = '<?php echo get_rest_url(null, '/lookup/v1/tract/gettractmap'); ?>';
+                jQuery.post( restURL, { address: address })
+                    .done(function( data ) {
+                        jQuery('#spinner').html('');
+                        jQuery('#search-button').html('Search Again?');
+                        jQuery('#search-response').html('<p>Looks like you searched for <strong>' + data.formatted_address + '</strong>? <br>Therefore, <strong>' + data.geoid + '</strong> is most likely your census tract represented in the map below. </p>' );
+                        jQuery('#map').css('height', '600px');
+
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: data.zoom,
+                            center: {lng: data.lng, lat: data.lat},
+                            mapTypeId: 'terrain'
+                        });
+
+                        // Define the LatLng coordinates for the polygon's path.
+                        var coords = [ data.coordinates ];
+
+                        var tracts = [];
+
+                        for (i = 0; i < coords.length; i++) {
+                            tracts.push(new google.maps.Polygon({
+                                paths: coords[i],
+                                strokeColor: '#FF0000',
+                                strokeOpacity: 0.5,
+                                strokeWeight: 2,
+                                fillColor: '',
+                                fillOpacity: 0.2
+                            }));
+
+                            tracts[i].setMap(map);
+                        }
+
                         jQuery('#tract').val(data.geoid);
+                        jQuery('#lng').val(data.lng);
+                        jQuery('#lat').val(data.lat);
                     });
             });
         });
@@ -134,7 +175,9 @@ function group_create_fields_markup() {
         }
     </style>
     <div id="map" style="height:200px;"></div>
-    <input type="text" id="tract" name="tract" value=""  required/>
+    <input type="hidden" id="tract" name="tract" value=""  required/>
+    <input type="hidden" id="lng" name="lng" value=""  required/>
+    <input type="hidden" id="lat" name="lat" value=""  required/>
 
 
     <script type="text/javascript">
@@ -184,6 +227,8 @@ function group_create_fields_markup() {
                         }
 
                         jQuery('#tract').val(data.geoid);
+                        jQuery('#lng').val(data.lng);
+                        jQuery('#lat').val(data.lat);
                     });
             });
         });
@@ -203,7 +248,7 @@ function group_header_fields_save($group_id)
 {
     global $bp, $wpdb;
     $plain_fields = array(
-        'address', 'city', 'state', 'zip', 'country'
+        'address', 'tract', 'lng', 'lat'
     );
     foreach ($plain_fields as $field) {
         $key = $field;

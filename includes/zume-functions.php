@@ -20,11 +20,15 @@ function zume_force_login() {
         'Resources'
     );
 
-    if(is_page($exception_pages) || $GLOBALS['pagenow'] === 'wp-login.php'  ) {
+    if(is_page($exception_pages) || $GLOBALS['pagenow'] === 'wp-login.php' ) {
         return;
     }
 
-    // If using BuddyPress and on the register/activate page, don't do anything.
+    $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'login';
+    if ( $action == 'rp' || $action == 'resetpass' ) {
+        return;
+    }
+
     if ( function_exists( 'bp_is_current_component' ) && ( bp_is_current_component( 'register' ) || bp_is_current_component( 'activate' ) ) )
         return;
 
