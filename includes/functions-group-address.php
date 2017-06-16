@@ -23,9 +23,11 @@ function group_edit_fields_markup() {
     global $bp, $wpdb;
     ?>
 
-    <input id="tract" type="hidden" name="tract" value="<?php echo custom_field('tract'); ?>" required/>
+    <input type="hidden" id="tract" name="tract" value="<?php echo custom_field('tract'); ?>" required/>
     <input type="hidden" id="lng" name="lng" value="<?php echo custom_field('lng'); ?>"  required/>
     <input type="hidden" id="lat" name="lat" value="<?php echo custom_field('lat'); ?>"  required/>
+    <input type="hidden" id="state" name="state" value="<?php echo custom_field('state'); ?>"  required/>
+    <input type="hidden" id="county" name="county" value="<?php echo custom_field('county'); ?>"  required/>
 
     <style>
         /* Always set the map height explicitly to define the size of the div
@@ -60,6 +62,8 @@ function group_edit_fields_markup() {
                 var geoid = '<?php echo custom_field('tract'); ?>';
                 var lng = '<?php echo custom_field('lng'); ?>';
                 var lat = '<?php echo custom_field('lat'); ?>';
+                var state = '<?php echo custom_field('state'); ?>';
+                var county = '<?php echo custom_field('county'); ?>';
 
 
                 var restURL = '<?php echo get_rest_url(null, '/lookup/v1/tract/getmapbygeoid'); ?>';
@@ -136,6 +140,8 @@ function group_edit_fields_markup() {
                         jQuery('#tract').val(data.geoid);
                         jQuery('#lng').val(data.lng);
                         jQuery('#lat').val(data.lat);
+                        jQuery('#state').val(data.state);
+                        jQuery('#county').val(data.county);
                     });
             });
         });
@@ -178,6 +184,8 @@ function group_create_fields_markup() {
     <input type="hidden" id="tract" name="tract" value=""  required/>
     <input type="hidden" id="lng" name="lng" value=""  required/>
     <input type="hidden" id="lat" name="lat" value=""  required/>
+    <input type="hidden" id="state" name="state" value=""  required/>
+    <input type="hidden" id="county" name="county" value=""  required/>
 
 
     <script type="text/javascript">
@@ -229,6 +237,8 @@ function group_create_fields_markup() {
                         jQuery('#tract').val(data.geoid);
                         jQuery('#lng').val(data.lng);
                         jQuery('#lat').val(data.lat);
+                        jQuery('#state').val(data.state);
+                        jQuery('#county').val(data.county);
                     });
             });
         });
@@ -248,7 +258,7 @@ function group_header_fields_save($group_id)
 {
     global $bp, $wpdb;
     $plain_fields = array(
-        'address', 'tract', 'lng', 'lat'
+        'address', 'tract', 'lng', 'lat', 'state', 'county'
     );
     foreach ($plain_fields as $field) {
         $key = $field;
