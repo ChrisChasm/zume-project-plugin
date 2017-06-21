@@ -149,4 +149,32 @@ function zume_invite_page_content ( $content ) {
 }
 add_filter( 'the_content', 'zume_invite_page_content');
 
+/**
+ * Hide appropriate tabs on User Profile
+ * Overrides defaults on the profile page
+ */
+function bpfr_hide_tabs() {
+    global $bp;
+    /**
+     * class_exists() & bp_is_active are recommanded to avoid problems during updates
+     * or when Component is deactivated
+     */
+
+    if( class_exists( 'bbPress' ) || bp_is_active ( 'groups' ) ) :
+
+        /** here we fix the conditions.
+         * Are we on a profile page ? | is user site admin ? | is user logged in ?
+         */
+        if ( bp_is_user()  ) {
+
+            /* and here we remove our stuff ! */
+            bp_core_remove_nav_item( 'activity' );
+            bp_core_remove_nav_item( 'friends' );
+            bp_core_remove_nav_item( 'groups' );
+            bp_core_remove_nav_item( 'forums' );
+        }
+    endif;
+}
+add_action( 'bp_setup_nav', 'bpfr_hide_tabs', 15 );
+
 
