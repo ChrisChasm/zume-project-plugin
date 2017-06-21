@@ -153,7 +153,7 @@ add_filter( 'the_content', 'zume_invite_page_content');
  * Hide appropriate tabs on User Profile
  * Overrides defaults on the profile page
  */
-function bpfr_hide_tabs() {
+function zume_hide_tabs() {
     global $bp;
     /**
      * class_exists() & bp_is_active are recommanded to avoid problems during updates
@@ -163,7 +163,7 @@ function bpfr_hide_tabs() {
     if( class_exists( 'bbPress' ) || bp_is_active ( 'groups' ) ) :
 
         /** here we fix the conditions.
-         * Are we on a profile page ? | is user site admin ? | is user logged in ?
+         * Are we on a profile page ?
          */
         if ( bp_is_user()  ) {
 
@@ -175,6 +175,53 @@ function bpfr_hide_tabs() {
         }
     endif;
 }
-add_action( 'bp_setup_nav', 'bpfr_hide_tabs', 15 );
+add_action( 'bp_setup_nav', 'zume_hide_tabs', 15 );
 
+function zume_remove_group_tabs() { // todo: remove for production.
 
+    /**
+     * @since 2.6.0 Introduced the $component parameter.
+     *
+     * @param string $slug      The slug of the primary navigation item.
+     * @param string $component The component the navigation is attached to. Defaults to 'members'.
+     * @return bool Returns false on failure, True on success.
+     */
+
+    if ( ! bp_is_group() ) {
+        return;
+    }
+
+    $slug = bp_get_current_group_slug();
+    // all existing default group tabs are listed here. Uncomment or remove.
+//		bp_core_remove_subnav_item( $slug, 'members' );
+//		bp_core_remove_subnav_item( $slug, 'send-invites' );
+//		bp_core_remove_subnav_item( $slug , 'admin' );
+//        bp_core_remove_subnav_item( $slug, 'invite-anyone' );
+
+}
+add_action( 'bp_init', 'zume_remove_group_tabs' );
+
+function zume_remove_group_admin_tab() {
+    if ( ! bp_is_group() || ! ( bp_is_current_action( 'admin' ) && bp_action_variable( 0 ) )  ) {
+        return;
+    }
+    // Add the admin subnav slug you want to hide in the
+    // following array
+    $hide_tabs = array(
+        'group-settings' => 1,
+        'delete-group' => 1,
+
+    );
+    $parent_nav_slug = bp_get_current_group_slug() . '_manage';
+    // Remove the nav items
+    foreach ( array_keys( $hide_tabs ) as $tab ) {
+        // Since 2.6, You just need to add the 'groups' parameter at the end of the bp_core_remove_subnav_item
+        bp_core_remove_subnav_item( $parent_nav_slug, $tab, 'groups' );
+    }
+    // You may want to be sure the user can't access
+    if ( ! empty( $hide_tabs[ bp_action_variable( 0 ) ] ) ) {
+        bp_core_add_message( 'Sorry buddy, but this part is restricted to super admins!', 'error' );
+        bp_core_redirect( bp_get_group_permalink( groups_get_current_group() ) );
+    }
+}
+add_action( 'bp_init', 'zume_remove_group_admin_tab', 9 );

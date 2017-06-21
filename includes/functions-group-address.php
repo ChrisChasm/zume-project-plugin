@@ -44,13 +44,14 @@ function group_edit_fields_markup() {
         }
     </style>
 
-    <div id="search-response"></div>
 
-    <div id="map"></div>
 
     <label for="address">Search for a new tract to connect with your group.</label>
     <input id="address" type="text" name="address" value="" placeholder="1501 W. Mineral Ave, Littleton, CO 80120" style="width: 50%; display:inline;" required/> <button style="font-size:1.25em;" type="button">Search</button> <span id="spinner"></span>
 
+    <div id="search-response"></div>
+    <div id="map"></div>
+    <p></p>
 
 
 
