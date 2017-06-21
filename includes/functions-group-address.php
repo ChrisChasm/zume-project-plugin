@@ -179,6 +179,9 @@ function group_create_fields_markup() {
             margin: 0;
             padding: 0;
         }
+        .article-header {
+            display:none;
+        }
     </style>
     <div id="map" style="height:200px;"></div>
     <input type="hidden" id="tract" name="tract" value=""  required/>
@@ -191,6 +194,7 @@ function group_create_fields_markup() {
     <script type="text/javascript">
 
         jQuery(document).ready(function() {
+
             var map;
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: 38.7767479, lng: -104.0954098},

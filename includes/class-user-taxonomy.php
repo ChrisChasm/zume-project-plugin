@@ -97,7 +97,7 @@ class Disciple_Tools_User_Taxonomy {
 		$this->hooks();
 
 		// JIT
-		do_action( 'disciple_tools_taxonomy', $this );
+		do_action( 'zume_taxonomy', $this );
 	}
 
 	/**
@@ -124,7 +124,7 @@ class Disciple_Tools_User_Taxonomy {
 		add_action( 'admin_menu', array( $this, 'add_admin_page' ) );
 
 		// WP User Profile support
-		add_action( 'disciple_tools_profiles_add_meta_boxes', array( $this, 'add_meta_box' ), 10, 2 );
+		add_action( 'zume_profiles_add_meta_boxes', array( $this, 'add_meta_box' ), 10, 2 );
 
 		// Taxonomy columns
 		add_action( "manage_{$this->taxonomy}_custom_column", array( $this, 'manage_custom_column'     ), 10, 3 );
@@ -242,7 +242,7 @@ class Disciple_Tools_User_Taxonomy {
 			}";
 
 		// Add inline style
-		wp_add_inline_style( 'disciple_tools_groups', $style );
+		wp_add_inline_style( 'zume_groups', $style );
 	}
 
 	/**
@@ -253,7 +253,7 @@ class Disciple_Tools_User_Taxonomy {
 	public function add_meta_box( $type = '' ) {
 
 		// Get hookname
-		$hooks = disciple_tools_profiles_get_section_hooknames( 'groups' );
+		$hooks = zume_profiles_get_section_hooknames( 'groups' );
 
 		// Bail if not the correct type
 		if ( ! in_array( $type, $hooks, true ) ) {
@@ -283,7 +283,7 @@ class Disciple_Tools_User_Taxonomy {
 
 		// Maybe add the metabox
 		add_meta_box(
-			'disciple_tools_taxonomy_' . $this->taxonomy,
+			'zume_taxonomy_' . $this->taxonomy,
 			$tax->label,
 			array( $this, 'user_profile_metabox' ),
 			$hooks[0],
@@ -307,7 +307,7 @@ class Disciple_Tools_User_Taxonomy {
 	public function save_terms_for_user( $user_id = 0 ) {
 
 		// Additional checks if User Profiles is active
-		if ( function_exists( 'disciple_tools_profiles_get_section_hooknames' ) ) {
+		if ( function_exists( 'zume_profiles_get_section_hooknames' ) ) {
 
 			// Bail if no page
 			if ( empty( $_GET['page'] ) ) {
@@ -321,7 +321,7 @@ class Disciple_Tools_User_Taxonomy {
 		}
 
 		// Set terms for user
-		disciple_tools_set_terms_for_user( $user_id, $this->taxonomy );
+		zume_set_terms_for_user( $user_id, $this->taxonomy );
 	}
 
 	/**
@@ -413,7 +413,7 @@ class Disciple_Tools_User_Taxonomy {
 		<?php
 
 		// Check for a global, because this is a huge dumb hack
-		if ( ! isset( $GLOBALS['disciple_tools_taxonomies'] ) ) : ?>
+		if ( ! isset( $GLOBALS['zume_taxonomies'] ) ) : ?>
 
 			<h3 id="<?php echo esc_html( $this->taxonomy ); ?>">
 				<?php esc_html_e( 'Relationships', 'disciple-tools-user-groups' ); ?>
@@ -422,7 +422,7 @@ class Disciple_Tools_User_Taxonomy {
 			<?php
 
 			// Set big dumb hack global to true
-			$GLOBALS['disciple_tools_taxonomies'] = true;
+			$GLOBALS['zume_taxonomies'] = true;
 
 		endif; ?>
 
@@ -554,7 +554,7 @@ class Disciple_Tools_User_Taxonomy {
 		}
 
 		// Filter
-		$actions = apply_filters( 'disciple_tools_groups_row_actions', $actions, $tax, $term, $this );
+		$actions = apply_filters( 'zume_groups_row_actions', $actions, $tax, $term, $this );
 
 		return implode( ' | ', $actions );
 	}
@@ -778,7 +778,7 @@ class Disciple_Tools_User_Taxonomy {
 			}
 
 			// Get term slugs of user for this taxonomy
-			$terms        = disciple_tools_get_terms_for_user( $user, $this->taxonomy );
+			$terms        = zume_get_terms_for_user( $user, $this->taxonomy );
 			$update_terms = wp_list_pluck( $terms, 'slug' );
 
 			// Adding
@@ -802,7 +802,7 @@ class Disciple_Tools_User_Taxonomy {
 
 			// Update terms for users
 			if ( $update_terms !== $terms ) {
-				disciple_tools_set_terms_for_user( $user, $this->taxonomy, $update_terms, true );
+				zume_set_terms_for_user( $user, $this->taxonomy, $update_terms, true );
 			}
 		}
 
@@ -974,7 +974,7 @@ class Disciple_Tools_User_Taxonomy {
 	private function get_user_term_links( $user, $page = null ) {
 
 		// Get terms for user and this taxonomy
-		$terms = disciple_tools_get_terms_for_user( $user, $this->taxonomy );
+		$terms = zume_get_terms_for_user( $user, $this->taxonomy );
 
 		// Bail if user has no terms
 		if ( empty( $terms ) ) {

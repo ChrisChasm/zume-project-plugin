@@ -1,0 +1,792 @@
+[
+  {
+    "id": 1495,
+    "date": "2017-06-19T14:12:37",
+    "date_gmt": "2017-06-19T20:12:37",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=1495"
+    },
+    "modified": "2017-06-19T14:12:37",
+    "modified_gmt": "2017-06-19T20:12:37",
+    "slug": "sites",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/sites/",
+    "title": {
+      "rendered": "Sites"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/1495"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=1495"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/1495/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=1495"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 845,
+    "date": "2017-06-09T04:09:23",
+    "date_gmt": "2017-06-09T10:09:23",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=845"
+    },
+    "modified": "2017-06-12T07:54:14",
+    "modified_gmt": "2017-06-12T13:54:14",
+    "slug": "resources",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/resources/",
+    "title": {
+      "rendered": "Resources"
+    },
+    "content": {
+      "rendered": "<div style=\"text-align: center; max-width: 640px; margin: 0 auto;\">\n<iframe src=\"https://www.youtube-nocookie.com/embed/EOdSAdJ6AhI?rel=0&amp;showinfo=0\" width=\"640\" height=\"360\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"></iframe>\n</div>\n<style>\n.temp-full-width {\n    background-color: #21336A;\n    color: white;\n    padding-top: 20px;\n    padding-bottom: 10px;\n    margin-top: 20px;\n    margin-bottom: 20px;\n    margin-left: -0.9375rem;\n    margin-right: -0.9375rem;\n    padding-left: 0.9375rem;\n    padding-right: 0.9375rem;\n}\n@media only screen and (min-width: 40em) {\n    .temp-full-width {\n        margin-left: -1.25rem;\n        margin-right: -1.25rem;\n        padding-left: 1.25rem;\n        padding-right: 1.25rem;\n    }\n}\n@media only screen and (min-width: 75rem) {\n    .temp-full-width {\n         margin-left: calc(-100vw / 2 + 75rem / 2 - 1.25rem);\n         margin-right: calc(-100vw / 2 + 75rem / 2 - 1.25rem);\n         padding-left: calc(100vw / 2 - 75rem / 2 + 1.25rem);\n         padding-right: calc(100vw / 2 - 75rem / 2 + 1.25rem);\n    }\n}\n</style>\n<div class=\"temp-full-width\">\n<h3 style=\"color: white\">The Zúme Mission:</h3>\n<p>Helping ordinary people make a big impact for the Kingdom of God by obeying and implementing the Great Commission and the Great Commandment.</p>\n<h3 style=\"color: white\">The Zúme Vision:</h3>\n<p>Make disciples in every census tract in the United States and then in every Omega District globally, using an online training platform focused on equipping participants in the basic disciple-making and simple church planting multiplication principles, processes, and practices.\n</p></div>\n<h3>Resources:</h3>\n<ul style=\"list-style-type: none; margin: 0;\">\n<li><a href=\"https://s3.amazonaws.com/zume/z%C3%BAme-video-scripts-1435878000.pdf\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"http://new.zumeproject.com/wp-content/uploads/pdf_download.png\" alt=\"PDF download\" width=\"30\" height=\"30\" class=\"alignnone size-full wp-image-907\" /> Download Zúme video scripts here.</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=qIs-PiCowlw&amp;t=1s\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"http://new.zumeproject.com/wp-content/uploads/video.png\" alt=\"Video\" width=\"30\" height=\"30\" class=\"alignnone size-full wp-image-908\" /> Share the Zúme Promo video here.</a></li>\n<li><a href=\"http://www.missionfrontiers.org/pdfs/39-3_Issue_5-6.pdf\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"http://new.zumeproject.com/wp-content/uploads/pdf_download.png\" alt=\"PDF download\" width=\"30\" height=\"30\" class=\"alignnone size-full wp-image-907\" /> Download May/June 2017 issue of Mission Frontiers on Zúme here.</a></li>\n<li><a href=\"https://docs.google.com/spreadsheets/d/12NUKhKfJl4ZnqegEdkHadlYMf2oHuEKIjNmyZI78TeA/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"http://new.zumeproject.com/wp-content/uploads/language.png\" alt=\"\" width=\"30\" height=\"30\" class=\"alignnone size-full wp-image-906\" /> Check on language translation progress here.</a></li>\n<li><a href=\"https://s3.amazonaws.com/zume/zume-guide-4039811470.pdf\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"http://new.zumeproject.com/wp-content/uploads/pdf_download.png\" alt=\"PDF download\" width=\"30\" height=\"30\" class=\"alignnone size-full wp-image-907\" /> Download Guidebook here.</a></li>\n<li><a href=\"https://s3.amazonaws.com/zume/z%C3%BAme-faq-0905337322.pdf\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"http://new.zumeproject.com/wp-content/uploads/pdf_download.png\" alt=\"PDF download\" width=\"30\" height=\"30\" class=\"alignnone size-full wp-image-907\" /> Frequently Asked Questions (FAQ)</a></li>\n</ul>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>The Zúme Mission: Helping ordinary people make a big impact for the Kingdom of God by obeying and implementing the Great Commission and the Great Commandment. The Zúme Vision: Make disciples in every census tract in the United States and then in every Omega District globally, using an online training platform focused on equipping participants<a class=\"excerpt-read-more\" href=\"http://new.zumeproject.com/resources/\" title=\"ReadResources\">&#8230; Read more &raquo;</a></p>\n",
+      "protected": false
+    },
+    "author": 13,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/845"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/13"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=845"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/845/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=845"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 812,
+    "date": "2017-06-08T09:35:28",
+    "date_gmt": "2017-06-08T15:35:28",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=812"
+    },
+    "modified": "2017-06-08T11:02:07",
+    "modified_gmt": "2017-06-08T17:02:07",
+    "slug": "session-9-course",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/session-9-course/",
+    "title": {
+      "rendered": "Session 9 Course"
+    },
+    "content": {
+      "rendered": "<p><!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING BACK\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Welcome back to Zúme Training!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>CHECK-IN</span></div>\n<div class=\"activity-description\">Before we get started, let&#8217;s take some time to check-in.</p>\n<p>At the end of our last session, everyone in your group was challenged in two ways: </p>\n<ol>\n<li>You were asked to practice Obeying, Training, and Sharing based on your commitments during last session&#8217;s 3/3 Group practice.</li>\n<li>You were encouraged to share the Leadership Cells tool with someone else.</li>\n</ol>\n<p> Take a few moments to see how your group did this week.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRAY</span></div>\n<div class=\"activity-description\">Pray and thank God that His ways are not our ways and His thoughts are not our thoughts. Ask Him to give each member of your group the mind of Christ &#8211; always focused on His Father&#8217;s work. Ask the Holy Spirit to lead your time together and make it the best session yet.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>OVERVIEW</span></div>\n<div class=\"activity-description\">In this session, we’ll learn how linear patterns hold back kingdom growth and how Non-Sequential thinking helps you multiply disciples. We&#8217;ll discover how much time matters in disciple-making and how to accelerate our Pace. We’ll learn how followers of Jesus can be a Part of Two Churches to help turn faithful, spiritual families into a growing city-wide body of believers. Finally, we&#8217;ll learn how a simple 3-Month Plan can focus our efforts and multiply our effectiveness in growing God&#8217;s family exponentially.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">When people think about disciples multiplying, they often think of it as a step-by-step process. The problem with that is &#8211; that&#8217;s not how it works best!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/1rydt7j3ds.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_1rydt7j3ds\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>What is the most exciting idea you heard in this video? Why?</li>\n<li> What is the most challenging idea? Why?</li>\n</ol>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">Multiplying matters and multiplying quickly matters even more. Pace matters because where we all spend our eternity &#8211; an existence that outlasts time &#8211; is determined in the very short time we call “life.&#8221;</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/42tm77n9aq.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_42tm77n9aq\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>Why is pace important?</li>\n<li> What do you need to change in your thinking, your actions, or your attitude to be better aligned with God&#8217;s priority for pace? </li>\n<li>What is one thing you can do starting this week that will make a difference?</li>\n</ol>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">Jesus taught us that we are to stay close &#8211; to live as a small, spiritual family, to love and give our lives to one another, to celebrate and suffer &#8212; together. However, Jesus also taught us to leave our homes and loved ones behind and be willing to go anywhere &#8211; and everywhere &#8211; to share and start new spiritual families.</p>\n<p>So how can we do both?</p>\n<p>When you&#8217;re ready, watch the video below and discuss the question that follows.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/nna7r761vo.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_nna7r761vo\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">What are some advantages of maintaining a consistent spiritual family that gives birth to new ones that grow and multiply instead of continually growing a family and splitting it in order to grow?</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tPROJECT (30min)\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Create a 3-month plan.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>OVERVIEW</span></div>\n<div class=\"activity-description\">In His Bible, God says, &#8220;I know the plans I have for you, plans to prosper you and not to harm you, plans to give you hope and a future.&#8221;</p>\n<p>\t\t\t\t\t\tGod makes plans, and He expects us to make plans, too. He teaches us through His Word and His work to look ahead, see a better tomorrow, make a plan for how to get there, and then prepare the resources we&#8217;ll need on the way.</p>\n<p>\t\t\t\t\t\tA 3-Month Plan is a tool you can use to help focus your attention and efforts and keep them aligned with God&#8217;s priorities for making disciples who multiply.</p>\n<p>\t\t\t\t\t\tSpend the next 30 minutes praying over, reading through, and then completing the commitments listed in the 3-Month Plan section in your Zúme Guidebook.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRAY</span></div>\n<div class=\"activity-description\">Ask God what He specifically wants you to do with the basic disciple-making tools and techniques you have learned over these last 9 sessions. Remember His words about Faithfulness.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>LISTEN</span></div>\n<div class=\"activity-description\">Take at least 10 minutes to be as quiet as possible and listen intently to what God has to say and what He chooses to reveal. Make an effort to hear His voice. </div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>COMPLETE</span></div>\n<div class=\"activity-description\">Use the rest of your time to complete the 3-Month Plan worksheet. You do not have to commit to every item, and there is room for other items not already on the list. Do your best to align your commitments to what you have heard God reveal to you about His will.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tACTIVITY (30min)\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Share your plan and plan as a team.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">SHARE</div>\n<div class=\"activity-description\">IN GROUPS OF TWO OR THREE (15 minutes)</p>\n<p>Take turns sharing your 3-Month Plans with each other. Take time to ask questions about things you might not understand about plans and how the others will meet their commitments. Ask them to do the same for you and your plan.</p>\n<p>Find a training partner(s) that is willing to check in with you to report on progress and challenges and ask questions after 1, 2, 3, 4, 6, 8 and 12 weeks. Commit to doing the same for them.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">IN YOUR FULL TRAINING GROUP (15 minutes)</p>\n<p>Discuss and Develop a group plan for starting at least two (2) new 3/3 Groups or Zúme Training Groups in your area. Remember, your goal is start Simple Churches that multiply. 3/3 Groups and Zúme Training Groups are two ways to do that.</p>\n<p>Discuss and Decide whether these new Groups will be connected to an existing local church or network or whether you’ll start a new network out of your Zúme Training Group.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">CONNECT</div>\n<div class=\"activity-description\">CONNECT WITH YOUR COACH</p>\n<p>Make sure all group members know how to contact the Zúme Coach that’s been assigned to your group in case anyone has questions or needs more training. Remember to share your 3-Month Plan with your Coach, so they understand your goals.</p>\n<p>Discuss any other locations where members of your group could help launch new 3/3 Groups or Zúme Training Groups.</p>\n<p>Be sure to pray as a group and ask God for His favor to bring about all the good work possible out of these plans and commitments.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING FORWARD\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Congratulations! You&#8217;ve completed Session 9. </div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">You may not know it, but you now have more practical training on starting simple churches and making disciples who multiply than many pastors and missionaries around the world!</p>\n<p> Watch the following video and celebrate all that you&#8217;ve learned!</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/h3znainxm9.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_h3znainxm9\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">OBEY</div>\n<div class=\"activity-description\"> Set aside time on your calendar each week to continue to work on your 3-Month Plan, and plan check-ins with your training partner at the end of week 1, 2, 3, 4, 6, 8, and 12. Each time you&#8217;re together, ask about their results and share yours, making sure you&#8217;re both working through your plans.</p>\n<p>Prayerfully consider continuing as an ongoing spiritual family committed to multiplying disciples. </p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">SHARE</div>\n<div class=\"activity-description\"> Pray and ask God who He would have you share Zúme Training with by launching a Leadership Cell of future Zúme Training leaders.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">PRAY</div>\n<div class=\"activity-description\"> Be sure to pray with your group before you end your time together. Thank God that He has created and gifted you with exactly the right talents to make a difference in His kingdom. Ask Him for wisdom to use the strengths He has given you and to find other followers who help cover your weaknesses. Pray that He would make you fruitful and multiply &#8211; this was His plan from the very beginning. Pray that God help you be obedient to Him and invite Him to work in you and those around you!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>LOOKING BACK Welcome back to Zúme Training! CHECK-IN Before we get started, let&#8217;s take some time to check-in. At the end of our last session, everyone in your group was challenged in two ways: You were asked to practice Obeying, Training, and Sharing based on your commitments during last session&#8217;s 3/3 Group practice. You were<a class=\"excerpt-read-more\" href=\"http://new.zumeproject.com/session-9-course/\" title=\"ReadSession 9 Course\">&#8230; Read more &raquo;</a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/812"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=812"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/812/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=812"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 810,
+    "date": "2017-06-08T09:35:16",
+    "date_gmt": "2017-06-08T15:35:16",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=810"
+    },
+    "modified": "2017-06-08T10:49:15",
+    "modified_gmt": "2017-06-08T16:49:15",
+    "slug": "session-8-course",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/session-8-course/",
+    "title": {
+      "rendered": "Session 8 Course"
+    },
+    "content": {
+      "rendered": "<p><!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING BACK\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Welcome back to Zúme Training!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>CHECK-IN</span></div>\n<div class=\"activity-description\">Before we get started, let&#8217;s take some time to check-in.</p>\n<p>At the end of our last session, everyone in your group was challenged in two ways: </p>\n<ol>\n<li>You were asked to practice obeying, training, and sharing based on your commitments during 3/3 Group practice.</li>\n<li>You were encouraged to share the 3/3 Group format with someone else.</li>\n</ol>\n<p> Take a few moments to see how your group did this week.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRAY</span></div>\n<div class=\"activity-description\">Pray and thank God for giving your group the energy, the focus and the faithfulness to come so far in this training. Ask God to have His Holy Spirit remind everyone in the group that we can do nothing without Him!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>OVERVIEW</span></div>\n<div class=\"activity-description\">In this session, we’ll learn how Leadership Cells prepare followers in a short time to become leaders for a lifetime. We&#8217;ll learn how serving others is Jesus&#8217; strategy for leadership. And we&#8217;ll spend time practicing as a 3/3 Group, again.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">Jesus said &#8211; “Whoever wishes to become great among you shall be your servant.”</p>\n<p>\t\t\t\t\t\tJesus radically reversed our understanding of leadership by teaching us that if we feel called to lead, then we are being called to serve. A Leadership Cell is a way someone who feels called to lead can develop their leadership by practicing serving.</p>\n<p>\t\t\t\t\t\tFind the &#8220;Leadership Cells&#8221; section in your Zúme Guidebook. When you&#8217;re ready, watch and discuss this video.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/lnr64mh2bg.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_lnr64mh2bg\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>Is there a group of followers of Jesus you know that are already meeting or would be willing to meet and form a Leadership Cell to learn Zúme Training?</li>\n<li> What would it take to bring them together?</li>\n</ol>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tPRACTICE (90min)\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Practice a 3/3 group session.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRACTICE</span></div>\n<div class=\"activity-description\">Have your entire group spend the next 90 minutes practicing the 3/3 Groups Format using the pattern on pages 19-20 in your Zúme Guidebook.</p>\n<ul>\n<li>LOOK BACK &#8211; Use last session’s Obey, Train, and Share challenges to check-in with each other.</li>\n<li>LOOK UP &#8211; Use Acts 2:42-47 as your group’s reading passage and answer questions 1- 4.</li>\n<li>LOOK FORWARD &#8211; Use questions 5, 6, and 7 to develop how you will Obey, Train and Share.</li>\n</ul>\n<p>\n\t\t\t\t\t\tREMEMBER &#8211; Each section should take about 1/3 (or 30 minutes) of your practice time.</div>\n</p></div>\n<p> <!-- row --></p>\n</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING FORWARD\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Congratulations! You&#8217;ve completed Session 8. Below are next steps to take in preparation for the next session. </div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">OBEY</div>\n<div class=\"activity-description\">Spend time again this week obeying, sharing, and training based on the commitments you&#8217;ve made during this session&#8217;s 3/3 Group practice.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">SHARE</div>\n<div class=\"activity-description\">Pray and ask God who He wants you to share the Leadership Cell tool with before your group meets again. Share this person’s name with the group before you go.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">PRAY</div>\n<div class=\"activity-description\">Thank God for sending Jesus to show us that real leaders are real servants. Thank Jesus for showing us the greatest service possible is giving up our own lives for others.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>LOOKING BACK Welcome back to Zúme Training! CHECK-IN Before we get started, let&#8217;s take some time to check-in. At the end of our last session, everyone in your group was challenged in two ways: You were asked to practice obeying, training, and sharing based on your commitments during 3/3 Group practice. You were encouraged to<a class=\"excerpt-read-more\" href=\"http://new.zumeproject.com/session-8-course/\" title=\"ReadSession 8 Course\">&#8230; Read more &raquo;</a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/810"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=810"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/810/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=810"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 808,
+    "date": "2017-06-08T09:35:08",
+    "date_gmt": "2017-06-08T15:35:08",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=808"
+    },
+    "modified": "2017-06-08T10:48:15",
+    "modified_gmt": "2017-06-08T16:48:15",
+    "slug": "session-7-course",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/session-7-course/",
+    "title": {
+      "rendered": "Session 7 Course"
+    },
+    "content": {
+      "rendered": "<p><!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING BACK\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Welcome back to Zúme Training!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>CHECK-IN</span></div>\n<div class=\"activity-description\">At the end of our last session, everyone in your group was challenged in two ways: </p>\n<ol>\n<li>You were asked to practice Faithfulness by obeying and sharing one of God&#8217;s commands.</li>\n<li>You were encouraged to share the importance of Faithfulness with someone else.</li>\n</ol>\n<p> Take a few moments to see how your group did this week.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRAY</span></div>\n<div class=\"activity-description\">Pray and thank God for the group&#8217;s commitment to faithfully following Jesus and invite God&#8217;s Holy Spirit to lead your time together.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>OVERVIEW</span></div>\n<div class=\"activity-description\">In this session, we’ll learn a Training Cycle that helps disciples go from one to many and turns a mission into a movement. We&#8217;ll also practice the 3/3 Groups Format and learn how the way you meet can impact the way you multiply.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">Have you ever learned how to ride a bicycle? Have you ever helped someone else learn? If so, chances are you already know the Training Cycle.</p>\n<p>Find the &#8220;Training Cycle&#8221; section in your Zúme Guidebook. When you&#8217;re ready, watch this video, and then discuss the questions below.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/ziw8qxj7zj.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_ziw8qxj7zj\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>Have you ever been a part of a Training Cycle?</li>\n<li> Who did you train? Or who trained you? </li>\n<li>Could the same person be at different parts of the Training Cycle while learning different skills? </li>\n<li>What would it look like to train someone like that?</li>\n</ol>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tPRACTICE AND DISCUSS (90min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRACTICE</span></div>\n<div class=\"activity-description\">Have your entire group spend the next 90 minutes practicing the 3/3 Groups Format using the pattern on pages 19-20 in your Zúme Guidebook.</p>\n<ul>\n<li>LOOK BACK &#8211; Use last week&#8217;s Session Challenges to practice &#8220;Faithfulness&#8221; in the Look Back section.</li>\n<li>LOOK UP &#8211; Use Mark 5:1-20 as your group&#8217;s reading passage and answer questions 1-4 during the Look Up section.</li>\n<li>LOOK FORWARD &#8211; Use questions 5, 6, and 7 in the Look Forward section to develop how you will Obey, Train and Share.</li>\n</ul>\n<p>\n\t\t\t\t\t\tREMEMBER &#8211; Each section should take about 1/3 (or 30 minutes) of your practice time.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>DISCUSS</span></div>\n<div class=\"activity-description\">\n<ol>\n<li>What did you like best about the 3/3 Group? Why?</li>\n<li> What was the most challenging? Why?</li>\n</ol>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING FORWARD\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Congratulations on finishing Session 7! Below are next steps to take in preparation for the next session. </div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">OBEY</div>\n<div class=\"activity-description\">Spend time this week obeying, training, and sharing based on the commitments you&#8217;ve made during your 3/3 Group practice.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">SHARE</div>\n<div class=\"activity-description\">Pray and ask God who He wants you to share the 3/3 Group format with before your group meets again. Share this person’s name with the group before you go.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">PRAY</div>\n<div class=\"activity-description\">Thank God that He loves us enough to invite us into His most important work &#8211; growing His family!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>LOOKING BACK Welcome back to Zúme Training! CHECK-IN At the end of our last session, everyone in your group was challenged in two ways: You were asked to practice Faithfulness by obeying and sharing one of God&#8217;s commands. You were encouraged to share the importance of Faithfulness with someone else. Take a few moments to see how<a class=\"excerpt-read-more\" href=\"http://new.zumeproject.com/session-7-course/\" title=\"ReadSession 7 Course\">&#8230; Read more &raquo;</a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/808"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=808"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/808/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=808"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 806,
+    "date": "2017-06-08T09:35:00",
+    "date_gmt": "2017-06-08T15:35:00",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=806"
+    },
+    "modified": "2017-06-08T10:56:34",
+    "modified_gmt": "2017-06-08T16:56:34",
+    "slug": "session-6-course",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/session-6-course/",
+    "title": {
+      "rendered": "Session 6 Course"
+    },
+    "content": {
+      "rendered": "<p><!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING BACK\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Welcome back to Zúme Training!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>CHECK-IN</span></div>\n<div class=\"activity-description\">At the end of our last session, everyone in your group was challenged in two ways: </p>\n<ol>\n<li>You were asked to spend some time Prayer Walking</li>\n<li>You were encouraged to share the Prayer Walking tool with someone else.</li>\n</ol>\n<p> Take a few moments to see how your group did this week.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRAY</span></div>\n<div class=\"activity-description\">Pray and thank God for the results, ask Him to help us when we find it hard to obey, and invite His Holy Spirit to lead your time together.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>OVERVIEW</span></div>\n<div class=\"activity-description\">In this session, we’ll learn how God uses faithful followers &#8211; even if they&#8217;re brand new &#8211; much more than ones with years of knowledge and training who just won&#8217;t obey. And we&#8217;ll get a first look at a way to meet together that helps disciples multiply even faster.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">When we help multiply disciples, we need to make sure we&#8217;re reproducing the right things. It&#8217;s important what disciples know &#8211; but it&#8217;s much more important what they DO with what they know.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/yk0i0eserm.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_yk0i0eserm\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">Think about God&#8217;s commands that you already know. How &#8220;faithful&#8221; are you in terms of obeying and sharing those things?</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLISTEN AND READ ALONG (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">READ</div>\n<div class=\"activity-description\">ZÚME TOOLKIT &#8211; 3/3 GROUPS FORMAT</p>\n<p>Jesus said &#8212; “Where two or three have gathered together in My name, I am there in their midst.”</p>\n<p>Find the &#8220;3/3 Group Format&#8221; section in your Zúme Guidebook, and listen to the audio below.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/xnhyl1o17z.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_xnhyl1o17z\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>Did you notice any differences between a 3/3 Group and a Bible Study or Small Group you&#8217;ve been a part of (or have heard about) in the past? If so, how would those differences impact the group? </li>\n<li>Could a 3/3 Group be considered a Simple Church? Why or why not?</li>\n</ol></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tMODEL 3/3 GROUP\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">A 3/3 Group is a way for followers of Jesus to meet, pray, learn, grow, fellowship and practice obeying and sharing what they&#8217;ve learned. In this way a 3/3 Group is not just a small group but a Simple Church.<BR><BR> In the following video, you&#8217;ll see a model 3/3 Group meet together and practice this format.</p>\n<p>Find the &#8220;3/3 Groups Format&#8221; section in your Zúme Guidebook, and watch the video below.</p></div>\n</p></div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/s4shprhr4l.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_s4shprhr4l\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING FORWARD\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Congratulations on finishing Session 6! Below are next steps to take in preparation for the next session. </div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">OBEY</div>\n<div class=\"activity-description\">Spend time this week practicing Faithfulness by obeying and sharing at least one of God&#8217;s commands that you already know.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">SHARE</div>\n<div class=\"activity-description\">Think about what you have heard and learned about Faithfulness in this session, and ask God who He wants you to share it with. Share this person’s name with the group before you go.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">PRAY</div>\n<div class=\"activity-description\">Thank God for His Faithfulness &#8211; for fulfilling every promise He&#8217;s ever made. Ask Him to help you and your group become even more Faithful to Him.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>LOOKING BACK Welcome back to Zúme Training! CHECK-IN At the end of our last session, everyone in your group was challenged in two ways: You were asked to spend some time Prayer Walking You were encouraged to share the Prayer Walking tool with someone else. Take a few moments to see how your group did<a class=\"excerpt-read-more\" href=\"http://new.zumeproject.com/session-6-course/\" title=\"ReadSession 6 Course\">&#8230; Read more &raquo;</a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/806"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=806"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/806/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=806"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 804,
+    "date": "2017-06-08T09:34:53",
+    "date_gmt": "2017-06-08T15:34:53",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=804"
+    },
+    "modified": "2017-06-08T10:55:06",
+    "modified_gmt": "2017-06-08T16:55:06",
+    "slug": "session-5-course",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/session-5-course/",
+    "title": {
+      "rendered": "Session 5 Course"
+    },
+    "content": {
+      "rendered": "<p><!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING BACK\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Welcome back to Zúme Training!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>CHECK-IN</span></div>\n<div class=\"activity-description\">At the end of our last session, everyone in your group was challenged in two ways. </p>\n<ol>\n<li>You were asked to share your 3-Minute Testimony with at least one person on your List of 100.</li>\n<li>You were encouraged to train someone else with the 3-Minute Testimony tool. </li>\n</ol>\n<p>Take a few moments to see how your group did this week.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRAY</span></div>\n<div class=\"activity-description\">Pray and thank God for the results and invite His Holy Spirit to lead your time together.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>OVERVIEW</span></div>\n<div class=\"activity-description\">In this session, we’ll learn how Prayer Walking is a powerful way to prepare a neighborhood for Jesus, and we&#8217;ll learn a simple but powerful pattern for prayer that will help us meet and make new disciples along the way.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLISTEN AND READ ALONG (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">READ</div>\n<div class=\"activity-description\">ZÚME TOOLKIT &#8211; PRAYER WALKING</p>\n<p>Prayer Walking is a simple way to obey God’s command to pray for others. And it&#8217;s just what it sounds like &#8211; praying to God while walking around!</p>\n<p>Find the &#8220;Prayer Walking&#8221; section in your Zúme Guidebook, and listen to the audio below.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/ltxoicq440.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_ltxoicq440\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tPRACTICE (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block single\">\n<div class=\"activity-description well\">PRACTICE THE B.L.E.S.S. PRAYER</p>\n<p>Break into groups of two or three and spend the next 15 minutes practicing the B.L.E.S.S. Prayer using the pattern on page 17 of your Zúme Guidebook. Practice praying the 5 areas of the B.L.E.S.S. Prayer for someone AND practice how you would train others to understand and use the B.L.E.S.S. Prayer, too.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tPRACTICE (60-90min)\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Practice Prayer Walking for 60-90 minutes.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">ACTIVITY</div>\n<div class=\"activity-description\">Break into groups of two or three and go out into the community to practice Prayer Walking. </p>\n<p>Choosing a location can be as simple as walking outside from where you are now, or you could plan to go to a specific destination. </p>\n<p>Go as God leads, and plan on spending 60-90 minutes on this activity.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING FORWARD\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">The session ends with a prayer walking activity. Read through the Obey, Share, and Pray sections, below, before you head out!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">OBEY</div>\n<div class=\"activity-description\">Spend time this week practicing Prayer Walking by going out alone or with a small group at least once.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">SHARE</div>\n<div class=\"activity-description\">Spend time asking God who He might want you to share the Prayer Walking tool with before your group meets again. Share this person’s name with the group before you go.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">PRAY</div>\n<div class=\"activity-description\">Before you go out on your Prayer Walking activity, be sure to pray with your group to end your time together. Thank God that He loves the lost, the last and the least &#8211; including us! Ask Him to prepare your heart and the heart of those you&#8217;ll meet during your walk to be open to His work.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>LOOKING BACK Welcome back to Zúme Training! CHECK-IN At the end of our last session, everyone in your group was challenged in two ways. You were asked to share your 3-Minute Testimony with at least one person on your List of 100. You were encouraged to train someone else with the 3-Minute Testimony tool. Take<a class=\"excerpt-read-more\" href=\"http://new.zumeproject.com/session-5-course/\" title=\"ReadSession 5 Course\">&#8230; Read more &raquo;</a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/804"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=804"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/804/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=804"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 802,
+    "date": "2017-06-08T09:34:46",
+    "date_gmt": "2017-06-08T15:34:46",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=802"
+    },
+    "modified": "2017-06-08T10:53:43",
+    "modified_gmt": "2017-06-08T16:53:43",
+    "slug": "session-4-course",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/session-4-course/",
+    "title": {
+      "rendered": "Session 4 Course"
+    },
+    "content": {
+      "rendered": "<p><!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING BACK\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Welcome back to Zúme Training!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>CHECK-IN</span></div>\n<div class=\"activity-description\">At the end of our last session, everyone in your group was challenged in two ways.</p>\n<ol>\n<li>you were asked to share God’s Story with at least one person from your List of 100 that you marked as &#8220;Unbeliever&#8221; or &#8220;Unknown.&#8221;</li>\n<li>you were encouraged to train someone to use the Creation to Judgement story (or some other way to share God’s Story) with someone. </li>\n</ol>\n<p>Take a few moments to see how your group did this week.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRAY</span></div>\n<div class=\"activity-description\">Pray and thank God for the results and invite His Holy Spirit to lead your time together.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>OVERVIEW</span></div>\n<div class=\"activity-description\">In this session, we&#8217;ll learn how God&#8217;s plan is for every follower to multiply! We’ll discover how disciples multiply far and fast when they start to see where God’s Kingdom isn’t. And, we&#8217;ll learn another great tool for inviting others into God&#8217;s family is as simple as telling our story.</p>\n<p>Then, when you&#8217;re ready, let&#8217;s get started!</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- LISTEN AND READ ALONG --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLISTEN AND READ ALONG (3min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">READ</div>\n<div class=\"activity-description\">ZÚME TOOLKIT &#8211; 3-MINUTE TESTIMONY</p>\n<p>As followers of Jesus, we are “witnesses&#8221; for Him, because we “testify” about the impact Jesus has had on our lives. Your story of your relationship with God is called your Testimony. It&#8217;s powerful, and it&#8217;s something no one can share better than you.</p>\n<p>Find the 3-Minute Testimony section in your Zúme Guidebook, and listen to the audio below.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/kwhpgugafp.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_kwhpgugafp\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tPRACTICE (45min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block single\">\n<div class=\"activity-description well\">PRACTICE SHARING YOUR TESTIMONY</p>\n<p>Break into groups of two or three and and spend the next 45 minutes practicing sharing your Testimony using the Activity instructions on page 15 of your Zúme Guidebook.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n<p>\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">What is God&#8217;s greatest blessing for His children? Making disciples who multiply! </p>\n<p>What if you could learn a simple pattern for making not just one follower of Jesus but entire spiritual families who multiply for generations to come?</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/qbfpcb1ta8.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_qbfpcb1ta8\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>Is this the pattern you were taught when you first began to follow Jesus? If not, what was different? </li>\n<li>After you came to faith, how long was it before you began to disciple others?</li>\n<li> What do you think would happen if new followers started sharing and discipling others, immediately?</li>\n</ol>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">Have you ever stopped to think about where God&#8217;s Kingdom&#8230; isn&#8217;t?</p>\n<p>Have you ever visited a home or a neighborhood or even a city where it seemed as if God was just&#8230; missing? These are usually the places where God wants to work the most.</p></div>\n</p></div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/aii2k283nk.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_aii2k283nk\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>Who are you more comfortable sharing with &#8211; people you already know or people you haven&#8217;t met, yet? </li>\n<li>Why do you think that is? </li>\n<li>How could you get better at sharing with people you&#8217;re less comfortable with?</li>\n</ol></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLISTEN AND READ ALONG (3min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">READ</div>\n<div class=\"activity-description\">ZÚME TOOLKIT &#8211; THE LORD&#8217;S SUPPER</p>\n<p>Jesus said &#8211; “I am the living bread that came down from heaven. Whoever eats this bread will live forever. This bread is my flesh, which I will give for the life of the world.”</p>\n<p>Find &#8220;The Lord&#8217;s Supper&#8221; section in your Zúme Guidebook, and listen to the audio below.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/t3xr5w43av.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_t3xr5w43av\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tPRACTICE (10min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block single\">\n<div class=\"activity-description well\">PRACTICE THE LORD&#8217;S SUPPER</p>\n<p>Spend the next 10 minutes celebrating The Lord&#8217;s Supper with your group using the pattern on page 15 of your Zúme Guidebook.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING FORWARD\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Congratulations on finishing Session 4! Below are next steps to take in preparation for the next session. </div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">OBEY</div>\n<div class=\"activity-description\">Spend time this week practicing your 3-Minute Testimony, and then share it with at least one person from your List of 100 that you marked as &#8220;Unbeliever&#8221; or &#8220;Unknown.&#8221;</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">SHARE</div>\n<div class=\"activity-description\">Ask God who He wants you to train with the 3-Minute Testimony tool. Share this person&#8217;s name with the group before you go. </div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">PRAY</div>\n<div class=\"activity-description\">Pray that God help you be obedient to Him and invite Him to work in you and those around you!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>LOOKING BACK Welcome back to Zúme Training! CHECK-IN At the end of our last session, everyone in your group was challenged in two ways. you were asked to share God’s Story with at least one person from your List of 100 that you marked as &#8220;Unbeliever&#8221; or &#8220;Unknown.&#8221; you were encouraged to train someone to<a class=\"excerpt-read-more\" href=\"http://new.zumeproject.com/session-4-course/\" title=\"ReadSession 4 Course\">&#8230; Read more &raquo;</a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/802"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=802"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/802/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=802"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 800,
+    "date": "2017-06-08T09:34:40",
+    "date_gmt": "2017-06-08T15:34:40",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=800"
+    },
+    "modified": "2017-06-08T10:52:56",
+    "modified_gmt": "2017-06-08T16:52:56",
+    "slug": "session-3-course",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/session-3-course/",
+    "title": {
+      "rendered": "Session 3 Course"
+    },
+    "content": {
+      "rendered": "<p><!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING BACK\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Welcome back to Zúme Training!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>CHECK-IN</span></div>\n<div class=\"activity-description\">Before we get started, let&#8217;s take some time to check-in.</p>\n<p>At the end of our last session, everyone in your group was challenged in two ways: </p>\n<ol>\n<li>You were asked to pray for 5 people from your List of 100 that you marked as an &#8220;Unbeliever&#8221; or &#8220;Unknown.&#8221;</li>\n<li>You were encouraged to share how to make a List of 100 with someone.</li>\n</ol>\n<p> Take a few moments to see how your group did this week.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRAY</span></div>\n<div class=\"activity-description\">Pray and thank God for the results and invite His Holy Spirit to lead your time together.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>OVERVIEW</span></div>\n<div class=\"activity-description\">In this session, we’ll learn how God’s Spiritual Economy works and how God invests more in those who are faithful with what they&#8217;ve already been given. We’ll also learn two more tools for making disciples &#8211; sharing God’s Story from Creation to Judgement and Baptism.</p>\n<p>Then, when you&#8217;re ready, let&#8217;s get started!</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n<p>\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">In this broken world, people feel rewarded when they take, when they receive and when they gain more than those around them. But God&#8217;s Spiritual Economy is different &#8211; God invests more in those who are faithful with what they&#8217;ve already been given.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/63g4lcmbjf.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_63g4lcmbjf\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">What are some differences you see between God&#8217;s Spiritual Economy and our earthly way of getting things done?</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n<p>\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tREAD AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">READ</div>\n<div class=\"activity-description\">Jesus said &#8212; “you will receive power when the Holy Spirit comes upon you. And you will be my witnesses, telling people about me everywhere&#8211;in Jerusalem, throughout Judea, in Samaria, and to the ends of the earth.”</p>\n<p>\t\t\t\t\t\tJesus believed in His followers so much, He trusted them to tell His story. Then He sent them around the world to do it. Now, He’s sending us.</p>\n<p>\t\t\t\t\t\tThere’s no one “best way” to tell God’s story (also called The Gospel), because the best way will depend on who you’re sharing with. Every disciple should learn to tell God’s Story in a way that’s true to scripture and connects with the audience they’re sharing with.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>What comes to mind when you hear God&#8217;s command to be His &#8220;witness&#8221; and to tell His story?</li>\n<li> Why do you think Jesus chose ordinary people instead of some other way to share His Good News?</li>\n<li>What would it take for you to feel more comfortable sharing God&#8217;s Story?</li>\n</ol>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n<p>\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">One way to share God’s Good News is by telling God’s Story from Creation to Judgement &#8211; from the beginning of humankind all the way to the end of this age.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/0qq5iq8b2i.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_0qq5iq8b2i\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>What do you learn about mankind from this story?</li>\n<li>What do you learn about God?</li>\n<li>Do you think it would be easier or harder to share God&#8217;s Story by telling a story like this?</li>\n</ol>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tPRACTICE (45min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block single\">\n<div class=\"activity-description well\">PRACTICE SHARING GOD&#8217;S STORY</p>\n<p>Break into groups of two or three people and spend the next 45 minutes practicing telling God&#8217;s Story using the Activity instructions on page 13 of your Zúme Guidebook.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n<p>\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tREAD AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">READ</div>\n<div class=\"activity-description\">ZÚME TOOLKIT &#8211; BAPTISM</p>\n<p>\t\t\t\t\t\tJesus said &#8212; “go and make disciples of all nations, BAPTIZING them in the name of the Father and of the Son and of the Holy Spirit…”</p>\n<p>\t\t\t\t\t\tFind the &#8220;Baptism&#8221; section in your Zúme Guidebook, and listen to the audio below.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/v8p5mbpdp5.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_v8p5mbpdp5\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>Have you ever baptized someone? </li>\n<li>Would you even consider it?</li>\n<li> If the Great Commission is for every follower of Jesus, does that mean every follower is allowed to baptize others? Why or why not?</li>\n</ol>\n</div></div>\n<p> <!-- row --></p>\n<div class=\"row block single\">\n<div class=\"activity-description well\">IMPORTANT REMINDER &#8211; Have you been baptized? If not, then we encourage you to plan this before even one more session of this training. Invite your group to be a part of this important day when you celebrate saying &#8220;yes&#8221; to Jesus.</div>\n</div>\n</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING FORWARD\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Congratulations on finishing Session 3! Below are next steps to take in preparation for the next session. </div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">OBEY</div>\n<div class=\"activity-description\">Spend time this week practicing God&#8217;s Story, and then share it with at least one person from your List of 100 that you marked as &#8220;Unbeliever&#8221; or &#8220;Unknown.&#8221;</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">SHARE</div>\n<div class=\"activity-description\">Ask God who He wants you to train to use the Creation to Judgment story (or some other way to share God&#8217;s Story). Share this person&#8217;s name with the group before you go.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">PRAY</div>\n<div class=\"activity-description\">Pray that God help you be obedient to Him and invite Him to work in you and those around you!</div>\n</p></div>\n<p> <!-- row --></p>\n<div class=\"row block single\">\n<div class=\"activity-description well\">IMPORTANT REMINDER &#8211; Your group will be celebrating the Lord&#8217;s Supper next session. Be sure to remember the supplies (bread and wine / juice).</div>\n</div>\n</section>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>LOOKING BACK Welcome back to Zúme Training! CHECK-IN Before we get started, let&#8217;s take some time to check-in. At the end of our last session, everyone in your group was challenged in two ways: You were asked to pray for 5 people from your List of 100 that you marked as an &#8220;Unbeliever&#8221; or &#8220;Unknown.&#8221;<a class=\"excerpt-read-more\" href=\"http://new.zumeproject.com/session-3-course/\" title=\"ReadSession 3 Course\">&#8230; Read more &raquo;</a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/800"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=800"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/800/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=800"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 798,
+    "date": "2017-06-08T09:34:33",
+    "date_gmt": "2017-06-08T15:34:33",
+    "guid": {
+      "rendered": "http://new.zumeproject.com/?page_id=798"
+    },
+    "modified": "2017-06-09T04:23:01",
+    "modified_gmt": "2017-06-09T10:23:01",
+    "slug": "session-2-course",
+    "status": "publish",
+    "type": "page",
+    "link": "http://new.zumeproject.com/session-2-course/",
+    "title": {
+      "rendered": "Session 2 Course"
+    },
+    "content": {
+      "rendered": "<p><!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWELCOME BACK!\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>DOWNLOAD</span></div>\n<div class=\"activity-description\">Does everyone have a printed copy of the Zúme Guidebook? If not, please be sure that someone can download the Guidebook and that everyone has access to some paper and a pen or pencil.</p>\n<p>\t\t\t\t\t\t<a href=\"/wp-content/uploads/zume-guide-4039811470.pdf\" class=\"btn btn-large next-step zume-purple uppercase bg-white font-zume-purple big-btn btn-wide\" target=\"_blank\"><i class=\"glyphicon glyphicon-download-alt\"></i> <span> GUIDEBOOK</span></a>\n\t\t\t\t\t</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>CHECK-IN</span></div>\n<div class=\"activity-description\">Before we get started, let&#8217;s take some time to check-in.</p>\n<p>At the end of our last session, everyone in your group was challenged in two ways: </p>\n<ol>\n<li>You were asked to begin practicing the S.O.A.P.S. Bible reading method and keeping a daily journal.</li>\n<li>You were encouraged to reach out to someone about starting an Accountability Group.</li>\n</ol>\n<p> Take a few moments to see how your group did this week.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\"><span>PRAY</span></div>\n<div class=\"activity-description\">Ask if anyone in the group has specific needs they&#8217;d like the group to pray for. Ask someone to pray and ask God to help in the areas the group shared. Be sure to thank God that He promises in His Word to listen and act when His people pray. And, as always, ask God&#8217;s Holy Spirit to lead your time, together.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tWATCH AND DISCUSS (15min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">WATCH</div>\n<div class=\"activity-description\">If we want to make disciples who multiply &#8211; spiritual producers and not just consumers &#8211; then we need to learn and share four main ways God makes everyday followers more like Jesus:</p>\n<ul>\n<li>Prayer</li>\n<li>God&#8217;s Word</li>\n<li>Living as God&#8217;s People</li>\n<li>Persecution and Suffering</li>\n</ul>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/degdhfsycm.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_degdhfsycm\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>Of the four areas detailed above (prayer, God&#8217;s Word, etc.), which ones do you already practice?</li>\n<li> Which ones do you feel unsure about?</li>\n<li> How ready do you feel when it comes to training others?</li>\n</ol>\n</div></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLISTEN AND READ ALONG (2min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">READ</div>\n<div class=\"activity-description\">ZÚME TOOLKIT &#8211; PRAYER CYCLE</p>\n<p>\t\t\t\t\t\tThe Bible tells us that prayer is our chance to speak to and hear from the same God who created us!</p>\n<p>Find the &#8220;Prayer Cycle&#8221; section in your Zúme Guidebook, and listen to the audio below.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/1995yry849.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_1995yry849\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tPRACTICE (60min)\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Practice the Prayer Cycle for 60 minutes. </div>\n</p></div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">LEAVE</div>\n<div class=\"activity-description\">Spend the next 60 minutes in prayer individually, using the exercises in &#8220;The Prayer Cycle&#8221; section of the Zúme Guidebook as a guide.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">RETURN</div>\n<div class=\"activity-description\">Set a time for the group to return and reconnect. Be sure to add a few extra minutes for everyone to both find a quiet place to pray and to make their way back to the group.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">DISCUSS</div>\n<div class=\"activity-description\">\n<ol>\n<li>What is your reaction to spending an hour in prayer?</li>\n<li>How do you feel?</li>\n<li>Did you learn or hear anything?</li>\n<li>What would life be like if you made this kind of prayer a regular habit?</li>\n</ol></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- LISTEN AND READ ALONG --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLISTEN AND READ ALONG (3min)\n\t\t\t\t\t</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">READ</div>\n<div class=\"activity-description\">ZÚME TOOLKIT &#8211; LIST OF 100</p>\n<p>God has already given us the relationships we need to “Go and make disciples.” These are our family, friends, neighbors, co-workers and classmates &#8211; people we’ve known all our lives or maybe just met.</p>\n<p>\t\t\t\t\t\tBeing good stewards of these relationships is the first step in multiplying disciples. Start by making a list.</p>\n<p>\t\t\t\t\t\tFind the &#8220;List of 100&#8221; section in your Zúme Guidebook, and listen to the audio below.</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Video block --></p>\n<div class=\"row block\">\n<div class=\"small-12 small-centered medium-9 columns\">\n\t\t\t\t\t<script src=\"//fast.wistia.com/embed/medias/pzcavp72zy.jsonp\" async></script><br />\n\t\t\t\t\t<script src=\"//fast.wistia.com/assets/external/E-v1.js\" async></script></p>\n<div class=\"wistia_embed wistia_async_pzcavp72zy\" >&nbsp;</div>\n</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Single column template --><br />\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">PROJECT (30min)</div>\n<p> <!-- step-title -->\n\t\t\t\t</div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block single\">\n<div class=\"activity-description well well-lg\">CREATE YOUR OWN LIST OF 100</p>\n<p>Have everyone in your group take the next 30 minutes to fill out their own inventory of relationships using the form in the &#8220;List of 100&#8221; section in your Zúme Guidebook. \n\t\t\t\t\t</p></div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n<p>\t\t\t<!-- Step --></p>\n<h3></h3>\n<section>\n\t\t\t\t<!-- Step Title --></p>\n<div class=\"row block\">\n<div class=\"step-title\">\n\t\t\t\t\t\tLOOKING FORWARD\n\t\t\t\t\t</div>\n<p> <!-- step-title --></p>\n<div class=\"center\">Congratulations on finishing Session 2! Below are next steps to take in preparation for the next session.</div>\n</p></div>\n<p> <!-- row --></p>\n<p>\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">OBEY</div>\n<div class=\"activity-description\">Spend time this week praying for 5 people from your List of 100 that you marked as an &#8220;Unbeliever&#8221; or &#8220;Unknown.&#8221; Ask God to prepare their hearts to be open to His story.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">SHARE</div>\n<div class=\"activity-description\">Ask God who He wants you to share the List of 100 tool with. Share this person&#8217;s name with the group before you go and reach out to them before the next session.</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t\t<!-- Activity Block  --></p>\n<div class=\"row block\">\n<div class=\"activity-title\">PRAY</div>\n<div class=\"activity-description\">Pray that God help you be obedient to Him and invite Him to work in you and those around you!</div>\n</p></div>\n<p> <!-- row --><br />\n\t\t\t</section>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>WELCOME BACK! DOWNLOAD Does everyone have a printed copy of the Zúme Guidebook? If not, please be sure that someone can download the Guidebook and that everyone has access to some paper and a pen or pencil. GUIDEBOOK CHECK-IN Before we get started, let&#8217;s take some time to check-in. At the end of our last<a class=\"excerpt-read-more\" href=\"http://new.zumeproject.com/session-2-course/\" title=\"ReadSession 2 Course\">&#8230; Read more &raquo;</a></p>\n",
+      "protected": false
+    },
+    "author": 2,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/798"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/comments?post=798"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/pages/798/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://new.zumeproject.com/wp-json/wp/v2/media?parent=798"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
