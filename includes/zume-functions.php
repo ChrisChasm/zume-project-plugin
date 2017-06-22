@@ -225,3 +225,39 @@ function zume_remove_group_admin_tab() {
     }
 }
 add_action( 'bp_init', 'zume_remove_group_admin_tab', 9 );
+
+/**
+ * Redirect members directory page
+ */
+function zume_redirect () {
+
+    $ipaddress = '';
+    if (getenv('HTTP_CLIENT_IP'))
+        $ipaddress = getenv('HTTP_CLIENT_IP');
+    else if(getenv('HTTP_X_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+    else if(getenv('HTTP_X_FORWARDED'))
+        $ipaddress = getenv('HTTP_X_FORWARDED');
+    else if(getenv('HTTP_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_FORWARDED_FOR');
+    else if(getenv('HTTP_FORWARDED'))
+        $ipaddress = getenv('HTTP_FORWARDED');
+    else if(getenv('REMOTE_ADDR'))
+        $ipaddress = getenv('REMOTE_ADDR');
+    else
+        $ipaddress = 'UNKNOWN';
+
+
+    ?>
+    <script>window.location.replace('<?php echo home_url('/'); ?>');</script>
+    <noscript>
+
+        <div class="awesome-fancy-styling">
+            This site requires JavaScript and directories are not available. I will only be visible if you have javascript disabled and likely you are looking in the wrong part of our site. Please don't hack. You're IP Address is <?php echo $ipaddress; ?>.
+        </div>
+
+    </noscript>
+    <?php
+    die();
+}
+add_action('bp_before_directory_members_page', 'zume_redirect_members_directory');
