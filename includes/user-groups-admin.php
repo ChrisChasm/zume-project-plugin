@@ -46,3 +46,15 @@ function disciple_tools_groups_add_profile_section( $sections = array() ) {
 	// Filter & return
 	return apply_filters( 'disciple_tools_groups_add_profile_section', $new_sections, $sections );
 }
+
+
+/*
+ * Display the buddypress user name instead of the wp one.
+ */
+
+function get_bp_display_name(){
+	global $members_template;
+	return  xprofile_get_field_data(1, $members_template->member->id);
+}
+
+add_filter( 'bp_get_group_member_name', "get_bp_display_name" );
