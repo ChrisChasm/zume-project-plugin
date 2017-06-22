@@ -481,10 +481,14 @@ class Zume_Course {
                                 
                                 if( n < 4 ) { 
                                     var missing = 4 - n;  
-                                    jQuery( '#count' ).text( missing + (missing === 1 ? \" is\" : \" are\") + \" needed!\"  );
+                                    if (missing === 1) {
+                                        jQuery( '#count' ).text( missing + ' more is needed!' );
                                     } else {
-                                    jQuery( '#count' ).text( '' );
+                                        jQuery( '#count' ).text( missing + ' more are needed!' );
                                     }
+                                } else {
+                                    jQuery( '#count' ).text( '' );
+                                }
                             };
                             countChecked();
  
