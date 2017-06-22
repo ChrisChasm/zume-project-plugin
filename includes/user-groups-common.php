@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @return object //corrected from boolean
  */
-function disciple_tools_get_terms_for_user( $user = false, $taxonomy = '' ) {
+function zume_get_terms_for_user( $user = false, $taxonomy = '' ) {
 
 	// Verify user ID
 	$user_id = is_object( $user )
@@ -49,7 +49,7 @@ function disciple_tools_get_terms_for_user( $user = false, $taxonomy = '' ) {
  *
  * @return boolean
  */
-function disciple_tools_set_terms_for_user( $user_id, $taxonomy, $terms = array(), $bulk = false ) {
+function zume_set_terms_for_user( $user_id, $taxonomy, $terms = array(), $bulk = false ) {
 
 	// Get the taxonomy
 	$tax = get_taxonomy( $taxonomy );
@@ -99,7 +99,7 @@ function disciple_tools_set_terms_for_user( $user_id, $taxonomy, $terms = array(
  *
  * @return array A list of taxonomy names or objects.
  */
-function disciple_tools_get_user_groups( $args = array(), $output = 'names', $operator = 'and' ) {
+function zume_get_user_groups( $args = array(), $output = 'names', $operator = 'and' ) {
 
 	// Parse arguments
 	$r = wp_parse_args( $args, array(
@@ -113,17 +113,17 @@ function disciple_tools_get_user_groups( $args = array(), $output = 'names', $op
 /**
  * Get all user group objects
  *
- * @uses disciple_tools_get_user_groups() To get user group objects
+ * @uses zume_get_user_groups() To get user group objects
  *
  * @since 0.1.5
  *
- * @param  array  $args     See disciple_tools_get_user_groups()
- * @param  string $operator See disciple_tools_get_user_groups()
+ * @param  array  $args     See zume_get_user_groups()
+ * @param  string $operator See zume_get_user_groups()
  *
  * @return array
  */
-function disciple_tools_get_user_group_objects( $args = array(), $operator = 'and' ) {
-	return disciple_tools_get_user_groups( $args, 'objects', $operator );
+function zume_get_user_group_objects( $args = array(), $operator = 'and' ) {
+	return zume_get_user_groups( $args, 'objects', $operator );
 }
 
 /**
@@ -131,7 +131,7 @@ function disciple_tools_get_user_group_objects( $args = array(), $operator = 'an
  *
  * @since 0.1.0
  */
-function disciple_tools_get_users_of_group( $args = array() ) {
+function zume_get_users_of_group( $args = array() ) {
 
 	// Parse arguments
 	$r = wp_parse_args( $args, array(

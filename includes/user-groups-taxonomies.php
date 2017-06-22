@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 0.1.4
  */
-function disciple_tools_register_default_user_group_taxonomy() {
+function zume_register_default_user_group_taxonomy() {
 	new Disciple_Tools_User_Taxonomy( 'user-group', 'users/group', array(
 		'singular' => __( 'Team',  'disciple-tools' ),
 		'plural'   => __( 'Teams', 'disciple-tools' )
@@ -34,7 +34,7 @@ function disciple_tools_register_default_user_group_taxonomy() {
  *
  * @since 0.1.4
  */
-function disciple_tools_register_default_user_type_taxonomy() {
+function zume_register_default_user_type_taxonomy() {
 	new Disciple_Tools_User_Taxonomy( 'user-type',  'users/type',  array(
 		'singular' => __( 'Type',  'disciple-tools' ),
 		'plural'   => __( 'Types', 'disciple-tools' )

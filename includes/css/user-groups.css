@@ -129,8 +129,8 @@ table.user-groups .inactive .plugin-title strong {
 	}
 }
 
-#disciple_tools_taxonomy_user-group .inside,
-#disciple_tools_taxonomy_user-type .inside {
+#zume_taxonomy_user-group .inside,
+#zume_taxonomy_user-type .inside {
 	margin: 0;
 	padding: 0;
 }

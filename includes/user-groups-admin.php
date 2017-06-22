@@ -14,10 +14,10 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 0.1.4
  */
-function disciple_tools_groups_admin_assets() {
+function zume_groups_admin_assets() {
 	$ver = '0.1';
 
-	wp_enqueue_style( 'disciple_tools_groups', plugin_dir_url(__DIR__) . 'includes/css/user-groups.css', false, $ver, false );
+	wp_enqueue_style( 'zume_groups', plugin_dir_url(__DIR__) . 'includes/css/user-groups.css', false, $ver, false );
 }
 
 
@@ -28,7 +28,7 @@ function disciple_tools_groups_admin_assets() {
  *
  * @param array $sections
  */
-function disciple_tools_groups_add_profile_section( $sections = array() ) {
+function zume_groups_add_profile_section( $sections = array() ) {
 
 	// Copy for modifying
 	$new_sections = $sections;
@@ -44,7 +44,7 @@ function disciple_tools_groups_add_profile_section( $sections = array() ) {
 	);
 
 	// Filter & return
-	return apply_filters( 'disciple_tools_groups_add_profile_section', $new_sections, $sections );
+	return apply_filters( 'zume_groups_add_profile_section', $new_sections, $sections );
 }
 
 
