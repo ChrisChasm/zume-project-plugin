@@ -177,30 +177,10 @@ function zume_hide_tabs() {
 }
 add_action( 'bp_setup_nav', 'zume_hide_tabs', 15 );
 
-function zume_remove_group_tabs() { // todo: remove for production.
 
-    /**
-     * @since 2.6.0 Introduced the $component parameter.
-     *
-     * @param string $slug      The slug of the primary navigation item.
-     * @param string $component The component the navigation is attached to. Defaults to 'members'.
-     * @return bool Returns false on failure, True on success.
-     */
-
-    if ( ! bp_is_group() ) {
-        return;
-    }
-
-    $slug = bp_get_current_group_slug();
-    // all existing default group tabs are listed here. Uncomment or remove.
-//		bp_core_remove_subnav_item( $slug, 'members' );
-//		bp_core_remove_subnav_item( $slug, 'send-invites' );
-//		bp_core_remove_subnav_item( $slug , 'admin' );
-//        bp_core_remove_subnav_item( $slug, 'invite-anyone' );
-
-}
-add_action( 'bp_init', 'zume_remove_group_tabs' );
-
+/**
+ * Removes unnecisary tabs in group.
+ */
 function zume_remove_group_admin_tab() {
     if ( ! bp_is_group() || ! ( bp_is_current_action( 'admin' ) && bp_action_variable( 0 ) )  ) {
         return;
@@ -227,7 +207,7 @@ function zume_remove_group_admin_tab() {
 add_action( 'bp_init', 'zume_remove_group_admin_tab', 9 );
 
 /**
- * Redirect members directory page
+ * Redirect members directory pages
  */
 function zume_redirect () {
 
@@ -261,3 +241,13 @@ function zume_redirect () {
     die();
 }
 add_action('bp_before_directory_members_page', 'zume_redirect_members_directory');
+
+/**
+ * Add next session to group tab menu
+ */
+function zume_add_next_session_to_group_tabs () {
+    ?>
+    <li><a href="<?php ?>">Start Next Session</a></li>
+    <?php
+}
+add_action('bp_group_options_nav', 'zume_add_next_session_to_group_tabs');
