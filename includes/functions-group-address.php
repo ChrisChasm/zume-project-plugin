@@ -161,7 +161,7 @@ function group_edit_fields_markup() {
 function group_create_fields_markup() {
     ?>
 
-    <label for="address">Search for your census tract using your group meeting address. (U.S. physical addresses only)</label>
+    <label for="address">Search for your census tract using your group meeting address. (required) (U.S. physical addresses only)</label>
     <input id="address" type="text" name="address" value="" placeholder="1501 W. Mineral Ave, Littleton, CO 80120" style="width: 50%; display:inline;" required/> <button style="font-size:1.25em;" type="button" id="search-button">Search</button> <span id="spinner"></span>
 
 
@@ -171,7 +171,7 @@ function group_create_fields_markup() {
         /* Always set the map height explicitly to define the size of the div
     * element that contains the map. */
         #map {
-            height: 600px;
+            height: 200px;;
             width: 75%;
         }
         /* Optional: Makes the sample page fill the window. */
@@ -184,7 +184,8 @@ function group_create_fields_markup() {
             display:none;
         }
     </style>
-    <div id="map" style="height:200px;"></div>
+    <div id="map" ></div>
+
     <input type="hidden" id="tract" name="tract" value=""  required/>
     <input type="hidden" id="lng" name="lng" value=""  required/>
     <input type="hidden" id="lat" name="lat" value=""  required/>
@@ -201,6 +202,10 @@ function group_create_fields_markup() {
                 center: {lat: 38.7767479, lng: -104.0954098},
                 zoom: 3
             });
+            jQuery('#group-creation-create').prop('disabled', true).addClass('button action');
+
+
+
 
             jQuery('button').click( function () {
                 jQuery('#spinner').prepend('<img src="<?php echo plugin_dir_url(__FILE__); ?>/img/spinner.svg" style="height:30px;" />');
@@ -213,7 +218,7 @@ function group_create_fields_markup() {
                         jQuery('#search-button').html('Search Again?');
                         jQuery('#search-response').html('<p>Looks like you searched for <strong>' + data.formatted_address + '</strong>? <br>Therefore, <strong>' + data.geoid + '</strong> is most likely your census tract represented in the map below. </p>' );
 
-                        jQuery('#map').css('height', '600px');
+                        jQuery('#map').css('height', '475px');
 
                         var map = new google.maps.Map(document.getElementById('map'), {
                             zoom: data.zoom,
@@ -244,6 +249,7 @@ function group_create_fields_markup() {
                         jQuery('#lat').val(data.lat);
                         jQuery('#state').val(data.state);
                         jQuery('#county').val(data.county);
+                        jQuery('#group-creation-create').prop('disabled', false);
                     });
             });
         });
