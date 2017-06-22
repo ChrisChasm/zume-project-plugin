@@ -183,6 +183,7 @@ function group_create_fields_markup() {
         .article-header {
             display:none;
         }
+        #group-create-tabs{border-bottom:1px solid #eaeaea;}
     </style>
     <div id="map" ></div>
 
