@@ -310,7 +310,8 @@ class Zume_Course {
         elseif ($visited && $last_step != null) { $html .= 'startIndex: '. $last_step . ','; }
 
         // Fire record creation on step change
-        $html .=    'onStepChanging: function (event, currentIndex, newIndex) {
+
+        if(zume_group_highest_session_completed ($group_id) < $session_number) {$html .=    'onStepChanging: function (event, currentIndex, newIndex) {
                        
                        if (currentIndex === 0) { /* check attendance requirement */
                             var n = jQuery( "input:checked" ).length;
@@ -322,7 +323,7 @@ class Zume_Course {
                        
                     },
                     
-                    '; // end html block
+                    '; }// end html block
 
         // Fire record creation on step change
         $html .=    'onStepChanged: function (event, currentIndex, priorIndex) {
