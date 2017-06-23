@@ -50,28 +50,6 @@ function zume_force_login() {
     }
 }
 
-
-/*
- * Removing confusing or unnecissary admin menu items for Coaches.
- *
- */
-add_action( 'admin_init', 'zume_remove_coach_menu_pages' );
-function zume_remove_coach_menu_pages() {
-
-    global $user_ID;
-
-    if ( current_user_can( 'coach' ) ) {
-        remove_menu_page( 'options-general.php' );
-        remove_menu_page( 'tools.php' );
-        remove_menu_page( 'admin.php?page=theme_my_login' );
-        remove_menu_page( 'theme_my_login' );
-        remove_menu_page('bp-emails-customizer-redirect' );
-        remove_menu_page('admin.php?page=activity-log-settings' );
-    }
-}
-
-
-
 /*
  * Redirects logged on users from home page requests to dashboard.
  *
@@ -122,13 +100,6 @@ function zume_group_next_session ($group_id) {
 add_action('bp_before_create_group_content_template', 'zume_create_group_content');
 function zume_create_group_content () {
     echo '<h2 class="center padding-bottom">Create Group</h2>';
-}
-
-
-function zume_add_next_session_link () {
-    global $wp_admin_bar, $bp;
-    // Add the top-level Group Admin button.
-
 }
 
 
