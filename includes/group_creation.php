@@ -242,6 +242,7 @@ function group_invite_by_email() {
 		return false;
 	}
 	$group = groups_get_group($_POST["group_id"]);
+	$errors = array();
 	if ( isset( $_POST["invite_by_email_addresses"] ) ) {
 		$addresses = invite_by_email_parse_addresses($_POST["invite_by_email_addresses"]);
 		foreach ($addresses as $address){
@@ -252,9 +253,19 @@ function group_invite_by_email() {
 					'group.sign_up' => $_POST["sign_up_url"]
 				)
 			);
-			bp_send_email('invite_to_group_email', $address, $args);
+			$sent = bp_send_email('invite_to_group_email', $address, $args);
+			if ($sent !== true){
+				$errors[] = $address;
+			}
 		}
 	}
+
+	if (!empty($errors)){
+		bp_core_add_message("Emails not sent to: " . implode(" ", $errors), "error");
+	} else {
+		bp_core_add_message("Emails sent.");
+	}
+
 	return wp_redirect($_POST["_wp_http_referer"]);
 }
 
