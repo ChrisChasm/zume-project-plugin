@@ -28,12 +28,6 @@ function zume_init() {
     require_once ('includes/class-zume-dashboard.php');
     require_once ('includes/functions-group-address.php'); // loads the group address meta fields
 
-    require_once ('includes/class-user-taxonomy.php');
-    require_once ('includes/user-groups-admin.php');
-    require_once ('includes/user-groups-common.php');
-    require_once ('includes/user-groups-hooks.php');
-    require_once ('includes/user-groups-taxonomies.php');
-
 }
 add_action( 'bp_include', 'zume_init' );
 
