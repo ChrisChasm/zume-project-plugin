@@ -228,7 +228,7 @@ class Zume_Course {
             $html .= '</div>';
             $html .= '<br><div id="session'.$session.'-'.$group_id .'" class="course-steps">';
 
-            $html .= $this->attendance_step($group_id, $session); // add attendance as the first step
+            if(zume_group_highest_session_completed ($group_id) < $session) { $html .= $this->attendance_step($group_id, $session); } // add attendance as the first step
 
             $html .= $page_object->post_content.'';
             $html .= '</div>';
@@ -266,8 +266,6 @@ class Zume_Course {
      * @return mixed
      */
 	public function jquery_steps ($group_id, $session_number) {
-
-
 
 	    // Create variables
 	    $visited = true;
@@ -448,10 +446,10 @@ class Zume_Course {
 
     public function get_attendance_list($group_id, $session) {
         $html = '';
-        $html = '<style>
+        $html .= '<style>
                     li.attendance-list {padding:10px;}
                     li#count {text-align:center;}
-</style>';
+        </style>';
 
         if ( bp_group_has_members( array('group_id' => $group_id, 'group_role' => array('admin', 'mod', 'member')) ) ) :
             $html .= '<ul id="attendance-list" style="list-style-type: none;">';
@@ -501,15 +499,6 @@ class Zume_Course {
 
 	    return $html;
 
-    }
-
-    public function get_members_in_group ($group_id) {
-//	    $member_array = array();
-//        if ( bp_group_has_members( array('group_id' => $group_id, 'group_role' => array('admin', 'mod', 'member')) ) ) :
-//            while ( bp_group_members() ) : bp_group_the_member();
-//                $member_array[] = '';
-//            endwhile;
-//        endif;
     }
 
 }
