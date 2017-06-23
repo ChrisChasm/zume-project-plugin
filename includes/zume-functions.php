@@ -170,7 +170,7 @@ function zume_hide_tabs() {
         if ( bp_is_user()  ) {
 
             /* and here we remove our stuff ! */
-            bp_core_remove_nav_item( 'activity' );
+//            bp_core_remove_nav_item( 'activity' );
             bp_core_remove_nav_item( 'friends' );
             bp_core_remove_nav_item( 'groups' );
             bp_core_remove_nav_item( 'forums' );
