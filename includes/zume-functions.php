@@ -246,8 +246,15 @@ add_action('bp_before_directory_members_page', 'zume_redirect_members_directory'
  * Add next session to group tab menu
  */
 function zume_add_next_session_to_group_tabs () {
-    ?>
-    <li><a href="<?php ?>">Start Next Session</a></li>
-    <?php
+	$group_next_session = zume_group_next_session(bp_get_group_id());
+	$link = "/zume-training/?id=";
+  if (is_null($group_next_session)){
+    $link = $link . "10&group_id=". bp_get_group_id();
+  } else {
+    $link = $link . $group_next_session . "&group_id=" . bp_get_group_id();
+  }
+  ?>
+  <li><a href="<?php echo $link?>">Start Next Session</a></li>
+  <?php
 }
 add_action('bp_group_options_nav', 'zume_add_next_session_to_group_tabs');
