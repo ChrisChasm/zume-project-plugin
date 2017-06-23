@@ -78,8 +78,10 @@ function zume_remove_coach_menu_pages() {
  */
 function zume_dashboard_redirect () {
     global $post;
-    if ( is_user_logged_in() && $post->post_name == 'home') {
-        wp_redirect( home_url('/dashboard') );
+    if ( is_user_logged_in() && isset($post->post_name)) {
+	    if($post->post_name == 'home') {
+		  wp_redirect( home_url('/dashboard') );  
+	    }
     }
 }
 add_action('template_redirect', 'zume_dashboard_redirect');
