@@ -233,6 +233,8 @@ class Zume_Course {
             $html .= $page_object->post_content.'';
             $html .= '</div>';
 
+            $html .= '<div class="js-group-info" data-group-permalink="' . esc_attr(bp_get_group_permalink(groups_get_group($group_id))) . '"></div>';
+
             return $html;
         }
         else {
