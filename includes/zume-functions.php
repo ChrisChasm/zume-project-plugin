@@ -162,8 +162,7 @@ function zume_remove_group_admin_tab() {
     // following array
     $hide_tabs = array(
         'group-settings' => 1,
-        'delete-group' => 1,
-
+        /* 'delete-group' => 1, */
     );
     $parent_nav_slug = bp_get_current_group_slug() . '_manage';
     // Remove the nav items
