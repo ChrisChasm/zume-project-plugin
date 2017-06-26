@@ -231,3 +231,6 @@ function zume_add_next_session_to_group_tabs () {
   <?php
 }
 add_action('bp_group_options_nav', 'zume_add_next_session_to_group_tabs');
+
+//disable the welcome email
+add_filter( 'wpmu_welcome_notification', '__return_false' );
