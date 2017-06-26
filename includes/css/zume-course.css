@@ -9,6 +9,9 @@ body {
 .course-steps {
     font-size: 1.5rem;
 }
+.course-steps.wizard > .actions {
+    margin-top: 0.5rem;
+}
 .gray-bar {
     min-height:1px;
     width:100%;
