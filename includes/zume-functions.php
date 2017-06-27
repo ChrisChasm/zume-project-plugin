@@ -233,3 +233,9 @@ add_action('bp_group_options_nav', 'zume_add_next_session_to_group_tabs');
 
 //disable the welcome email
 add_filter( 'wpmu_welcome_notification', '__return_false' );
+
+//redirect to the dashboard after deleting a group
+function redirect_after_group_delete(){
+  bp_core_redirect( "/dashboard" );
+}
+add_action('groups_delete_group', "redirect_after_group_delete");
