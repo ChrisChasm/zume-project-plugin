@@ -192,6 +192,7 @@ function group_create_fields_markup() {
     <input type="hidden" id="lat" name="lat" value=""  required/>
     <input type="hidden" id="state" name="state" value=""  required/>
     <input type="hidden" id="county" name="county" value=""  required/>
+    <input type="hidden" id="assigned_to" name="assigned_to" value="dispatch"  required/>
 
 
     <script type="text/javascript">
@@ -270,7 +271,7 @@ function group_header_fields_save($group_id)
 {
     global $bp, $wpdb;
     $plain_fields = array(
-        'address', 'tract', 'lng', 'lat', 'state', 'county'
+        'address', 'tract', 'lng', 'lat', 'state', 'county', 'assigned_to'
     );
     foreach ($plain_fields as $field) {
         $key = $field;

@@ -28,6 +28,15 @@ function zume_init() {
     require_once ('includes/class-zume-dashboard.php');
     require_once ('includes/functions-group-address.php'); // loads the group address meta fields
 
+
+    if(is_admin()) {
+        require_once ('includes/class-coaches.php');
+        $zume_coaches = Zume_Coaches::instance();
+
+        require_once ('includes/class-coach-metabox.php');
+    }
+
+
 }
 add_action( 'bp_include', 'zume_init' );
 
@@ -39,9 +48,6 @@ function bp_loaded_function(){
 add_action('bp_init', 'bp_loaded_function');
 
 /* If you have code that does not need BuddyPress to run, then add it here. */
-
-
-
 
 /*
  * API routes

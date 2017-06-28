@@ -1,0 +1,435 @@
+{
+  "countries": [
+    {
+      "ab": "DZA",
+      "name": "Algeria",
+      "level": "2",
+      "file": "DZA_admin2.kml"
+    },
+    {
+      "ab": "EGY",
+      "name": "Egypt",
+      "level": "2",
+      "file": "EGY_admin2.kml"
+    },
+    {
+      "ab": "MAR",
+      "name": "Morocco",
+      "level": "4",
+      "file": "MAR_admin4.kml"
+    },
+    {
+      "ab": "TUN",
+      "name": "Tunisia",
+      "level": "2",
+      "file": "TUN_admin2.kml"
+    },
+    {
+      "ab": "TUR",
+      "name": "Turkey",
+      "level": "2",
+      "file": "TUR_admin2.kml"
+    }
+  ],
+  "USA_tracts": {
+    "01": {
+      "key": "01",
+      "ab": "AL",
+      "name": "Alabama",
+      "level": "tract",
+      "file": "cb_2016_01_tract_500k.kml"
+    },
+    "02": {
+      "key": "02",
+      "ab": "AK",
+      "name": "Alaska",
+      "level": "tract",
+      "file": "cb_2016_02_tract_500k.kml"
+    },
+    "04": {
+      "key": "04",
+      "ab": "AZ",
+      "name": "Arizona",
+      "level": "tract",
+      "file": "cb_2016_04_tract_500k.kml"
+    },
+    "05": {
+      "key": "05",
+      "ab": "AR",
+      "name": "Arkansas",
+      "level": "tract",
+      "file": "cb_2016_05_tract_500k.kml"
+    },
+    "06": {
+      "key": "06",
+      "ab": "CA",
+      "name": "California",
+      "level": "tract",
+      "file": "cb_2016_06_tract_500k.kml"
+    },
+    "08": {
+      "key": "08",
+      "ab": "CO",
+      "name": "Colorado",
+      "level": "tract",
+      "file": "cb_2016_08_tract_500k.kml"
+    },
+    "09": {
+      "key": "09",
+      "ab": "CT",
+      "name": "Connecticut",
+      "level": "tract",
+      "file": "cb_2016_09_tract_500k.kml"
+    },
+    "10": {
+      "key": "10",
+      "ab": "DE",
+      "name": "Delaware",
+      "level": "tract",
+      "file": "cb_2016_10_tract_500k.kml"
+    },
+    "11": {
+      "key": "11",
+      "ab": "DC",
+      "name": "District of Columbia",
+      "level": "tract",
+      "file": "cb_2016_11_tract_500k.kml"
+    },
+    "12": {
+      "key": "12",
+      "ab": "FL",
+      "name": "Florida",
+      "level": "tract",
+      "file": "cb_2016_12_tract_500k.kml"
+    },
+    "13": {
+      "key": "13",
+      "ab": "GA",
+      "name": "Georgia",
+      "level": "tract",
+      "file": "cb_2016_13_tract_500k.kml"
+    },
+    "15": {
+      "key": "15",
+      "ab": "HI",
+      "name": "Hawaii",
+      "level": "tract",
+      "file": "cb_2016_15_tract_500k.kml"
+    },
+    "16": {
+      "key": "16",
+      "ab": "ID",
+      "name": "Idaho",
+      "level": "tract",
+      "file": "cb_2016_16_tract_500k.kml"
+    },
+    "17": {
+      "key": "17",
+      "ab": "IL",
+      "name": "Illinois",
+      "level": "tract",
+      "file": "cb_2016_17_tract_500k.kml"
+    },
+    "18": {
+      "key": "18",
+      "ab": "IN",
+      "name": "Indiana",
+      "level": "tract",
+      "file": "cb_2016_18_tract_500k.kml"
+    },
+    "19": {
+      "key": "19",
+      "ab": "IA",
+      "name": "Iowa",
+      "level": "tract",
+      "file": "cb_2016_19_tract_500k.kml"
+    },
+    "20": {
+      "key": "20",
+      "ab": "KS",
+      "name": "Kansas",
+      "level": "tract",
+      "file": "cb_2016_20_tract_500k.kml"
+    },
+    "21": {
+      "key": "21",
+      "ab": "KY",
+      "name": "Kentucky",
+      "level": "tract",
+      "file": "cb_2016_21_tract_500k.kml"
+    },
+    "22": {
+      "key": "22",
+      "ab": "LA",
+      "name": "Louisiana",
+      "level": "tract",
+      "file": "cb_2016_22_tract_500k.kml"
+    },
+    "23": {
+      "key": "23",
+      "ab": "ME",
+      "name": "Maine",
+      "level": "tract",
+      "file": "cb_2016_23_tract_500k.kml"
+    },
+    "24": {
+      "key": "24",
+      "ab": "MD",
+      "name": "Maryland",
+      "level": "tract",
+      "file": "cb_2016_24_tract_500k.kml"
+    },
+    "25": {
+      "key": "25",
+      "ab": "MA",
+      "name": "Massachusetts",
+      "level": "tract",
+      "file": "cb_2016_25_tract_500k.kml"
+    },
+    "26": {
+      "key": "26",
+      "ab": "MI",
+      "name": "Michigan",
+      "level": "tract",
+      "file": "cb_2016_26_tract_500k.kml"
+    },
+    "27": {
+      "key": "27",
+      "ab": "MN",
+      "name": "Minnesota",
+      "level": "tract",
+      "file": "cb_2016_27_tract_500k.kml"
+    },
+    "28": {
+      "key": "28",
+      "ab": "MS",
+      "name": "Mississippi",
+      "level": "tract",
+      "file": "cb_2016_28_tract_500k.kml"
+    },
+    "29": {
+      "key": "29",
+      "ab": "MO",
+      "name": "Missouri",
+      "level": "tract",
+      "file": "cb_2016_29_tract_500k.kml"
+    },
+    "30": {
+      "key": "30",
+      "ab": "MT",
+      "name": "Montana",
+      "level": "tract",
+      "file": "cb_2016_30_tract_500k.kml"
+    },
+    "31": {
+      "key": "31",
+      "ab": "NE",
+      "name": "Nebraska",
+      "level": "tract",
+      "file": "cb_2016_31_tract_500k.kml"
+    },
+    "32": {
+      "key": "32",
+      "ab": "NV",
+      "name": "Nevada",
+      "level": "tract",
+      "file": "cb_2016_32_tract_500k.kml"
+    },
+    "33": {
+      "key": "33",
+      "ab": "NH",
+      "name": "New Hampshire",
+      "level": "tract",
+      "file": "cb_2016_33_tract_500k.kml"
+    },
+    "34": {
+      "key": "34",
+      "ab": "NJ",
+      "name": "New Jersey",
+      "level": "tract",
+      "file": "cb_2016_34_tract_500k.kml"
+    },
+    "35": {
+      "key": "35",
+      "ab": "NM",
+      "name": "New Mexico",
+      "level": "tract",
+      "file": "cb_2016_35_tract_500k.kml"
+    },
+    "36": {
+      "key": "36",
+      "ab": "NY",
+      "name": "New York",
+      "level": "tract",
+      "file": "cb_2016_36_tract_500k.kml"
+    },
+    "37": {
+      "key": "37",
+      "ab": "NC",
+      "name": "North Carolina",
+      "level": "tract",
+      "file": "cb_2016_37_tract_500k.kml"
+    },
+    "38": {
+      "key": "38",
+      "ab": "ND",
+      "name": "North Dakota",
+      "level": "tract",
+      "file": "cb_2016_38_tract_500k.kml"
+    },
+    "39": {
+      "key": "39",
+      "ab": "OH",
+      "name": "Ohio",
+      "level": "tract",
+      "file": "cb_2016_39_tract_500k.kml"
+    },
+    "40": {
+      "key": "40",
+      "ab": "OK",
+      "name": "Oklahoma",
+      "level": "tract",
+      "file": "cb_2016_40_tract_500k.kml"
+    },
+    "41": {
+      "key": "41",
+      "ab": "OR",
+      "name": "Oregon",
+      "level": "tract",
+      "file": "cb_2016_41_tract_500k.kml"
+    },
+    "42": {
+      "key": "42",
+      "ab": "PA",
+      "name": "Pennsylvania",
+      "level": "tract",
+      "file": "cb_2016_42_tract_500k.kml"
+    },
+    "44": {
+      "key": "44",
+      "ab": "RI",
+      "name": "Rhode Island",
+      "level": "tract",
+      "file": "cb_2016_44_tract_500k.kml"
+    },
+    "45": {
+      "key": "45",
+      "ab": "SC",
+      "name": "South Carolina",
+      "level": "tract",
+      "file": "cb_2016_45_tract_500k.kml"
+    },
+    "46": {
+      "key": "46",
+      "ab": "SD",
+      "name": "South Dakota",
+      "level": "tract",
+      "file": "cb_2016_46_tract_500k.kml"
+    },
+    "47": {
+      "key": "47",
+      "ab": "TN",
+      "name": "Tennessee",
+      "level": "tract",
+      "file": "cb_2016_47_tract_500k.kml"
+    },
+    "48": {
+      "key": "48",
+      "ab": "TX",
+      "name": "Texas",
+      "level": "tract",
+      "file": "cb_2016_48_tract_500k.kml"
+    },
+    "49": {
+      "key": "49",
+      "ab": "UT",
+      "name": "Utah",
+      "level": "tract",
+      "file": "cb_2016_49_tract_500k.kml"
+    },
+    "50": {
+      "key": "50",
+      "ab": "VT",
+      "name": "Vermont",
+      "level": "tract",
+      "file": "cb_2016_50_tract_500k.kml"
+    },
+    "51": {
+      "key": "51",
+      "ab": "VA",
+      "name": "Virginia",
+      "level": "tract",
+      "file": "cb_2016_51_tract_500k.kml"
+    },
+    "53": {
+      "key": "53",
+      "ab": "WA",
+      "name": "Washington",
+      "level": "tract",
+      "file": "cb_2016_53_tract_500k.kml"
+    },
+    "54": {
+      "key": "54",
+      "ab": "WV",
+      "name": "West Virginia",
+      "level": "tract",
+      "file": "cb_2016_54_tract_500k.kml"
+    },
+    "55": {
+      "key": "55",
+      "ab": "WI",
+      "name": "Wisconsin",
+      "level": "tract",
+      "file": "cb_2016_55_tract_500k.kml"
+    },
+    "56": {
+      "key": "56",
+      "ab": "WY",
+      "name": "Wyoming",
+      "level": "tract",
+      "file": "cb_2016_56_tract_500k.kml"
+    },
+    "60": {
+      "key": "60",
+      "ab": "AS",
+      "name": "American Samoa",
+      "level": "tract",
+      "file": "cb_2016_60_tract_500k.kml"
+    },
+    "66": {
+      "key": "66",
+      "ab": "GU",
+      "name": "Guam",
+      "level": "tract",
+      "file": "cb_2016_66_tract_500k.kml"
+    },
+    "69": {
+      "key": "69",
+      "ab": "MP",
+      "name": "Northern Mariana Islands",
+      "level": "tract",
+      "file": "cb_2016_69_tract_500k.kml"
+    },
+    "72": {
+      "key": "72",
+      "ab": "PR",
+      "name": "Puerto Rico",
+      "level": "tract",
+      "file": "cb_2016_72_tract_500k.kml"
+    },
+    "74": {
+      "key": "74",
+      "ab": "UM",
+      "name": "U.S. Minor Outlying Islands",
+      "level": "tract",
+      "file": "cb_2016_74_tract_500k.kml"
+    },
+    "78": {
+      "key": "78",
+      "ab": "VI",
+      "name": "U.S. Virgin Islands",
+      "level": "tract",
+      "file": "cb_2016_78_tract_500k.kml"
+    }
+  }
+}
