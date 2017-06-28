@@ -239,3 +239,6 @@ function redirect_after_group_delete(){
   bp_core_redirect( "/dashboard" );
 }
 add_action('groups_delete_group', "redirect_after_group_delete");
+
+//disable the public message button
+add_filter('bp_get_send_public_message_button', '__return_false');
