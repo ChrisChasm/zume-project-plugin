@@ -44,10 +44,10 @@ class Zume_Coaches {
      */
     public function __construct () {
 
-        // Register coach role
-        if(!$this->role_exists( 'coach' )) {
-            $this->create_coach_role();
-        }
+//        // Register coach role
+//        if(!$this->role_exists( 'coach' )) {
+//            $this->create_coach_role();
+//        }
 
         if(user_can(get_current_user_id(), 'coach_tools')) {
             // Add coach tab
