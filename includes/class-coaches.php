@@ -112,6 +112,7 @@ class Zume_Coaches {
 
             $states = ''; //TODO left off matching coach to location via the teams feature.
 
+
             // Check if location matches coach county
             // Check if multiple coaches and assign to coach with least groups.
 
