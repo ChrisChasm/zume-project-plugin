@@ -70,7 +70,7 @@ class Zume_Course {
          * First check if a change has been made to the active group selection
          * or if a new group session is being requested from the dashboard.
          */
-        if(! empty($_POST[$meta_key]) || isset( $_GET['group_id'])) {
+        if((!empty($_POST[$meta_key]) || isset( $_GET['group_id'])) && groups_is_user_member( $user_id, $_GET['group_id'])) {
 
             if ( isset( $_GET['group_id']) ) {
                 $new_group_id =  $_GET['group_id'];

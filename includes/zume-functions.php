@@ -225,9 +225,11 @@ function zume_add_next_session_to_group_tabs () {
   } else {
     $link = $link . $group_next_session . "&group_id=" . bp_get_group_id();
   }
+  if (groups_is_user_member( get_current_user_id(), bp_get_group_id() )){
   ?>
-  <li><a href="<?php echo $link?>">Start Next Session</a></li>
+    <li><a href="<?php echo $link?>">Start Next Session</a></li>
   <?php
+  }
 }
 add_action('bp_group_options_nav', 'zume_add_next_session_to_group_tabs');
 
