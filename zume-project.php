@@ -35,6 +35,7 @@ function zume_init() {
 
         require_once ('includes/class-coach-metabox.php');
     }
+	require_once ('includes/class-zume-emails.php');
 
 
 }
@@ -85,4 +86,12 @@ function ZumeProject_i18n_init() {
 add_action('plugins_loadedi','ZumeProject_i18n_init');
 
 
+function initialize_custom_emails(){
+	require_once ('includes/class-zume-emails.php');
+	your_three_month_plan_email();
+	group_enough_members_email();
+	invite_to_group_email();
+	automatically_added_to_group_email();
+}
 
+register_activation_hook( __FILE__, 'initialize_custom_emails' );
