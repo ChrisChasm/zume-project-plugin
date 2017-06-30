@@ -152,8 +152,10 @@ add_action( 'bp_core_install_emails', 'your_three_month_plan_email' );
 
 function automatically_added_to_group_email() {
 
+	$title = __('Added to Group', 'zume_project');
+
 	// Do not create if it already exists and is not in the trash
-	$post_exists = post_exists( '[{{{site.name}}}] Added to Group.' );
+	$post_exists = post_exists( '[{{{site.name}}}] ' . $title );
 
 	if ( $post_exists != 0 && get_post_status( $post_exists ) == 'publish' )
 		return;
@@ -178,7 +180,7 @@ Return to {{{site.url}}} to:
 
 	// Create post object
 	$my_post = array(
-		'post_title'    => __( '[{{{site.name}}}] Added to Group.', 'zume_project' ),
+		'post_title'    => '[{{{site.name}}}] ' . $title,
 		'post_content'  => $post_content,
 		'post_excerpt'  => $post_excerpt,
 		'post_status'   => 'publish',
@@ -209,8 +211,10 @@ add_action( 'bp_core_install_emails', 'automatically_added_to_group' );
 
 function invite_to_group_email() {
 
+	$title = __('Join my training group', "zume_project");
+
 	// Do not create if it already exists and is not in the trash
-	$post_exists = post_exists( '[{{{site.name}}}] Zume Invitation.' );
+	$post_exists = post_exists( '[{{{site.name}}}] '. $title);
 
 	if ( $post_exists != 0 && get_post_status( $post_exists ) == 'publish' )
 		return;
@@ -245,7 +249,7 @@ Join the movement of ordinary people who God could use to change the world.
 
 	// Create post object
 	$my_post = array(
-		'post_title'    => __( '[{{{site.name}}}] Join my training group.', 'zume_project' ),
+		'post_title'    => '[{{{site.name}}}] '. $title,
 		'post_content'  => $post_content,  // HTML email content.
 		'post_excerpt'  => $post_exerpt,
 		'post_status'   => 'publish',
