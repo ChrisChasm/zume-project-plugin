@@ -60,14 +60,14 @@ function group_enough_members_email() {
 
     $email_html = __('Hi {{recipient.name}},
 
-Your group now has at least four people who have activated their accounts. You are ready to begin your first session. Pick a time that works for all four of you and get started!
+Fantastic! Your Zúme Training Group, {{group.name}}, now has at least four people who have activated their accounts. You are ready to begin your first session. Pick a time that works for all of you and get started!
 
-Zume. Multiplying disciples. It\'s who we are. It\'s what we do.', 'zume_project');
+', 'zume_project');
     $email_content = __('Hi {{recipient.name}},
 
-Your group now has at least four people who have activated their accounts. You are ready to begin your first session. Pick a time that works for all four of you and get started!
+Fantastic! Your Zúme Training Group, {{group.name}}, now has at least four people who have activated their accounts. You are ready to begin your first session. Pick a time that works for all of you and get started!
 
-Zume. Multiplying disciples. It\'s who we are. It\'s what we do.', 'zume_project');
+', 'zume_project');
 
     // Create post object
     $my_post = array(

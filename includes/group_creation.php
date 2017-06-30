@@ -1,20 +1,25 @@
 <?php
 
-//
-//function skip_used($status, $email){
-//
-//
-////	if user already exists
-////	add to group auto
-//	if ($status == "used"){
-//		$status = "skip";
-//	}
-//	return  $status;
-//
-//}
-//
-//add_filter("invite_anyone_validate_email", "skid_used");
-
+function send_group_ready_email($user_id, $group_id, $inviter_id){
+	$count = groups_get_total_member_count( $group_id );
+	$emails = [];
+	if ($count == 4){
+		if (bp_group_has_members('group_id=' . $group_id . '&exclude_admins_mods=0' )){
+			while (bp_group_members()): bp_group_the_member();
+				$emails[] = bp_get_member_user_email();
+			endwhile;
+		}
+		$group = groups_get_group($group_id);
+		$args = array(
+			'tokens' => array (
+				'group.name'    => $group->name,
+				'group.url'     => esc_url(bp_get_group_permalink($group))
+			)
+		);
+		bp_send_email('group_enough_members', $emails, $args);
+	}
+}
+add_action('groups_accept_invite', 'send_group_ready_email', 1, 3);
 
 /**
  * Automatically add people to a group
@@ -36,13 +41,14 @@ if (isset($_SESSION["zume_group_id"]) && isset($_SESSION["zume_group_token"])){
 	$group_token = groups_get_groupmeta($group->id, "group_token");
 	if (isset($group_token) && $group_token == $_SESSION["zume_group_token"]){
 		if (!groups_is_user_member(get_current_user_id(), $_SESSION["zume_group_id"]) && $group->creator_id){
-			$_SESSION["test"] = groups_invite_user(array(
-				"user_id"=>get_current_user_id(),
-				"group_id" => $_SESSION["zume_group_id"],
-				"inviter_id" => $group->creator_id,
-				"is_confirmed" => true
-				)
-			);
+//			$_SESSION["test"] = groups_invite_user(array(
+//				"user_id"=>get_current_user_id(),
+//				"group_id" => $_SESSION["zume_group_id"],
+//				"inviter_id" => $group->creator_id,
+//				"is_confirmed" => true
+//				)
+//			);
+
 			if (groups_accept_invite(get_current_user_id(), $_SESSION["zume_group_id"])){
 				$_SESSION["zume_group_id"] = "";
 				$_SESSION["zume_group_token"] = "";
@@ -150,3 +156,5 @@ function group_invite_by_email() {
 
 
 add_action("admin_post_group_invite_by_email", "group_invite_by_email");
+
+
