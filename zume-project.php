@@ -56,13 +56,6 @@ add_action('bp_init', 'bp_loaded_function');
 require_once ('includes/rest-api.php');
 $zume_rest = Zume_REST_API::instance();
 
-//require_once ('api/zume-api.php');
-//// Function to register our new routes from the controller.
-//function prefix_register_zume_rest_routes() {
-//    $zume_route = new Zume_Custom_Route();
-//    $zume_route->register_routes();
-//}
-//add_action( 'rest_api_init', 'prefix_register_zume_rest_routes' );
 /* End API routes */
 
 

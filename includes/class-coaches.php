@@ -44,11 +44,6 @@ class Zume_Coaches {
      */
     public function __construct () {
 
-        // Register coach role
-        if(!$this->role_exists( 'coach' )) {
-            $this->create_coach_role();
-        }
-
         if(user_can(get_current_user_id(), 'coach_tools')) {
             // Add coach tab
             require_once ('class-coaches-group-stats.php');
@@ -56,16 +51,12 @@ class Zume_Coaches {
             require_once ('class-coaches-list.php');
             add_action( 'admin_menu', array( $this, 'load_admin_menu_item' ) );
         }
-
-
-
-
     } // End __construct()
 
     /**
      * Create the coach role if it is not created.
      */
-    private function create_coach_role () {
+    private static function create_coach_role () {
         add_role( 'coach', 'Coach',
             array(
                 'add_users' => true,
@@ -84,15 +75,6 @@ class Zume_Coaches {
                 'remove_users' => true,
                 'coach_tools' => true,
             ) );
-    }
-
-    private function role_exists( $role ) {
-
-        if( ! empty( $role ) ) {
-            return $GLOBALS['wp_roles']->is_role( $role );
-        }
-
-        return false;
     }
 
     /**
@@ -232,7 +214,7 @@ class Zume_Coaches {
                 ?>
                 <div class="wrap">
                     <div id="icon-users" class="icon32"></div>
-                    <h2>Group Stats</h2><?php  print '<pre>'; print_r(groups_get_groupmeta( '4')); print '</pre>'; ?>
+                    <h2>Group Stats</h2>
                     <form method="post">
                         <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
                         <?php $list_class->search_box('Search Table', 'your-element-id'); ?>
@@ -246,18 +228,6 @@ class Zume_Coaches {
         $html .= '</div>'; // end div class wrap
 
         echo $html; // Echo contents
-    }
-
-    public function assignment_cron () {
-
-        // if group has no coach
-
-        // if county coach exists
-        // search for groups without assigned_coach key
-
-        // assign coach logic
-
-
     }
 
 }
