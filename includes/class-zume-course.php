@@ -37,6 +37,8 @@ class Zume_Course {
 		return self::$_instance;
 	} // End instance()
 
+	private $session_nine_labels = array();
+
 	/**
 	 * Constructor function.
 	 * @access  public
@@ -44,6 +46,11 @@ class Zume_Course {
 	 */
 	public function __construct () {
 		add_action( 'wp_enqueue_scripts', array($this, 'zume_scripts_enqueue' ) );
+		add_shortcode('session_nine_plan', array($this, 'session_nine_plan'));
+		add_action("admin_post_session_nine_plan", array($this, "session_nine_plan_submit"));
+		$this->session_nine_labels = array(
+			"fieldOne reat time", "field2"
+		);
 	} // End __construct()
 
     /**
@@ -230,7 +237,7 @@ class Zume_Course {
 
             if(zume_group_highest_session_completed ($group_id) < $session) { $html .= $this->attendance_step($group_id, $session); } // add attendance as the first step
 
-            $html .= $page_object->post_content.'';
+            $html .= apply_filters('the_content', $page_object->post_content.'');
             $html .= '</div>';
 
             $html .= '<div class="js-group-info" data-group-permalink="' . esc_attr(bp_get_group_permalink(groups_get_group($group_id))) . '"></div>';
@@ -503,5 +510,43 @@ class Zume_Course {
 	    return $html;
 
     }
+
+
+
+    function session_nine_plan($attr){
+		$form = '<form id="session_nine_plan" action="/wp-admin/admin-post.php" method="post">';
+        foreach ($this->session_nine_labels as $index=>$label){
+       	    $form = $form . '<label>' . $label . '</label>';
+       	    $form = $form . '<textarea name="field_' . $label . '"></textarea>';
+	    }
+
+		$form = $form . wp_nonce_field('session_nine_plan') . '
+		<input type="hidden" name="action" value="session_nine_plan">
+		<input class="button" type="submit" name="submit" value="submit">
+		</form>
+		';
+	    return $form;
+    }
+
+    function session_nine_plan_submit(){
+
+	    if (isset($_POST["_wpnonce"]) && wp_verify_nonce($_POST["_wpnonce"], 'session_nine_plan' )){
+	        $user_id = get_current_user_id();
+		    $group_id = get_user_meta($user_id, "zume_active_group", true);
+	        update_option("test_session_9_group_". $group_id, $_POST);
+	        $fields = [];
+	        foreach ($_POST as $key=>$value){
+	        	if (strpos($key, 'field_') !== false){
+	        		$fields[str_replace("field_", "", $key)] = $value;
+		        }
+		    }
+
+
+	        $key = "group_" . $group_id . "-session_9";
+		    update_user_meta($user_id, $key, $fields);
+		    return wp_redirect($_POST["_wp_http_referer"]);
+	    }
+    }
+
 
 }
