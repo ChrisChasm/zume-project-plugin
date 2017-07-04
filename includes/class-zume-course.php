@@ -61,7 +61,8 @@ class Zume_Course {
 			"I will use the Prayer Cycle tool once every [days / weeks / months].",
 			"I will Prayer Walk once every [days / weeks / months].",
 			"I will invite the following people to be part of a Leadership Cell that I will lead:",
-			"I will encourage the following people to go through this Zúme Training course:"
+			"I will encourage the following people to go through this Zúme Training course:",
+			"Other commitments:"
 		);
 	} // End __construct()
 
