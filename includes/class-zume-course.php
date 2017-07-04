@@ -145,9 +145,13 @@ class Zume_Course {
 
             } else {
                 //user has no group.
-				echo '<h3>You need a group to see this page.</h3> 
-				<p>To create one go here: <a href="' . get_site_url() . '/dashboard">Dashboard</a></p>
+				echo '<h3>You do not have a group selected.</h3> 
+				<p>To create or select one go here: <a href="' . get_site_url() . '/dashboard">Dashboard</a></p>
 				<p>To see the Zúme course overview go here: <a href="' . get_site_url() . '/overview">Overview</a></p>';
+				if (isset( $_GET['group_id'])){
+					$group = groups_get_group( $_GET['group_id']);
+					echo 'To see the page of the group in the link and request membership click: <a href="' . bp_get_group_permalink($group). '">Here</a></p>';
+				}
 	            return;
             }
 
