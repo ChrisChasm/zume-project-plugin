@@ -144,21 +144,11 @@ class Zume_Course {
                 return;
 
             } else {
-                $new_group_id = '';
-
-                foreach ($user_groups as $agroup) {
-                    $new_group_id = $agroup->group_id;
-                }
-
-                // Update or Add meta value with new_group_id
-                if ( get_user_meta($user_id, $meta_key, true) ) {
-                    update_user_meta($user_id, $meta_key, $new_group_id);
-                } else {
-                    add_user_meta( $user_id, $meta_key, $new_group_id, true );
-                }
-
-                // Load Zúme content with variables
-                $this->content_loader($zume_session, $new_group_id );
+                //user has no group.
+				echo '<h3>You need a group to see this page.</h3> 
+				<p>To create one go here: <a href="' . get_site_url() . '/dashboard">Dashboard</a></p>
+				<p>To see the Zúme course overview go here: <a href="' . get_site_url() . '/overview">Overview</a></p>';
+	            return;
             }
 
             /**
