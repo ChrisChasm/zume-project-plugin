@@ -605,6 +605,7 @@ class Zume_Course {
 			foreach($coaches as $coach_id){
 				bp_send_email('your_three_month_plan', $coach_id, $args);
 			}
+			bp_core_add_message("Your plan was submitted successfully");
 		    return wp_redirect($_POST["_wp_http_referer"]);
 	    }
     }
