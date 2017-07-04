@@ -37,6 +37,8 @@ class Zume_Course {
 		return self::$_instance;
 	} // End instance()
 
+	private $session_nine_labels = array();
+
 	/**
 	 * Constructor function.
 	 * @access  public
@@ -44,6 +46,23 @@ class Zume_Course {
 	 */
 	public function __construct () {
 		add_action( 'wp_enqueue_scripts', array($this, 'zume_scripts_enqueue' ) );
+		add_shortcode('session_nine_plan', array($this, 'session_nine_plan'));
+		add_action("admin_post_session_nine_plan", array($this, "session_nine_plan_submit"));
+		$this->session_nine_labels = array(
+			"I will share My Story [Testimony] and God’s Story [the Gospel] with the following individuals:",
+			"I will invite the following people to begin an Accountability Group with me:",
+			"I will challenge the following people to begin their own Accountability Groups and train them how to do it:",
+			"I will invite the following people to begin a 3/3 Group with me:",
+			"I will challenge the following people to begin their own 3/3 Groups and train them how to do it:",
+			"I will invite the following people to participate in a 3/3 Hope or Discover Group [see Appendix]:",
+			"I will invite the following people to participate in Prayer Walking with me:",
+			"I will equip the following people to share their story and God’s Story and make a List of 100 of the people in their relational network:",
+			"I will challenge the following people to use the Prayer Cycle tool on a periodic basis:",
+			"I will use the Prayer Cycle tool once every [days / weeks / months].",
+			"I will Prayer Walk once every [days / weeks / months].",
+			"I will invite the following people to be part of a Leadership Cell that I will lead:",
+			"I will encourage the following people to go through this Zúme Training course:"
+		);
 	} // End __construct()
 
     /**
@@ -230,7 +249,7 @@ class Zume_Course {
 
             if(zume_group_highest_session_completed ($group_id) < $session) { $html .= $this->attendance_step($group_id, $session); } // add attendance as the first step
 
-            $html .= $page_object->post_content.'';
+            $html .= apply_filters('the_content', $page_object->post_content.'');
             $html .= '</div>';
 
             $html .= '<div class="js-group-info" data-group-permalink="' . esc_attr(bp_get_group_permalink(groups_get_group($group_id))) . '"></div>';
@@ -503,5 +522,91 @@ class Zume_Course {
 	    return $html;
 
     }
+
+
+
+    function session_nine_plan($attr){
+		$form = '<form id="session_nine_plan" action="/wp-admin/admin-post.php" method="post">';
+        foreach ($this->session_nine_labels as $index=>$label){
+       	    $form = $form . '<label>' . $label . '</label>';
+       	    $form = $form . '<textarea name="field_' . $index . '"></textarea>';
+	    }
+
+		$form = $form . wp_nonce_field('session_nine_plan') . '
+		<input type="hidden" name="action" value="session_nine_plan">
+		<input class="button" type="submit" name="submit" value="submit">
+		</form>
+		';
+	    return $form;
+    }
+
+
+    /**
+	 * Gets all coaches in a particular group, returns an array of integers
+	 * @return array
+	 */
+	function zume_get_coach_ids_in_group ($group_id) {
+	    if (is_numeric($group_id)) {
+	        $group_id = (int) $group_id;
+	    } else {
+	        throw new Exception("group_id argument should be an integer or pass the is_numeric test.");
+	    }
+	    global $wpdb;
+	    $results = $wpdb->get_results( "SELECT wp_usermeta.user_id FROM wp_bp_groups_members INNER JOIN wp_usermeta ON wp_usermeta.user_id=wp_bp_groups_members.user_id WHERE group_id = '$group_id' AND meta_key = 'wp_capabilities' AND meta_value LIKE '%coach%'", ARRAY_A );
+	    $rv = [];
+	    foreach ($results as $result) {
+	        $rv[] = (int) $result["user_id"];
+	    }
+	    return $rv;
+	}
+
+    function session_nine_plan_submit(){
+	    if (isset($_POST["_wpnonce"]) && wp_verify_nonce($_POST["_wpnonce"], 'session_nine_plan' )){
+	        $user = wp_get_current_user();
+	        $user_id = $user->ID;
+		    $group_id = get_user_meta($user_id, "zume_active_group", true);
+		    $group = groups_get_group($group_id);
+	        update_option("test_session_9_group_". $group_id, $_POST);
+	        $fields = [];
+		    $email_fields = "--------------------------------- \n";
+	        foreach ($_POST as $key=>$value){
+	        	if (strpos($key, 'field_') !== false){
+	        		$index = str_replace("field_", "", $key);
+	        		$label = $this->session_nine_labels[(int)$index];
+	        		$fields[$label] = $value;
+	        		$email_fields .= '- ' .str_replace("_", " ", $label) . "\n";
+	        		$email_fields .= '> ' . $value ."\n\n";
+		        }
+		    }
+
+
+	        $key = "group_" . $group_id . "-session_9";
+		    update_user_meta($user_id, $key, $fields);
+
+
+			$args = array(
+				'tokens'=> array(
+					"three_month_plan" => $email_fields
+				)
+			);
+			bp_send_email('your_three_month_plan', $user_id, $args);
+
+			$coaches = $this->zume_get_coach_ids_in_group($group_id);
+
+		    $user_plan = "--------------------------------- \n";
+		    $user_plan .= "Here is the plan for: " . $user->display_name . ", in group: " . $group->name . "\n";
+		    $user_plan .= $email_fields;
+			$args = array(
+				'tokens'=> array(
+					"three_month_plan" => $user_plan
+				)
+			);
+			foreach($coaches as $coach_id){
+				bp_send_email('your_three_month_plan', $coach_id, $args);
+			}
+		    return wp_redirect($_POST["_wp_http_referer"]);
+	    }
+    }
+
 
 }
