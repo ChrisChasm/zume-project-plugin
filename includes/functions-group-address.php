@@ -121,7 +121,7 @@ function group_edit_fields_markup() {
                         });
 
                         // Define the LatLng coordinates for the polygon's path.
-                        var coords = [ data.coordinates ];
+                        var coords = [ [data.coordinates] ];
 
                         var tracts = [];
 
@@ -259,6 +259,7 @@ function group_create_fields_markup() {
     <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcddCscCo-Uyfa3HJQVe0JdBaMCORA9eY">
     </script>
+
 
     <?php
 }

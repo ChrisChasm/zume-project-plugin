@@ -51,6 +51,8 @@ class Zume_Coaches {
             require_once ('class-coaches-list.php');
             add_action( 'admin_menu', array( $this, 'load_admin_menu_item' ) );
         }
+
+        add_action('groups_accept_invite', array($this, 'check_for_groups_needing_assignment'), 3, 10);
     } // End __construct()
 
     /**
@@ -78,34 +80,41 @@ class Zume_Coaches {
     }
 
     /**
-     * Function called by the hourly cron job that assigns coaches to groups who have at least 4 people and no currently assigned coach.
+     *
      */
-    public static function check_for_groups_needing_assignment () {
+    public function check_for_groups_needing_assignment ( $user_id, $group_id, $inviter_id) {
         global $wpdb;
-        // Find all groups that have 4 members and do not have an assigned coach
-        //SELECT group_id FROM wp_bp_groups_groupmeta WHERE meta_key != 'assigned_to' AND meta_key = 'total_member_count' AND meta_value >= '4' Group BY group_id
-        $groups = $wpdb->get_results("SELECT group_id, count(*) as total FROM $wpdb->bp_groups_groupmeta WHERE (meta_key = 'total_member_count' AND meta_value >= '4' )
-	OR (meta_key = 'assigned_to' AND meta_value = 'dispatch') Group BY group_id HAVING total >= 2", ARRAY_A);
 
-        foreach($groups as $group) {
-            // Get group location
-            $group_id = $group['group_id'];
-            $group_meta = groups_get_groupmeta( $group_id);
-
-            $states = ''; //TODO left off matching coach to location via the teams feature.
-
-
-            // Check if location matches coach county
-            // Check if multiple coaches and assign to coach with least groups.
-
-            // Check if location matches coach state
-            // Check if multiple coaches and assign to coach with least groups.
-
-            // Default to global coach location
-            // Check if multiple coaches and assign to coach with least groups.
+        $group = $wpdb->get_results("SELECT meta_value FROM $wpdb->bp_groups_groupmeta WHERE group_id = '$group_id' AND (meta_key = 'total_member_count' OR meta_key = 'assigned_to')", ARRAY_A);
+        $total_member_count = '';
+        $assigned_to = '';
+        foreach($group as $key => $value) {
+            if($key == 'total_member_count') {$total_member_count = $value;}
+            if($key == 'assigned_to') {$assigned_to = $value;}
         }
 
-        // Notify coach
+        if(empty($assigned_to)) {
+            groups_update_groupmeta($group_id, 'assigned_to', 'dispatch');
+            $assigned_to = 'dispatch';
+        }
+
+        if($total_member_count < 4 /* if Group has <4 members, then return and do nothing */) {
+            return true;
+        }
+        elseif ($total_member_count >= 4 && $assigned_to != 'dispatch' /* Group has 4+ members and has an assigned coach who is not dispatch */) {
+            return true;
+        }
+        else { /* If a group has 4+ members and their coach is dispatch, then begin assignment process */
+            // Check if county coach exists
+            
+
+            // Check if state coach exists
+
+
+            // Check if global coach exists.
+
+
+        }
 
         return true;
     }
