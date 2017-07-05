@@ -28,8 +28,7 @@ function add_user_to_mailchimp($email, $name=null) {
     $url = "https://$dc.api.mailchimp.com/3.0/lists/$list_id/members";
     $post_data = [
         'email_address' => $email,
-        'status' => 'subscribed',
-        'merge_fields' => []
+        'status' => 'subscribed'
     ];
     if ($name !== null) {
         $post_data['merge_fields']['FNAME'] = $name;
@@ -54,7 +53,7 @@ function add_user_to_mailchimp($email, $name=null) {
         if ($response === NULL) {
             error_log(__FUNCTION__ . ": could not decode JSON of response, this was the response string: $response_string");
         } else {
-            error_log(__FUNCTION__ . ": response is: " . var_export($response));
+            error_log(__FUNCTION__ . ": response is: " . var_export($response, TRUE));
         }
     }
 
