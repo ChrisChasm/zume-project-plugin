@@ -50,7 +50,12 @@ function add_user_to_mailchimp($email, $name=null) {
 
     if ($status_code != 200) {
         error_log(__FUNCTION__ . ": When sending post request to $url, got status code $status_code");
+        $response = json_decode($response_string, TRUE);
+        if ($response === NULL) {
+            error_log(__FUNCTION__ . ": could not decode JSON of response, this was the response string: $response_string");
+        } else {
+            error_log(__FUNCTION__ . ": response is: " . var_export($response));
+        }
     }
 
-    $response = json_decode($response_string);
 }
