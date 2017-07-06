@@ -262,6 +262,29 @@ function group_create_fields_markup() {
 
 
     <?php
+    echo '<br>';
+    $lng = -105.2705456;
+    $lat = 40.0149856;
+    $tract_address = 'https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x='.$lng.'&y='.$lat.'&benchmark=4&vintage=4&format=json';
+//    print $tract_address;
+    $census_results = json_decode(url_get_contents($tract_address));
+//    $census_results = url_get_contents($tract_address);
+//    print_r($census_results);
+
+//    print_r(Disciple_Tools_Census_Geolocation::query_census_api ('-105.2705456', '40.0149856', $type = 'full_object'));
+}
+
+function url_get_contents ($Url) {
+    if (!function_exists('curl_init')){
+        die('CURL is not installed!');
+    }
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_URL, $Url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $output = curl_exec($ch);
+    curl_close($ch);
+    return $output;
 }
 
 

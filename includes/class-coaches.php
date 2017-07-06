@@ -106,7 +106,7 @@ class Zume_Coaches {
         }
         else { /* If a group has 4+ members and their coach is dispatch, then begin assignment process */
             // Check if county coach exists
-            
+
 
             // Check if state coach exists
 
