@@ -146,11 +146,7 @@ class Zume_Course {
 	        return;
         } else {
         	// Update or Add meta value with new_group_id
-            if ( $group_id_user_meta ) {
-                update_user_meta($user_id, $meta_key, $group_id);
-            } else {
-                add_user_meta( $user_id, $meta_key, $group_id, true );
-            }
+            update_user_meta($user_id, $meta_key, $group_id);
 
             // Load Zúme content with variables
             $this->content_loader($zume_session, $group_id );
