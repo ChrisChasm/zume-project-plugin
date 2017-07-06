@@ -90,3 +90,4 @@ function initialize_custom_emails(){
 register_activation_hook( __FILE__, 'initialize_custom_emails' );
 
 include_once('includes/zume-options.php');
+include_once('includes/user-register.php');
