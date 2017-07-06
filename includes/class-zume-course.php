@@ -85,91 +85,81 @@ class Zume_Course {
         }
         else { $zume_session = '1'; }
 
+		$group_id = '';
 
-        /**
-         * First check if a change has been made to the active group selection
-         * or if a new group session is being requested from the dashboard.
-         */
-        if((!empty($_POST[$meta_key]) || isset( $_GET['group_id'])) && groups_is_user_member( $user_id, $_GET['group_id'])) {
-
-            if ( isset( $_GET['group_id']) ) {
-                $new_group_id =  $_GET['group_id'];
-            } else {
-                $new_group_id = $_POST[$meta_key];
-            }
-
-
-            // Update or Add meta value with new_group_id
-            if ( get_user_meta($user_id, $meta_key, true) ) {
-                update_user_meta($user_id, $meta_key, $new_group_id);
-            } else {
-                add_user_meta( $user_id, $meta_key, $new_group_id, true );
-            }
-
-            // Load Zúme content with variables
-            $this->content_loader($zume_session, $new_group_id );
+        if (isset( $_GET['group_id']) && !empty($_GET['group_id'])){
+        	if (groups_is_user_member( $user_id, $_GET['group_id'])){
+        	    $group_id = $_GET['group_id'];
+	        }
         }
-        /**
-         * Second check if there is no active group associated with the the user or
-         * a request has been made by the users to switch the active group
-         */
-        elseif ( (! get_user_meta($user_id, $meta_key, true) ) || isset($_GET['switch_zume_group'])  ) {
+        if (empty($group_id) && !empty($_POST[$meta_key]) ){
+        	if (groups_is_user_member($user_id,$_POST[$meta_key])){
+				$group_id = $_POST[$meta_key];
+	        }
+        }
+        $group_id_user_meta = get_user_meta($user_id, $meta_key, true);
+        if (empty($group_id) && $group_id_user_meta){
+	        if (groups_is_user_member($user_id, $group_id_user_meta)){
+        	    $group_id = $group_id_user_meta;
+	        }
+        }
 
-            // Get user memberships
-            $user_groups = bp_get_user_groups( bp_loggedin_user_id(), array( 'is_admin' => null, 'is_mod' => null, ) );
+        //look at user's buddy press groups
+        if (empty($group_id)){
+        	$user_groups = bp_get_user_groups( $user_id, array( 'is_admin' => null, 'is_mod' => null, ) );
+        	if (count($user_groups) == 1){
+        		$group_id = $user_groups[0]->group_id;
+	        } elseif (count($user_groups) > 1){
+		        echo 'More than one group<br>';
+		        echo '<form action=""  method="POST" >Which group do you prefer?<br>';
 
-            // Check to select group
-            if ( count( $user_groups ) > 1 ) {
+		        foreach ($user_groups as $agroup) {
 
-                echo 'More than one group<br>';
-                echo '<form action=""  method="POST" >Which group do you prefer?<br>';
+			        // Get group name from group id
+			        $group_id = $agroup->group_id;
+			        $group = groups_get_group( $group_id ); // gets group object
+			        $group_name = $group->name;
 
-                foreach ($user_groups as $agroup) {
+			        // Create radio button
+			        echo '<div class="radio">';
+			        echo '<label><input type="radio" name="'. $meta_key .'" value="'.$group_id.'">'.$group_name.' </label>';
+			        echo '</div>';
 
-                    // Get group name from group id
-                    $group_id = $agroup->group_id;
-                    $group = groups_get_group( $group_id ); // gets group object
-                    $group_name = $group->name;
+		        }
 
-                    // Create radio button
-                    echo '<div class="radio">';
-                    echo '<label><input type="radio" name="'. $meta_key .'" value="'.$group_id.'">'.$group_name.' </label>';
-                    echo '</div>';
+		        echo '<button type="submit" class="btn button">Select</button>';
+		        echo '</form>';
 
-                }
+		        return;
+	        }
+        }
 
-                echo '<button type="submit" class="btn button">Select</button>';
-                echo '</form>';
-
-                return;
-
+        if (empty($group_id)){
+	        //user has no group.
+	        echo '<h3>You do not have a group selected.</h3> 
+					<p>To create or select one go here: <a href="' . get_site_url() . '/dashboard">Dashboard</a></p>
+					<p>To see the Zúme course overview go here: <a href="' . get_site_url() . '/overview">Overview</a></p>';
+	        if (isset( $_GET['group_id'])){
+		        $group = groups_get_group( $_GET['group_id']);
+		        echo 'To see the page of the group in the link and request membership click: <a href="' . bp_get_group_permalink($group). '">Here</a></p>';
+	        }
+	        return;
+        } else {
+        	// Update or Add meta value with new_group_id
+            if ( $group_id_user_meta ) {
+                update_user_meta($user_id, $meta_key, $group_id);
             } else {
-                //user has no group.
-				echo '<h3>You do not have a group selected.</h3> 
-				<p>To create or select one go here: <a href="' . get_site_url() . '/dashboard">Dashboard</a></p>
-				<p>To see the Zúme course overview go here: <a href="' . get_site_url() . '/overview">Overview</a></p>';
-				if (isset( $_GET['group_id'])){
-					$group = groups_get_group( $_GET['group_id']);
-					echo 'To see the page of the group in the link and request membership click: <a href="' . bp_get_group_permalink($group). '">Here</a></p>';
-				}
-	            return;
+                add_user_meta( $user_id, $meta_key, $group_id, true );
             }
 
-            /**
-             * Last, pull current active group from user meta and load content according to active group.
-             */
-        } else {
-
-            $new_group_id = get_user_meta($user_id, $meta_key, true);
-
             // Load Zúme content with variables
-            $this->content_loader($zume_session, $new_group_id );
+            $this->content_loader($zume_session, $group_id );
         }
 
         /**
          * Create switch group link
          */
-        $user_groups = bp_get_user_groups( bp_loggedin_user_id(), array( 'is_admin' => null, 'is_mod' => null, ) ); // Check for number of groups
+        $user_groups = bp_get_user_groups( $user_id, array( 'is_admin' => null, 'is_mod' => null, ) ); // Check for number of groups
 
         // Check to select group
         if ( count( $user_groups ) > 1 ) {
@@ -523,7 +513,7 @@ class Zume_Course {
     function session_nine_plan($attr){
 		$form = '<form id="session_nine_plan" action="/wp-admin/admin-post.php" method="post">';
         foreach ($this->session_nine_labels as $index=>$label){
-       	    $form = $form . '<label>' . $label . '</label>';
+       	    $form = $form . '<label style="font-size:16px">' . $label . '</label>';
        	    $form = $form . '<textarea name="field_' . $index . '"></textarea>';
 	    }
 
@@ -561,7 +551,6 @@ class Zume_Course {
 	        $user_id = $user->ID;
 		    $group_id = get_user_meta($user_id, "zume_active_group", true);
 		    $group = groups_get_group($group_id);
-	        update_option("test_session_9_group_". $group_id, $_POST);
 	        $fields = [];
 		    $email_fields = "--------------------------------- \n";
 	        foreach ($_POST as $key=>$value){
@@ -600,8 +589,8 @@ class Zume_Course {
 				bp_send_email('your_three_month_plan', $coach_id, $args);
 			}
 			bp_core_add_message("Your plan was submitted successfully");
-		    return wp_redirect($_POST["_wp_http_referer"]);
 	    }
+	    return wp_redirect($_POST["_wp_http_referer"]);
     }
 
 
