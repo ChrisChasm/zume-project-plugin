@@ -105,7 +105,7 @@ class Zume_Course {
         }
 
         //look at user's buddy press groups
-        if (empty($group_id)){
+        if (empty($group_id) || (empty($_POST[$meta_key]) && isset($_GET["switch_zume_group"]))){
         	$user_groups = bp_get_user_groups( $user_id, array( 'is_admin' => null, 'is_mod' => null, ) );
         	if (count($user_groups) == 1){
         		$group_id = $user_groups[0]->group_id;
@@ -534,7 +534,7 @@ class Zume_Course {
 	    if (is_numeric($group_id)) {
 	        $group_id = (int) $group_id;
 	    } else {
-	        throw new Exception("group_id argument should be an integer or pass the is_numeric test.");
+	        throw new Exception("group_id argument should be an integer or pass the is_numeric test: " . $group_id);
 	    }
 	    global $wpdb;
 	    $results = $wpdb->get_results( "SELECT wp_usermeta.user_id FROM wp_bp_groups_members INNER JOIN wp_usermeta ON wp_usermeta.user_id=wp_bp_groups_members.user_id WHERE group_id = '$group_id' AND meta_key = 'wp_capabilities' AND meta_value LIKE '%coach%'", ARRAY_A );
@@ -548,7 +548,7 @@ class Zume_Course {
     function session_nine_plan_submit(){
 	    if (isset($_POST["_wpnonce"]) && wp_verify_nonce($_POST["_wpnonce"], 'session_nine_plan' )){
 	        $user = wp_get_current_user();
-	        $user_id = $user->ID;
+	        $user_id = get_current_user_id();
 		    $group_id = get_user_meta($user_id, "zume_active_group", true);
 		    $group = groups_get_group($group_id);
 	        $fields = [];
@@ -578,7 +578,7 @@ class Zume_Course {
 			$coaches = $this->zume_get_coach_ids_in_group($group_id);
 
 		    $user_plan = "--------------------------------- \n";
-		    $user_plan .= "Here is the plan for: " . $user->display_name . ", in group: " . $group->name . "\n";
+		    $user_plan .= "Here is the plan for: " . (isset($user->display_name) ? $user->display_name : "[user]") . ", in group: " . $group->name . "\n";
 		    $user_plan .= $email_fields;
 			$args = array(
 				'tokens'=> array(
