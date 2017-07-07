@@ -56,6 +56,10 @@ add_action('bp_init', 'bp_loaded_function');
 require_once ('includes/rest-api.php');
 $zume_rest = Zume_REST_API::instance();
 
+require_once('includes/locations-rest-controller.php');
+require_once('includes/locations-rest-api.php');
+$location_api = Location_Lookup_REST_API::instance();
+
 /* End API routes */
 
 
