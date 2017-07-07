@@ -230,7 +230,10 @@ class Zume_Course {
 
             if(zume_group_highest_session_completed ($group_id) < $session) { $html .= $this->attendance_step($group_id, $session); } // add attendance as the first step
 
-            $html .= apply_filters('the_content', $page_object->post_content.'');
+            $post_content = $page_object->post_content.'';
+            $post_content = str_replace("[session_nine_plan]", $this->session_nine_plan(), $post_content);
+
+            $html .= $post_content;
             $html .= '</div>';
 
             $html .= '<div class="js-group-info" data-group-permalink="' . esc_attr(bp_get_group_permalink(groups_get_group($group_id))) . '"></div>';
@@ -506,7 +509,7 @@ class Zume_Course {
 
 
 
-    function session_nine_plan($attr){
+    function session_nine_plan($attr=null){
 		$form = '<form id="session_nine_plan" action="/wp-admin/admin-post.php" method="post">';
         foreach ($this->session_nine_labels as $index=>$label){
        	    $form = $form . '<label style="font-size:16px">' . $label . '</label>';
