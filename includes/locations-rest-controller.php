@@ -94,30 +94,19 @@ class Location_Lookup_Controller {
     public static function get_map_by_geoid ($params) {
 
         $geoid = $params['geoid'];
-        $lng = $params['lng'];
-        $lat = $params['lat'];
-        $state = substr($geoid, 0, 2);
 
         // Boundary data
         $coordinates = Disciple_Tools_Coordinates_DB::get_db_coordinates( $geoid); // return coordinates from database
-
-
-        if(empty($lng) || empty($lat)) {
-            $coor = $coordinates[0];
-            $lng = $coor['lng'];
-            $lat = $coor['lat'];
-        }
-
-        $zoom = Location_Lookup_Placemark_Info::get_placemark_zoom($geoid, $state);
+        $meta = dt_get_coordinates_meta ($geoid); // returns an array of meta
 
         return array(
             'status' => 'OK',
-            'zoom' => $zoom,
-            'lng'   =>  (float)$lng,
-            'lat'   =>  (float)$lat,
+            'zoom' => $meta['zoom'],
+            'lng'   =>  (float)$meta['center_lng'],
+            'lat'   =>  (float)$meta['center_lat'],
             'geoid' => $geoid,
             'coordinates' => $coordinates,
-            'state' =>  $state,
+            'state' =>  substr($geoid, 0, 1),
         );
     }
 

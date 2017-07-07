@@ -69,7 +69,7 @@ function group_edit_fields_markup() {
 
                 var restURL = '<?php echo get_rest_url(null, '/lookup/v1/tract/getmapbygeoid'); ?>';
 
-                jQuery.post( restURL, { geoid: geoid, lng: lng, lat: lat })
+                jQuery.post( restURL, { geoid: geoid })
                     .done(function( data ) {
 
                         jQuery('#map').css('height', '600px');
