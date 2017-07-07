@@ -132,12 +132,12 @@ div.mt-element-step {
     background-color: #00aeef;
 }
 
-/*commented out to make sessions more pretty*/
-/*div.block {*/
-    /*padding: 0 20px 0 20px;*/
-    /*!*max-width: 800px;*!*/
-    /*margin: 0 auto;*/
-/*}*/
+
+div.block {
+    padding: 20px;
+    /*max-width: 800px;*/
+    margin: 0 auto;
+}
 
 div.step-title {
     text-align: center;
