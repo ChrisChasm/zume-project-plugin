@@ -44,7 +44,7 @@ class Zume_Coaches {
      */
     public function __construct () {
 
-        if(user_can(get_current_user_id(), 'coach_tools')) {
+        if(user_can(get_current_user_id(), 'manage_options')) {
             // Add coach tab
             require_once ('class-coaches-group-stats.php');
             require_once ('class-coaches-unassigned-groups.php');
@@ -125,7 +125,7 @@ class Zume_Coaches {
      * Load Admin menu into Settings
      */
     public function load_admin_menu_item () {
-        add_menu_page( 'Coach', 'Coach Tools', 'read', 'coach_tools', array($this, 'page_content'), 'dashicons-admin-users', '30' );
+        add_menu_page( 'Coach', 'Coach Tools', 'manage_options', 'coach_tools', array($this, 'page_content'), 'dashicons-admin-users', '30' );
     }
 
     /**
@@ -153,15 +153,15 @@ class Zume_Coaches {
 
         $html .= $tab_link_pre . 'group_stats' . $tab_link_post;
         if ($tab == 'group_stats' || !isset($tab)) {$html .= 'nav-tab-active';}
-        $html .= '">Group Stats</a>';
+        $html .= '">Group List with Assigned Coach</a>';
 
-        $html .= $tab_link_pre . 'unassigned' . $tab_link_post;
-        if ($tab == 'unassigned' ) {$html .= 'nav-tab-active';}
-        $html .= '">Unassigned Groups</a>';
+//        $html .= $tab_link_pre . 'unassigned' . $tab_link_post;
+//        if ($tab == 'unassigned' ) {$html .= 'nav-tab-active';}
+//        $html .= '">Unassigned Groups</a>';
 
-        $html .= $tab_link_pre . 'coach_list' . $tab_link_post;
-        if ($tab == 'coach_list' ) {$html .= 'nav-tab-active';}
-        $html .= '">Coach List</a>';
+//        $html .= $tab_link_pre . 'coach_list' . $tab_link_post;
+//        if ($tab == 'coach_list' ) {$html .= 'nav-tab-active';}
+//        $html .= '">Coach List</a>';
 
         $html .= '</h2>';
 
