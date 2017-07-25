@@ -655,7 +655,6 @@ class Zume_Group_Stats_List extends WP_List_Table {
      */
     public function column_assigned_to( $item = array() ) {
         $assigned_to = groups_get_groupmeta( $item['id'], 'assigned_to' );
-        $user_name = zume_get_assigned_name ( $assigned_to );
 
         /**
          * Filters the markup for the number of Members column.
@@ -665,7 +664,7 @@ class Zume_Group_Stats_List extends WP_List_Table {
          * @param int   $count Markup for the number of Members column.
          * @parma array $item  The current group item in the loop.
          */
-        echo apply_filters_ref_array( 'bp_groups_admin_get_group_assigned_to', array( $user_name, $item ) );
+        echo apply_filters_ref_array( 'bp_groups_admin_get_group_assigned_to', array( $assigned_to, $item ) );
     }
 
     /**
