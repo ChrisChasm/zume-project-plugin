@@ -286,7 +286,8 @@ function zume_get_assigned_name ( $assigned_to ) {
             return $value->display_name;
         } else {
             $value = get_term( $id );
-            return $value->name;
+            return $assigned_to;
+//            return $value->name;
         }
     }
 
