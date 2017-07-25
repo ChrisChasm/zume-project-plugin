@@ -275,20 +275,20 @@ add_action( 'admin_menu', 'custom_menu_page_removing' );
  * @param $contact_id
  */
 function zume_get_assigned_name ( $assigned_to ) {
-
-    if(!empty( $assigned_to )) {
-        $meta_array = explode( '-', $assigned_to ); // Separate the type and id
-        $type = $meta_array[0];
-        $id = $meta_array[1];
-
-        if($type == 'user') {
-            $value = get_user_by( 'id', $id );
-            return $value->display_name;
-        } else {
-            $value = get_term( $id );
-            return $assigned_to;
-//            return $value->name;
-        }
-    }
+return $assigned_to;
+//    if(!empty( $assigned_to )) {
+//        $meta_array = explode( '-', $assigned_to ); // Separate the type and id
+//        $type = $meta_array[0];
+//        $id = $meta_array[1];
+//
+//        if($type == 'user') {
+//            $value = get_user_by( 'id', $id );
+//            return $value->display_name;
+//        } else {
+//            $value = get_term( $id );
+//            return $assigned_to;
+////            return $value->name;
+//        }
+//    }
 
 }
