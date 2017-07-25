@@ -269,3 +269,25 @@ function custom_menu_page_removing() {
     }
 }
 add_action( 'admin_menu', 'custom_menu_page_removing' );
+
+/**
+ * Get User Name from Assigned To Field
+ * @param $contact_id
+ */
+function zume_get_assigned_name ( $assigned_to ) {
+
+    if(!empty( $assigned_to )) {
+        $meta_array = explode( '-', $assigned_to ); // Separate the type and id
+        $type = $meta_array[0];
+        $id = $meta_array[1];
+
+        if($type == 'user') {
+            $value = get_user_by( 'id', $id );
+            return $value->display_name;
+        } else {
+            $value = get_term( $id );
+            return $value->name;
+        }
+    }
+
+}

@@ -1,445 +1,820 @@
 <?php
-
-
-
-/*************************** LOAD THE BASE CLASS *******************************
- *******************************************************************************
- * The WP_List_Table class isn't automatically available to plugins, so we need
- * to check if it's available and load it if necessary. In this tutorial, we are
- * going to use the WP_List_Table class directly from WordPress core.
+/**
+ * BuddyPress Groups admin list table class.
  *
- * IMPORTANT:
- * Please note that the WP_List_Table class technically isn't an official API,
- * and it could change at some point in the distant future. Should that happen,
- * I will update this plugin with the most current techniques for your reference
- * immediately.
+ * Props to WordPress core for the Comments admin screen, and its contextual
+ * help text, on which this implementation is heavily based.
  *
- * If you are really worried about future compatibility, you can make a copy of
- * the WP_List_Table class (file path is shown just below) to use and distribute
- * with your plugins. If you do that, just remember to change the name of the
- * class to avoid conflicts with core.
- *
- * Since I will be keeping this tutorial up-to-date for the foreseeable future,
- * I am going to work with the copy of the class provided in WordPress core.
+ * @package BuddyPress
+ * @subpackage Groups
+ * @since 1.7.0
  */
-if(!class_exists('WP_List_Table')){
-    require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
-}
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
 
 
-
-/************************** CREATE A PACKAGE CLASS *****************************
- *******************************************************************************
- * Create a new list table package that extends the core WP_List_Table class.
- * WP_List_Table contains most of the framework for generating the table, but we
- * need to define and override some methods so that our data can be displayed
- * exactly the way we need it to be.
+/**
+ * List table class for the Groups component admin page.
  *
- * To display this example on a page, you will first need to instantiate the class,
- * then call $yourInstance->prepare_items() to handle any data manipulation, then
- * finally call $yourInstance->display() to render the table to the page.
- *
- * Our theme for this list table is going to be movies.
+ * @since 1.7.0
  */
 class Zume_Group_Stats_List extends WP_List_Table {
 
-    /** ************************************************************************
-     * Normally we would be querying data from a database and manipulating that
-     * for use in your list table. For this example, we're going to simplify it
-     * slightly and create a pre-built array. Think of this as the data that might
-     * be returned by $wpdb->query()
+    /**
+     * The type of view currently being displayed.
      *
-     * In a real-world scenario, you would make your own custom query inside
-     * this class' prepare_items() method.
+     * E.g. "All", "Pending", "Approved", "Spam"...
      *
+     * @since 1.7.0
+     * @var string
+     */
+    public $view = 'all';
+
+    /**
+     * Group counts for each group type.
+     *
+     * @since 1.7.0
+     * @var int
+     */
+    public $group_counts = 0;
+
+    /**
+     * Multidimensional array of group visibility (status) types and their groups.
+     *
+     * @link https://buddypress.trac.wordpress.org/ticket/6277
      * @var array
-     **************************************************************************/
-    var $example_data = array(
-        array(
-            'ID'        => 1,
-            'title'     => '300',
-            'rating'    => 'R',
-            'director'  => 'Zach Snyder'
-        ),
-        array(
-            'ID'        => 2,
-            'title'     => 'Eyes Wide Shut',
-            'rating'    => 'R',
-            'director'  => 'Stanley Kubrick'
-        ),
-        array(
-            'ID'        => 3,
-            'title'     => 'Moulin Rouge!',
-            'rating'    => 'PG-13',
-            'director'  => 'Baz Luhrman'
-        ),
-        array(
-            'ID'        => 4,
-            'title'     => 'Snow White',
-            'rating'    => 'G',
-            'director'  => 'Walt Disney'
-        ),
-        array(
-            'ID'        => 5,
-            'title'     => 'Super 8',
-            'rating'    => 'PG-13',
-            'director'  => 'JJ Abrams'
-        ),
-        array(
-            'ID'        => 6,
-            'title'     => 'The Fountain',
-            'rating'    => 'PG-13',
-            'director'  => 'Darren Aronofsky'
-        ),
-        array(
-            'ID'        => 7,
-            'title'     => 'Watchmen',
-            'rating'    => 'R',
-            'director'  => 'Zach Snyder'
-        ),
-        array(
-            'ID'        => 8,
-            'title'     => '2001',
-            'rating'    => 'G',
-            'director'  => 'Stanley Kubrick'
-        ),
-    );
+     */
+    public $group_type_ids = array();
 
+    /**
+     * Constructor
+     *
+     * @since 1.7.0
+     */
+    public function __construct() {
 
-    /** ************************************************************************
-     * REQUIRED. Set up a constructor that references the parent constructor. We
-     * use the parent reference to set some default configs.
-     ***************************************************************************/
-    function __construct(){
-        global $status, $page;
-
-        //Set parent defaults
+        // Define singular and plural labels, as well as whether we support AJAX.
         parent::__construct( array(
-            'singular'  => 'movie',     //singular name of the listed records
-            'plural'    => 'movies',    //plural name of the listed records
-            'ajax'      => false        //does this table support ajax?
+            'ajax'     => false,
+            'plural'   => 'groups',
+            'singular' => 'group',
         ) );
 
-    }
-
-
-    /** ************************************************************************
-     * Recommended. This method is called when the parent class can't find a method
-     * specifically build for a given column. Generally, it's recommended to include
-     * one method for each column you want to render, keeping your package class
-     * neat and organized. For example, if the class needs to process a column
-     * named 'title', it would first see if a method named $this->column_title()
-     * exists - if it does, that method will be used. If it doesn't, this one will
-     * be used. Generally, you should try to use custom column methods as much as
-     * possible.
-     *
-     * Since we have defined a column_title() method later on, this method doesn't
-     * need to concern itself with any column with a name of 'title'. Instead, it
-     * needs to handle everything else.
-     *
-     * For more detailed insight into how columns are handled, take a look at
-     * WP_List_Table::single_row_columns()
-     *
-     * @param array $item A singular item (one full row's worth of data)
-     * @param array $column_name The name/slug of the column to be processed
-     * @return string Text or HTML to be placed inside the column <td>
-     **************************************************************************/
-    function column_default($item, $column_name){
-        switch($column_name){
-            case 'rating':
-            case 'director':
-                return $item[$column_name];
-            default:
-                return print_r($item,true); //Show the whole array for troubleshooting purposes
+        // Add Group Type column and bulk change controls.
+        if ( bp_groups_get_group_types() ) {
+            // Add Group Type column.
+            add_filter( 'bp_groups_list_table_get_columns',        array( $this, 'add_type_column' )                  );
+            add_filter( 'bp_groups_admin_get_group_custom_column', array( $this, 'column_content_group_type' ), 10, 3 );
+            // Add the bulk change select.
+            add_action( 'bp_groups_list_table_after_bulk_actions', array( $this, 'add_group_type_bulk_change_select' ) );
         }
     }
 
+    /**
+     * Set up items for display in the list table.
+     *
+     * Handles filtering of data, sorting, pagination, and any other data
+     * manipulation required prior to rendering.
+     *
+     * @since 1.7.0
+     */
+    public function prepare_items() {
+        global $groups_template;
 
-    /** ************************************************************************
-     * Recommended. This is a custom column method and is responsible for what
-     * is rendered in any column with a name/slug of 'title'. Every time the class
-     * needs to render a column, it first looks for a method named
-     * column_{$column_title} - if it exists, that method is run. If it doesn't
-     * exist, column_default() is called instead.
-     *
-     * This example also illustrates how to implement rollover actions. Actions
-     * should be an associative array formatted as 'slug'=>'link html' - and you
-     * will need to generate the URLs yourself. You could even ensure the links
-     *
-     *
-     * @see WP_List_Table::::single_row_columns()
-     * @param array $item A singular item (one full row's worth of data)
-     * @return string Text to be placed inside the column <td> (movie title only)
-     **************************************************************************/
-    function column_title($item){
+        $screen = get_current_screen();
 
-        //Build row actions
+        // Option defaults.
+        $include_id   = false;
+        $search_terms = false;
+
+        // Set current page.
+        $page = $this->get_pagenum();
+
+        // Set per page from the screen options.
+        $per_page = $this->get_items_per_page( str_replace( '-', '_', "{$screen->id}_per_page" ) );
+
+        // Sort order.
+        $order = 'DESC';
+        if ( !empty( $_REQUEST['order'] ) ) {
+            $order = ( 'desc' == strtolower( $_REQUEST['order'] ) ) ? 'DESC' : 'ASC';
+        }
+
+        // Order by - default to newest.
+        $orderby = 'last_activity';
+        if ( ! empty( $_REQUEST['orderby'] ) ) {
+            switch ( $_REQUEST['orderby'] ) {
+                case 'name' :
+                    $orderby = 'name';
+                    break;
+                case 'id' :
+                    $orderby = 'date_created';
+                    break;
+                case 'members' :
+                    $orderby = 'total_member_count';
+                    break;
+                case 'last_active' :
+                    $orderby = 'last_activity';
+                    break;
+                case 'assigned_to' :
+                    $orderby = 'assigned_to';
+                    break;
+            }
+        }
+
+        // Are we doing a search?
+        if ( !empty( $_REQUEST['s'] ) )
+            $search_terms = $_REQUEST['s'];
+
+        // Check if user has clicked on a specific group (if so, fetch only that group).
+        if ( !empty( $_REQUEST['gid'] ) )
+            $include_id = (int) $_REQUEST['gid'];
+
+        // Set the current view.
+        if ( isset( $_GET['group_status'] ) && in_array( $_GET['group_status'], array( 'public', 'private', 'hidden' ) ) ) {
+            $this->view = $_GET['group_status'];
+        }
+
+        // We'll use the ids of group status types for the 'include' param.
+        $this->group_type_ids = BP_Groups_Group::get_group_type_ids();
+
+        // Pass a dummy array if there are no groups of this type.
+        $include = false;
+        if ( 'all' != $this->view && isset( $this->group_type_ids[ $this->view ] ) ) {
+            $include = ! empty( $this->group_type_ids[ $this->view ] ) ? $this->group_type_ids[ $this->view ] : array( 0 );
+        }
+
+        // Get group type counts for display in the filter tabs.
+        $this->group_counts = array();
+        foreach ( $this->group_type_ids as $group_type => $group_ids ) {
+            $this->group_counts[ $group_type ] = count( $group_ids );
+        }
+
+        // Group types
+        $group_type = false;
+        if ( isset( $_GET['bp-group-type'] ) && null !== bp_groups_get_group_type_object( $_GET['bp-group-type'] ) ) {
+            $group_type = $_GET['bp-group-type'];
+        }
+
+        // If we're viewing a specific group, flatten all activities into a single array.
+        if ( $include_id ) {
+            $groups = array( (array) groups_get_group( $include_id ) );
+        } else {
+            $groups_args = array(
+                'include'  => $include,
+                'per_page' => $per_page,
+                'page'     => $page,
+                'orderby'  => $orderby,
+                'order'    => $order
+            );
+
+            if ( $group_type ) {
+                $groups_args['group_type'] = $group_type;
+            }
+
+            $groups = array();
+            if ( bp_has_groups( $groups_args ) ) {
+                while ( bp_groups() ) {
+                    bp_the_group();
+                    $groups[] = (array) $groups_template->group;
+                }
+            }
+        }
+
+        // Set raw data to display.
+        $this->items = $groups;
+
+        // Store information needed for handling table pagination.
+        $this->set_pagination_args( array(
+            'per_page'    => $per_page,
+            'total_items' => $groups_template->total_group_count,
+            'total_pages' => ceil( $groups_template->total_group_count / $per_page )
+        ) );
+    }
+
+    /**
+     * Get an array of all the columns on the page.
+     *
+     * @since 1.7.0
+     *
+     * @return array Array of column headers.
+     */
+    public function get_column_info() {
+        $this->_column_headers = array(
+            $this->get_columns(),
+            array(),
+            $this->get_sortable_columns(),
+            $this->get_default_primary_column_name(),
+        );
+
+        return $this->_column_headers;
+    }
+
+    /**
+     * Get name of default primary column
+     *
+     * @since 2.3.3
+     *
+     * @return string
+     */
+    protected function get_default_primary_column_name() {
+        // Comment column is mapped to Group's name.
+        return 'comment';
+    }
+
+    /**
+     * Display a message on screen when no items are found ("No groups found").
+     *
+     * @since 1.7.0
+     */
+    public function no_items() {
+        _e( 'No groups found.', 'buddypress' );
+    }
+
+    /**
+     * Output the Groups data table.
+     *
+     * @since 1.7.0
+     */
+    public function display() {
+        $this->display_tablenav( 'top' ); ?>
+
+        <h2 class="screen-reader-text"><?php
+            /* translators: accessibility text */
+            _e( 'Groups list', 'buddypress' );
+            ?></h2>
+
+        <table class="wp-list-table <?php echo implode( ' ', $this->get_table_classes() ); ?>" cellspacing="0">
+            <thead>
+            <tr>
+                <?php $this->print_column_headers(); ?>
+            </tr>
+            </thead>
+
+            <tbody id="the-comment-list">
+            <?php $this->display_rows_or_placeholder(); ?>
+            </tbody>
+
+            <tfoot>
+            <tr>
+                <?php $this->print_column_headers( false ); ?>
+            </tr>
+            </tfoot>
+        </table>
+        <?php
+
+        $this->display_tablenav( 'bottom' );
+    }
+
+    /**
+     * Extra controls to be displayed between bulk actions and pagination
+     *
+     * @since 2.7.0
+     * @access protected
+     *
+     * @param string $which
+     */
+    protected function extra_tablenav( $which ) {
+        /**
+         * Fires just after the bulk action controls in the WP Admin groups list table.
+         *
+         * @since 2.7.0
+         *
+         * @param string $which The location of the extra table nav markup: 'top' or 'bottom'.
+         */
+        do_action( 'bp_groups_list_table_after_bulk_actions', $which );
+    }
+
+    /**
+     * Generate content for a single row of the table.
+     *
+     * @since 1.7.0
+     *
+     * @param object|array $item The current group item in the loop.
+     */
+    public function single_row( $item = array() ) {
+        static $even = false;
+
+        $row_classes = array();
+
+        if ( $even ) {
+            $row_classes = array( 'even' );
+        } else {
+            $row_classes = array( 'alternate', 'odd' );
+        }
+
+        /**
+         * Filters the classes applied to a single row in the groups list table.
+         *
+         * @since 1.9.0
+         *
+         * @param array  $row_classes Array of classes to apply to the row.
+         * @param string $value       ID of the current group being displayed.
+         */
+        $row_classes = apply_filters( 'bp_groups_admin_row_class', $row_classes, $item['id'] );
+        $row_class = ' class="' . implode( ' ', $row_classes ) . '"';
+
+        echo '<tr' . $row_class . ' id="group-' . esc_attr( $item['id'] ) . '" data-parent_id="' . esc_attr( $item['id'] ) . '" data-root_id="' . esc_attr( $item['id'] ) . '">';
+        echo $this->single_row_columns( $item );
+        echo '</tr>';
+
+        $even = ! $even;
+    }
+
+    /**
+     * Get the list of views available on this table (e.g. "all", "public").
+     *
+     * @since 1.7.0
+     */
+    public function get_views() {
+        $url_base = bp_get_admin_url( 'admin.php?page=bp-groups' ); ?>
+
+        <h2 class="screen-reader-text"><?php
+            /* translators: accessibility text */
+            _e( 'Filter groups list', 'buddypress' );
+            ?></h2>
+
+        <ul class="subsubsub">
+            <li class="all"><a href="<?php echo esc_url( $url_base ); ?>" class="<?php if ( 'all' == $this->view ) echo 'current'; ?>"><?php _e( 'All', 'buddypress' ); ?></a> |</li>
+            <li class="public"><a href="<?php echo esc_url( add_query_arg( 'group_status', 'public', $url_base ) ); ?>" class="<?php if ( 'public' == $this->view ) echo 'current'; ?>"><?php printf( _n( 'Public <span class="count">(%s)</span>', 'Public <span class="count">(%s)</span>', $this->group_counts['public'], 'buddypress' ), number_format_i18n( $this->group_counts['public'] ) ); ?></a> |</li>
+            <li class="private"><a href="<?php echo esc_url( add_query_arg( 'group_status', 'private', $url_base ) ); ?>" class="<?php if ( 'private' == $this->view ) echo 'current'; ?>"><?php printf( _n( 'Private <span class="count">(%s)</span>', 'Private <span class="count">(%s)</span>', $this->group_counts['private'], 'buddypress' ), number_format_i18n( $this->group_counts['private'] ) ); ?></a> |</li>
+            <li class="hidden"><a href="<?php echo esc_url( add_query_arg( 'group_status', 'hidden', $url_base ) ); ?>" class="<?php if ( 'hidden' == $this->view ) echo 'current'; ?>"><?php printf( _n( 'Hidden <span class="count">(%s)</span>', 'Hidden <span class="count">(%s)</span>', $this->group_counts['hidden'], 'buddypress' ), number_format_i18n( $this->group_counts['hidden'] ) ); ?></a></li>
+
+            <?php
+
+            /**
+             * Fires inside listing of views so plugins can add their own.
+             *
+             * @since 1.7.0
+             *
+             * @param string $url_base Current URL base for view.
+             * @param string $view     Current view being displayed.
+             */
+            do_action( 'bp_groups_list_table_get_views', $url_base, $this->view ); ?>
+        </ul>
+        <?php
+    }
+
+    /**
+     * Get bulk actions for single group row.
+     *
+     * @since 1.7.0
+     *
+     * @return array Key/value pairs for the bulk actions dropdown.
+     */
+    public function get_bulk_actions() {
+
+        /**
+         * Filters the list of bulk actions to display on a single group row.
+         *
+         * @since 1.7.0
+         *
+         * @param array $value Array of bulk actions to display.
+         */
+        return apply_filters( 'bp_groups_list_table_get_bulk_actions', array(
+            'delete' => __( 'Delete', 'buddypress' )
+        ) );
+    }
+
+    /**
+     * Get the table column titles.
+     *
+     * @since 1.7.0
+     *
+     * @see WP_List_Table::single_row_columns()
+     *
+     * @return array Array of column titles.
+     */
+    public function get_columns() {
+
+        /**
+         * Filters the titles for the columns for the groups list table.
+         *
+         * @since 2.0.0
+         *
+         * @param array $value Array of slugs and titles for the columns.
+         */
+        return apply_filters( 'bp_groups_list_table_get_columns', array(
+            'cb'          => '<input name type="checkbox" />',
+            'comment'     => _x( 'Name', 'Groups admin Group Name column header',               'buddypress' ),
+            'description' => _x( 'Description', 'Groups admin Group Description column header', 'buddypress' ),
+            'status'      => _x( 'Status', 'Groups admin Privacy Status column header',         'buddypress' ),
+            'members'     => _x( 'Members', 'Groups admin Members column header',               'buddypress' ),
+            'assigned_to'     => _x( 'Assigned To', 'Assigned To',               'buddypress' ),
+            'last_active' => _x( 'Last Active', 'Groups admin Last Active column header',       'buddypress' )
+        ) );
+    }
+
+    /**
+     * Get the column names for sortable columns.
+     *
+     * Note: It's not documented in WP, but the second item in the
+     * nested arrays below is $desc_first. Normally, we would set
+     * last_active to be desc_first (since you're generally interested in
+     * the *most* recently active group, not the *least*). But because
+     * the default sort for the Groups admin screen is DESC by last_active,
+     * we want the first click on the Last Active column header to switch
+     * the sort order - ie, to make it ASC. Thus last_active is set to
+     * $desc_first = false.
+     *
+     * @since 1.7.0
+     *
+     * @return array Array of sortable column names.
+     */
+    public function get_sortable_columns() {
+        return array(
+            'gid'         => array( 'gid', false ),
+            'comment'     => array( 'name', false ),
+            'members'     => array( 'members', false ),
+            'last_active' => array( 'last_active', false ),
+        );
+    }
+
+    /**
+     * Override WP_List_Table::row_actions().
+     *
+     * Basically a duplicate of the row_actions() method, but removes the
+     * unnecessary <button> addition.
+     *
+     * @since 2.3.3
+     * @since 2.3.4 Visibility set to public for compatibility with WP < 4.0.0.
+     *
+     * @param array $actions        The list of actions.
+     * @param bool  $always_visible Whether the actions should be always visible.
+     * @return string
+     */
+    public function row_actions( $actions, $always_visible = false ) {
+        $action_count = count( $actions );
+        $i = 0;
+
+        if ( !$action_count )
+            return '';
+
+        $out = '<div class="' . ( $always_visible ? 'row-actions visible' : 'row-actions' ) . '">';
+        foreach ( $actions as $action => $link ) {
+            ++$i;
+            ( $i == $action_count ) ? $sep = '' : $sep = ' | ';
+            $out .= "<span class='$action'>$link$sep</span>";
+        }
+        $out .= '</div>';
+
+        return $out;
+    }
+
+    /**
+     * Markup for the Checkbox column.
+     *
+     * @since 1.7.0
+     *
+     * @see WP_List_Table::single_row_columns()
+     *
+     * @param array $item A singular item (one full row).
+     */
+    public function column_cb( $item = array() ) {
+        /* translators: accessibility text */
+        printf( '<label class="screen-reader-text" for="gid-%1$d">' . __( 'Select group %1$d', 'buddypress' ) . '</label><input type="checkbox" name="gid[]" value="%1$d" id="gid-%1$d" />', $item['id'] );
+    }
+
+    /**
+     * Markup for the Group ID column.
+     *
+     * @since 1.7.0
+     *
+     * @see WP_List_Table::single_row_columns()
+     *
+     * @param array $item A singular item (one full row).
+     */
+    public function column_gid( $item = array() ) {
+        echo '<strong>' . absint( $item['id'] ) . '</strong>';
+    }
+
+    /**
+     * Name column, and "quick admin" rollover actions.
+     *
+     * Called "comment" in the CSS so we can re-use some WP core CSS.
+     *
+     * @since 1.7.0
+     *
+     * @see WP_List_Table::single_row_columns()
+     *
+     * @param array $item A singular item (one full row).
+     */
+    public function column_comment( $item = array() ) {
+
+        // Preorder items: Edit | Delete | View.
         $actions = array(
-            'edit'      => sprintf('<a href="?page=%s&action=%s&movie=%s">Edit</a>',$_REQUEST['page'],'edit',$item['ID']),
-            'delete'    => sprintf('<a href="?page=%s&action=%s&movie=%s">Delete</a>',$_REQUEST['page'],'delete',$item['ID']),
+            'edit'   => '',
+            'delete' => '',
+            'view'   => '',
         );
 
-        //Return the title contents
-        return sprintf('%1$s <span style="color:silver">(id:%2$s)</span>%3$s',
-            /*$1%s*/ $item['title'],
-            /*$2%s*/ $item['ID'],
-            /*$3%s*/ $this->row_actions($actions)
-        );
+        // We need the group object for some BP functions.
+        $item_obj = (object) $item;
+
+        // Build actions URLs.
+        $base_url   = bp_get_admin_url( 'admin.php?page=bp-groups&amp;gid=' . $item['id'] );
+        $delete_url = wp_nonce_url( $base_url . "&amp;action=delete", 'bp-groups-delete' );
+        $edit_url   = $base_url . '&amp;action=edit';
+        $view_url   = bp_get_group_permalink( $item_obj );
+
+        /**
+         * Filters the group name for a group's column content.
+         *
+         * @since 1.7.0
+         *
+         * @param string $value Name of the group being rendered.
+         * @param array  $item  Array for the current group item.
+         */
+        $group_name = apply_filters_ref_array( 'bp_get_group_name', array( $item['name'], $item ) );
+
+        // Rollover actions.
+        // Edit.
+        $actions['edit']   = sprintf( '<a href="%s">%s</a>', esc_url( $edit_url   ), __( 'Edit',   'buddypress' ) );
+
+        // Delete.
+        $actions['delete'] = sprintf( '<a href="%s">%s</a>', esc_url( $delete_url ), __( 'Delete', 'buddypress' ) );
+
+        // Visit.
+        $actions['view']   = sprintf( '<a href="%s">%s</a>', esc_url( $view_url   ), __( 'View',   'buddypress' ) );
+
+        /**
+         * Filters the actions that will be shown for the column content.
+         *
+         * @since 1.7.0
+         *
+         * @param array $value Array of actions to be displayed for the column content.
+         * @param array $item  The current group item in the loop.
+         */
+        $actions = apply_filters( 'bp_groups_admin_comment_row_actions', array_filter( $actions ), $item );
+
+        // Get group name and avatar.
+        $avatar = '';
+
+        if ( buddypress()->avatar->show_avatars ) {
+            $avatar  = bp_core_fetch_avatar( array(
+                'item_id'    => $item['id'],
+                'object'     => 'group',
+                'type'       => 'thumb',
+                'avatar_dir' => 'group-avatars',
+                'alt'        => sprintf( __( 'Group logo of %s', 'buddypress' ), $group_name ),
+                'width'      => '32',
+                'height'     => '32',
+                'title'      => $group_name
+            ) );
+        }
+
+        $content = sprintf( '<strong><a href="%s">%s</a></strong>', esc_url( $edit_url ), $group_name );
+
+        echo $avatar . ' ' . $content . ' ' . $this->row_actions( $actions );
     }
 
-
-    /** ************************************************************************
-     * REQUIRED if displaying checkboxes or using bulk actions! The 'cb' column
-     * is given special treatment when columns are processed. It ALWAYS needs to
-     * have it's own method.
+    /**
+     * Markup for the Description column.
      *
-     * @see WP_List_Table::::single_row_columns()
-     * @param array $item A singular item (one full row's worth of data)
-     * @return string Text to be placed inside the column <td> (movie title only)
-     **************************************************************************/
-    function column_cb($item){
-        return sprintf(
-            '<input type="checkbox" name="%1$s[]" value="%2$s" />',
-            /*$1%s*/ $this->_args['singular'],  //Let's simply repurpose the table's singular label ("movie")
-            /*$2%s*/ $item['ID']                //The value of the checkbox should be the record's id
-        );
+     * @since 1.7.0
+     *
+     * @param array $item Information about the current row.
+     */
+    public function column_description( $item = array() ) {
+
+        /**
+         * Filters the markup for the Description column.
+         *
+         * @since 1.0.0
+         *
+         * @param string $value Markup for the Description column.
+         * @param array  $item  The current group item in the loop.
+         */
+        echo apply_filters_ref_array( 'bp_get_group_description', array( $item['description'], $item ) );
     }
 
+    /**
+     * Markup for the Status column.
+     *
+     * @since 1.7.0
+     *
+     * @param array $item Information about the current row.
+     */
+    public function column_status( $item = array() ) {
+        $status      = $item['status'];
+        $status_desc = '';
 
-    /** ************************************************************************
-     * REQUIRED! This method dictates the table's columns and titles. This should
-     * return an array where the key is the column slug (and class) and the value
-     * is the column's title text. If you need a checkbox for bulk actions, refer
-     * to the $columns array below.
+        // @todo This should be abstracted out somewhere for the whole
+        // Groups component.
+        switch ( $status ) {
+            case 'public' :
+                $status_desc = __( 'Public', 'buddypress' );
+                break;
+            case 'private' :
+                $status_desc = __( 'Private', 'buddypress' );
+                break;
+            case 'hidden' :
+                $status_desc = __( 'Hidden', 'buddypress' );
+                break;
+        }
+
+        /**
+         * Filters the markup for the Status column.
+         *
+         * @since 1.7.0
+         *
+         * @param string $status_desc Markup for the Status column.
+         * @parma array  $item        The current group item in the loop.
+         */
+        echo apply_filters_ref_array( 'bp_groups_admin_get_group_status', array( $status_desc, $item ) );
+    }
+
+    /**
+     * Markup for the Number of Members column.
      *
-     * The 'cb' column is treated differently than the rest. If including a checkbox
-     * column in your table you must create a column_cb() method. If you don't need
-     * bulk actions or checkboxes, simply leave the 'cb' entry out of your array.
+     * @since 1.7.0
      *
-     * @see WP_List_Table::::single_row_columns()
-     * @return array An associative array containing column information: 'slugs'=>'Visible Titles'
-     **************************************************************************/
-    function get_columns(){
-        $columns = array(
-            'cb'        => '<input type="checkbox" />', //Render a checkbox instead of text
-            'title'     => 'Title',
-            'rating'    => 'Rating',
-            'director'  => 'Director'
-        );
+     * @param array $item Information about the current row.
+     */
+    public function column_members( $item = array() ) {
+        $count = groups_get_groupmeta( $item['id'], 'total_member_count' );
+
+        /**
+         * Filters the markup for the number of Members column.
+         *
+         * @since 1.7.0
+         *
+         * @param int   $count Markup for the number of Members column.
+         * @parma array $item  The current group item in the loop.
+         */
+        echo apply_filters_ref_array( 'bp_groups_admin_get_group_member_count', array( (int) $count, $item ) );
+    }
+
+    /**
+     * Markup for the Assigned To
+     *
+     * @since 1.7.0
+     *
+     * @param array $item Information about the current row.
+     */
+    public function column_assigned_to( $item = array() ) {
+        $assigned_to = groups_get_groupmeta( $item['id'], 'assigned_to' );
+        $user_name = zume_get_assigned_name ( $assigned_to );
+
+        /**
+         * Filters the markup for the number of Members column.
+         *
+         * @since 1.7.0
+         *
+         * @param int   $count Markup for the number of Members column.
+         * @parma array $item  The current group item in the loop.
+         */
+        echo apply_filters_ref_array( 'bp_groups_admin_get_group_assigned_to', array( $user_name, $item ) );
+    }
+
+    /**
+     * Markup for the Last Active column.
+     *
+     * @since 1.7.0
+     *
+     * @param array $item Information about the current row.
+     */
+    public function column_last_active( $item = array() ) {
+        $last_active = groups_get_groupmeta( $item['id'], 'last_activity' );
+
+        /**
+         * Filters the markup for the Last Active column.
+         *
+         * @since 1.7.0
+         *
+         * @param string $last_active Markup for the Last Active column.
+         * @parma array  $item        The current group item in the loop.
+         */
+        echo apply_filters_ref_array( 'bp_groups_admin_get_group_last_active', array( $last_active, $item ) );
+    }
+
+    /**
+     * Allow plugins to add their custom column.
+     *
+     * @since 2.0.0
+     *
+     * @param array  $item        Information about the current row.
+     * @param string $column_name The column name.
+     * @return string
+     */
+    public function column_default( $item = array(), $column_name = '' ) {
+
+        /**
+         * Filters a string to allow plugins to add custom column content.
+         *
+         * @since 2.0.0
+         *
+         * @param string $value       Empty string.
+         * @param string $column_name Name of the column being rendered.
+         * @param array  $item        The current group item in the loop.
+         */
+        return apply_filters( 'bp_groups_admin_get_group_custom_column', '', $column_name, $item );
+    }
+
+    // Group Types
+
+    /**
+     * Add group type column to the WordPress admin groups list table.
+     *
+     * @since 2.7.0
+     *
+     * @param array $columns Groups table columns.
+     *
+     * @return array $columns
+     */
+    public function add_type_column( $columns = array() ) {
+        $columns['bp_group_type'] = _x( 'Group Type', 'Label for the WP groups table group type column', 'buddypress' );
+
         return $columns;
     }
 
-
-    /** ************************************************************************
-     * Optional. If you want one or more columns to be sortable (ASC/DESC toggle),
-     * you will need to register it here. This should return an array where the
-     * key is the column that needs to be sortable, and the value is db column to
-     * sort by. Often, the key and value will be the same, but this is not always
-     * the case (as the value is a column name from the database, not the list table).
+    /**
+     * Markup for the Group Type column.
      *
-     * This method merely defines which columns should be sortable and makes them
-     * clickable - it does not handle the actual sorting. You still need to detect
-     * the ORDERBY and ORDER querystring variables within prepare_items() and sort
-     * your data accordingly (usually by modifying your query).
+     * @since 2.7.0
      *
-     * @return array An associative array containing all the columns that should be sortable: 'slugs'=>array('data_values',bool)
-     **************************************************************************/
-    function get_sortable_columns() {
-        $sortable_columns = array(
-            'title'     => array('title',false),     //true means it's already sorted
-            'rating'    => array('rating',false),
-            'director'  => array('director',false)
-        );
-        return $sortable_columns;
-    }
-
-
-    /** ************************************************************************
-     * Optional. If you need to include bulk actions in your list table, this is
-     * the place to define them. Bulk actions are an associative array in the format
-     * 'slug'=>'Visible Title'
-     *
-     * If this method returns an empty value, no bulk action will be rendered. If
-     * you specify any bulk actions, the bulk actions box will be rendered with
-     * the table automatically on display().
-     *
-     * Also note that list tables are not automatically wrapped in <form> elements,
-     * so you will need to create those manually in order for bulk actions to function.
-     *
-     * @return array An associative array containing all the bulk actions: 'slugs'=>'Visible Titles'
-     **************************************************************************/
-    function get_bulk_actions() {
-        $actions = array(
-            'delete'    => 'Delete'
-        );
-        return $actions;
-    }
-
-
-    /** ************************************************************************
-     * Optional. You can handle your bulk actions anywhere or anyhow you prefer.
-     * For this example package, we will handle it in the class to keep things
-     * clean and organized.
-     *
-     * @see $this->prepare_items()
-     **************************************************************************/
-    function process_bulk_action() {
-
-        //Detect when a bulk action is being triggered...
-        if( 'delete'===$this->current_action() ) {
-            wp_die('Items deleted (or they would be if we had items to delete)!');
+     * @param string $value       Empty string.
+     * @param string $column_name Name of the column being rendered.
+     * @param array  $item        The current group item in the loop.
+     */
+    public function column_content_group_type( $retval = '', $column_name, $item ) {
+        if ( 'bp_group_type' !== $column_name ) {
+            return $retval;
         }
 
-    }
-
-
-    /** ************************************************************************
-     * REQUIRED! This is where you prepare your data for display. This method will
-     * usually be used to query the database, sort and filter the data, and generally
-     * get it ready to be displayed. At a minimum, we should set $this->items and
-     * $this->set_pagination_args(), although the following properties and methods
-     * are frequently interacted with here...
-     *
-     * @global WPDB $wpdb
-     * @uses $this->_column_headers
-     * @uses $this->items
-     * @uses $this->get_columns()
-     * @uses $this->get_sortable_columns()
-     * @uses $this->get_pagenum()
-     * @uses $this->set_pagination_args()
-     **************************************************************************/
-    function prepare_items($search = null) {
-        global $wpdb; //This is used only if making any database queries
-
-        /**
-         * First, lets decide how many records per page to show
-         */
-        $per_page = 5;
-
-
-        /**
-         * REQUIRED. Now we need to define our column headers. This includes a complete
-         * array of columns to be displayed (slugs & titles), a list of columns
-         * to keep hidden, and a list of columns that are sortable. Each of these
-         * can be defined in another method (as we've done here) before being
-         * used to build the value for our _column_headers property.
-         */
-        $columns = $this->get_columns();
-        $hidden = array();
-        $sortable = $this->get_sortable_columns();
-
-
-        /**
-         * REQUIRED. Finally, we build an array to be used by the class for column
-         * headers. The $this->_column_headers property takes an array which contains
-         * 3 other arrays. One for all columns, one for hidden columns, and one
-         * for sortable columns.
-         */
-        $this->_column_headers = array($columns, $hidden, $sortable);
-
-
-        /**
-         * Optional. You can handle your bulk actions however you see fit. In this
-         * case, we'll handle them within our package just to keep things clean.
-         */
-        $this->process_bulk_action();
-
-
-        /**
-         * Instead of querying a database, we're going to fetch the example data
-         * property we created for use in this plugin. This makes this example
-         * package slightly different than one you might build on your own. In
-         * this example, we'll be using array manipulation to sort and paginate
-         * our data. In a real-world implementation, you will probably want to
-         * use sort and pagination data to build a custom query instead, as you'll
-         * be able to use your precisely-queried data immediately.
-         */
-        $data = $this->example_data;
-
-        if( $search != NULL ){ /* If the value is not NULL, do a search for it. */
-
-            // Trim Search Term
-            $search = trim($search);
-
-            /* Notice how you can search multiple columns for your search term easily, and return one data set */
-            $data = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."table_name WHERE `col_one` LIKE '%%%s%%' OR `col_two` LIKE '%%%s%%'", $search, $search), ARRAY_A);
-
-        }
-
-
-        /**
-         * This checks for sorting input and sorts the data in our array accordingly.
-         *
-         * In a real-world situation involving a database, you would probably want
-         * to handle sorting by passing the 'orderby' and 'order' values directly
-         * to a custom query. The returned data will be pre-sorted, and this array
-         * sorting technique would be unnecessary.
-         */
-        function usort_reorder($a,$b){
-            $orderby = (!empty($_REQUEST['orderby'])) ? $_REQUEST['orderby'] : 'title'; //If no sort, default to title
-            $order = (!empty($_REQUEST['order'])) ? $_REQUEST['order'] : 'asc'; //If no order, default to asc
-            $result = strcmp($a[$orderby], $b[$orderby]); //Determine sort order
-            return ($order==='asc') ? $result : -$result; //Send final sort direction to usort
-        }
-        usort($data, 'usort_reorder');
-
-
-        /***********************************************************************
-         * ---------------------------------------------------------------------
-         * vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-         *
-         * In a real-world situation, this is where you would place your query.
-         *
-         * For information on making queries in WordPress, see this Codex entry:
-         * http://codex.wordpress.org/Class_Reference/wpdb
-         *
-         * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         * ---------------------------------------------------------------------
-         **********************************************************************/
-
-
-        /**
-         * REQUIRED for pagination. Let's figure out what page the user is currently
-         * looking at. We'll need this later, so you should always include it in
-         * your own package classes.
-         */
-        $current_page = $this->get_pagenum();
-
-        /**
-         * REQUIRED for pagination. Let's check how many items are in our data array.
-         * In real-world use, this would be the total number of items in your database,
-         * without filtering. We'll need this later, so you should always include it
-         * in your own package classes.
-         */
-        $total_items = count($data);
-
-
-        /**
-         * The WP_List_Table class does not handle pagination for us, so we need
-         * to ensure that the data is trimmed to only the current page. We can use
-         * array_slice() to
-         */
-        $data = array_slice($data,(($current_page-1)*$per_page),$per_page);
-
-
-
-        /**
-         * REQUIRED. Now we can add our *sorted* data to the items property, where
-         * it can be used by the rest of the class.
-         */
-        $this->items = $data;
-
-
-        /**
-         * REQUIRED. We also have to register our pagination options & calculations.
-         */
-        $this->set_pagination_args( array(
-            'total_items' => $total_items,                  //WE have to calculate the total number of items
-            'per_page'    => $per_page,                     //WE have to determine how many items to show on a page
-            'total_pages' => ceil($total_items/$per_page)   //WE have to calculate the total number of pages
+        add_filter( 'bp_get_group_type_directory_permalink', array( $this, 'group_type_permalink_use_admin_filter' ), 10, 2 );
+        $retval = bp_get_group_type_list( $item['id'], array(
+            'parent_element' => '',
+            'label_element'  => '',
+            'label'          => '',
+            'show_all'       => true
         ) );
+        remove_filter( 'bp_get_group_type_directory_permalink', array( $this, 'group_type_permalink_use_admin_filter' ), 10 );
+
+        /**
+         * Filters the markup for the Group Type column.
+         *
+         * @since 2.7.0
+         *
+         * @param string $retval Markup for the Group Type column.
+         * @parma array  $item   The current group item in the loop.
+         */
+        echo apply_filters_ref_array( 'bp_groups_admin_get_group_type_column', array( $retval, $item ) );
     }
 
+    /**
+     * Filters the group type list permalink in the Group Type column.
+     *
+     * Changes the group type permalink to use the admin URL.
+     *
+     * @since 2.7.0
+     *
+     * @param  string $retval Current group type permalink.
+     * @param  object $type   Group type object.
+     * @return string
+     */
+    public function group_type_permalink_use_admin_filter( $retval, $type ) {
+        return add_query_arg( array( 'bp-group-type' => urlencode( $type->name ) ) );
+    }
 
+    /**
+     * Markup for the Group Type bulk change select.
+     *
+     * @since 2.7.0
+     *
+     * @param string $which The location of the extra table nav markup: 'top' or 'bottom'.
+     */
+    public function add_group_type_bulk_change_select( $which ) {
+        // `$which` is only passed in WordPress 4.6+. Avoid duplicating controls in earlier versions.
+        static $displayed = false;
+        if ( version_compare( bp_get_major_wp_version(), '4.6', '<' ) && $displayed ) {
+            return;
+        }
+        $displayed = true;
+        $id_name = 'bottom' === $which ? 'bp_change_type2' : 'bp_change_type';
+
+        $types = bp_groups_get_group_types( array(), 'objects' );
+        ?>
+        <div class="alignleft actions">
+            <label class="screen-reader-text" for="<?php echo $id_name; ?>"><?php _e( 'Change group type to&hellip;', 'buddypress' ) ?></label>
+            <select name="<?php echo $id_name; ?>" id="<?php echo $id_name; ?>" style="display:inline-block;float:none;">
+                <option value=""><?php _e( 'Change group type to&hellip;', 'buddypress' ) ?></option>
+
+                <?php foreach( $types as $type ) : ?>
+
+                    <option value="<?php echo esc_attr( $type->name ); ?>"><?php echo esc_html( $type->labels['singular_name'] ); ?></option>
+
+                <?php endforeach; ?>
+
+                <option value="remove_group_type"><?php _e( 'No Group Type', 'buddypress' ) ?></option>
+
+            </select>
+            <?php
+            wp_nonce_field( 'bp-bulk-groups-change-type-' . bp_loggedin_user_id(), 'bp-bulk-groups-change-type-nonce' );
+            submit_button( __( 'Change', 'buddypress' ), 'button', 'bp_change_group_type', false );
+            ?>
+        </div>
+        <?php
+    }
 }
