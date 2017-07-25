@@ -251,7 +251,7 @@ add_filter('bp_get_send_public_message_button', '__return_false');
  */
 function custom_menu_page_removing() {
 
-    if(is_admin() && current_user_can('coach')) {
+    if(is_admin() && current_user_can('coach') && !current_user_can('administrator') ) {
 
         remove_menu_page( 'index.php' );                  //Dashboard
         remove_menu_page( 'jetpack' );                    //Jetpack*
@@ -265,7 +265,7 @@ function custom_menu_page_removing() {
     //    remove_menu_page( 'users.php' );                  //Users
         remove_menu_page( 'tools.php' );                  //Tools
         remove_menu_page( 'options-general.php' );        //Settings
-        
+
     }
 }
 add_action( 'admin_menu', 'custom_menu_page_removing' );
