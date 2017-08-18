@@ -60,7 +60,7 @@ class Zume_REST_API {
                 'methods'         => WP_REST_Server::CREATABLE,
                 'callback'        => array( $this, 'log_attendance' ),
                 "permission_callback" => function () {
-                    return current_user_can( 'read' );
+                    return current_user_can( 'publish_steplogs' );
                 }
             ),
         ) );
