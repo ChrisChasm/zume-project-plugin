@@ -63,6 +63,7 @@ function add_user_to_mailchimp($email, $name=null) {
 function session_completed_trigger_mailchimp( $group_id, $session_number ) {
     $group_id = (int) $group_id;
     $session_number = (int) $session_number;
+    $api_key = get_option("zume_mailchimp_api_key");
     $url = get_option("zume_mailchimp_automation_session_$session_number");
 
     if (! $url) { return; }
