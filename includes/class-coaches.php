@@ -49,6 +49,7 @@ class Zume_Coaches {
             require_once ('class-coaches-group-stats.php');
             require_once ('class-coaches-unassigned-groups.php');
             require_once ('class-coaches-list.php');
+            require_once ('class-coaches-group-csv.php');
             add_action( 'admin_menu', array( $this, 'load_admin_menu_item' ) );
         }
 
@@ -155,9 +156,9 @@ class Zume_Coaches {
         if ($tab == 'group_stats' || !isset($tab)) {$html .= 'nav-tab-active';}
         $html .= '">Group List with Assigned Coach</a>';
 
-//        $html .= $tab_link_pre . 'unassigned' . $tab_link_post;
-//        if ($tab == 'unassigned' ) {$html .= 'nav-tab-active';}
-//        $html .= '">Unassigned Groups</a>';
+//        $html .= $tab_link_pre . 'groups_csv' . $tab_link_post;
+//        if ($tab == 'groups_csv' ) {$html .= 'nav-tab-active';}
+//        $html .= '">Groups CSV</a>';
 
 //        $html .= $tab_link_pre . 'coach_list' . $tab_link_post;
 //        if ($tab == 'coach_list' ) {$html .= 'nav-tab-active';}
@@ -213,6 +214,7 @@ class Zume_Coaches {
                     </div>
                     <?php
                 break;
+            
             default:
                 $list_class = new Zume_Group_Stats_List();
                 if( isset($_POST['s']) ){
