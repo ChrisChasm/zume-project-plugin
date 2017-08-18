@@ -143,6 +143,10 @@ function group_edit_fields_markup() {
                         jQuery('#lat').val(data.lat);
                         jQuery('#state').val(data.state);
                         jQuery('#county').val(data.county);
+                    })
+                    .fail(function( jqXHR, textStatus, errorThrown ) {
+                        console.log( jqXHR.responseText );
+                        alert("error");
                     });
             });
         });

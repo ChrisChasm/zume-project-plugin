@@ -18,6 +18,7 @@ jQuery( document ).ready( function ( $ ) {
             method: "POST",
             url: POST_SUBMITTER.root + 'wp/v2/posts',
             data: data,
+            dataType: 'json',
             beforeSend: function ( xhr ) {
                 xhr.setRequestHeader( 'X-WP-Nonce', POST_SUBMITTER.nonce );
             },
@@ -25,8 +26,8 @@ jQuery( document ).ready( function ( $ ) {
                 console.log( response );
                 alert( POST_SUBMITTER.success );
             },
-            fail : function( response ) {
-                console.log( response );
+            error : function( jqXHR, textStatus, errorThrown ) {
+                console.log( jqXHR.responseText );
                 alert( POST_SUBMITTER.failure );
             }
 

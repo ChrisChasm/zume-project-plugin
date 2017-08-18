@@ -347,11 +347,12 @@ class Zume_Course {
                             method: "POST",
                             url: \''. $root .'\' + \'zume/v1/attendance/log\',
                             data: data,
+                            dataType: "json",
                             beforeSend: function ( xhr ) {
                                 xhr.setRequestHeader( \'X-WP-Nonce\', \''.$nonce.'\' );
                             },
-                            fail : function( response ) {
-                                console.log( response );
+                            error : function( jqXHR, textStatus, errorThrown ) {
+                                console.log( jqXHR.responseText );
                                 alert( \''.$failure.'\' );
                             }
                 
@@ -370,11 +371,12 @@ class Zume_Course {
                             method: "POST",
                             url: \''. $root .'\' + \'wp/v2/steplog\',
                             data: data,
+                            dataType: "json",
                             beforeSend: function ( xhr ) {
                                 xhr.setRequestHeader( \'X-WP-Nonce\', \''.$nonce.'\' );
                             },
-                            fail : function( response ) {
-                                console.log( response );
+                            error : function( jqXHR, textStatus, errorThrown ) {
+                                console.log( jqXHR.responseText );
                                 alert( \''.$failure.'\' );
                             }
                 
@@ -400,6 +402,7 @@ class Zume_Course {
                             method: "POST",
                             url: \''. $root .'\' + \'wp/v2/steplog\',
                             data: data,
+                            dataType: "json",
                             beforeSend: function ( xhr ) {
                                 xhr.setRequestHeader( \'X-WP-Nonce\', \''.$nonce.'\' );
                             },
@@ -407,12 +410,13 @@ class Zume_Course {
                                 
                                 window.location.replace("' . $dashboard_complete . '"); 
                             },
-                            fail : function( response ) {
-                                console.log( response );
+                            error : function( jqXHR, textStatus, errorThrown ) {
+                                console.log( jqXHR.responseText );
                                 alert( \''.$failure.'\' );
                             }
                 
                         });
+
                     },
                     
                     '; // end html block
