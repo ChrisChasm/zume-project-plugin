@@ -58,3 +58,38 @@ function add_user_to_mailchimp($email, $name=null) {
     }
 
 }
+
+
+function session_completed_trigger_mailchimp( $group_id, $session_number ) {
+    $group_id = (int) $group_id;
+    $session_number = (int) $session_number;
+    $url = get_option("zume_mailchimp_automation_session_$session_number");
+
+    if (! $url) { return; }
+
+    if ( bp_group_has_members( "group_id=$group_id" ) ) {
+        while ( bp_group_members( "group_id=$group_id" ) ) {
+            bp_group_the_member();
+            $user_id = bp_get_group_member_id();
+            $user = get_user_by( 'id', $user_id );
+
+            $post_data = [
+                'email_address' => $user->user_email,
+            ];
+            $request = curl_init($url);
+            curl_setopt($request, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($request, CURLOPT_POSTFIELDS, json_encode($post_data));
+            curl_setopt($request, CURLOPT_USERPWD, "anystring:$api_key");
+            curl_setopt($request, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($request, CURLOPT_HTTPHEADER, [
+                'Content-Type: application/json'
+            ]);
+            $response_string = curl_exec($request);
+            $status_code = curl_getinfo($request, CURLINFO_HTTP_CODE);
+
+            curl_close($request);
+            error_log("Running curl for URL $url and email $user->user_email got status code $status_code");
+        }
+    }
+
+}

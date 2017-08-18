@@ -292,3 +292,13 @@ return $assigned_to;
 //    }
 
 }
+
+function zume_wp_insert_post( $post_id, $post, $update ) {
+    if ( wp_is_post_revision( $post_id ) ) {
+        return;
+    }
+    if ( $post->post_type === 'steplog' && preg_match('/^group-(\d+)-step-complete-session-(\d+)/i', $post->post_name, $matches ) ) {
+        session_completed_trigger_mailchimp( (int) $matches[1], (int) $matches[2] );
+    }
+}
+add_action( 'wp_insert_post', 'zume_wp_insert_post', 10, 3 );
