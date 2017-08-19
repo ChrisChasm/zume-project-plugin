@@ -80,10 +80,10 @@ class Zume_REST_API {
             if ($result["status"] == true){
                 return 'success';
             } else {
-                return new WP_Error("tract_status_error", $result["message"], array('status', 400));
+                return new WP_Error("log_status_error", $result["message"], array('status', 400));
             }
         } else {
-            return new WP_Error("tract_param_error", "Please provide a valid address", array('status', 400));
+            return new WP_Error("log_param_error", "Please provide a valid address", array('status', 400));
         }
     }
 
