@@ -353,7 +353,7 @@ class Zume_Course {
                             },
                             error : function( jqXHR, textStatus, errorThrown ) {
                                 console.log( jqXHR.responseText );
-                                alert( \''.$failure.'\' );
+                                
                             }
                 
                         });

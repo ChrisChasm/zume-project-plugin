@@ -94,7 +94,7 @@ class Zume_REST_API {
      */
     public function record_members_attendance ($params) {
 
-        $members = $params['members'];
+        $members = json_decode($params['members']);
         $session = $params['session'];
         $group_id = $params['group_id'];
         $status = '';
